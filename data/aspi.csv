@@ -1,0 +1,106 @@
+REF_DATE,GEO,Class of service,VALUE,STATUS,Classification Code for Class of service
+1999,Canada,Accounting Services Price Index,67.7,NA,NA
+1999,Canada,"Audit, review, related services and other assurance services",67.3,NA,NA
+1999,Canada,"Bookkeeping, compilation, payroll and general accounting services",70.9,NA,NA
+1999,Canada,Tax preparation services for corporate clients,72.3,NA,NA
+1999,Canada,Tax preparation services for individuals and unincorporated businesses,60.1,NA,NA
+2000,Canada,Accounting Services Price Index,71.7,NA,NA
+2000,Canada,"Audit, review, related services and other assurance services",71.6,NA,NA
+2000,Canada,"Bookkeeping, compilation, payroll and general accounting services",73.2,NA,NA
+2000,Canada,Tax preparation services for corporate clients,78.9,NA,NA
+2000,Canada,Tax preparation services for individuals and unincorporated businesses,63.6,NA,NA
+2001,Canada,Accounting Services Price Index,74.7,NA,NA
+2001,Canada,"Audit, review, related services and other assurance services",73.3,NA,NA
+2001,Canada,"Bookkeeping, compilation, payroll and general accounting services",75.7,NA,NA
+2001,Canada,Tax preparation services for corporate clients,87.6,NA,NA
+2001,Canada,Tax preparation services for individuals and unincorporated businesses,65.8,NA,NA
+2002,Canada,Accounting Services Price Index,76.4,NA,NA
+2002,Canada,"Audit, review, related services and other assurance services",76,NA,NA
+2002,Canada,"Bookkeeping, compilation, payroll and general accounting services",79.9,NA,NA
+2002,Canada,Tax preparation services for corporate clients,81.7,NA,NA
+2002,Canada,Tax preparation services for individuals and unincorporated businesses,68.3,NA,NA
+2003,Canada,Accounting Services Price Index,78.7,NA,NA
+2003,Canada,"Audit, review, related services and other assurance services",78,NA,NA
+2003,Canada,"Bookkeeping, compilation, payroll and general accounting services",83.5,NA,NA
+2003,Canada,Tax preparation services for corporate clients,83.8,NA,NA
+2003,Canada,Tax preparation services for individuals and unincorporated businesses,71.3,NA,NA
+2004,Canada,Accounting Services Price Index,82.3,NA,NA
+2004,Canada,"Audit, review, related services and other assurance services",81.4,NA,NA
+2004,Canada,"Bookkeeping, compilation, payroll and general accounting services",86.4,NA,NA
+2004,Canada,Tax preparation services for corporate clients,87.6,NA,NA
+2004,Canada,Tax preparation services for individuals and unincorporated businesses,75.7,NA,NA
+2005,Canada,Accounting Services Price Index,85.5,NA,NA
+2005,Canada,"Audit, review, related services and other assurance services",84.8,NA,NA
+2005,Canada,"Bookkeeping, compilation, payroll and general accounting services",88.8,NA,NA
+2005,Canada,Tax preparation services for corporate clients,90.5,NA,NA
+2005,Canada,Tax preparation services for individuals and unincorporated businesses,79.8,NA,NA
+2006,Canada,Accounting Services Price Index,89,NA,NA
+2006,Canada,"Audit, review, related services and other assurance services",87.8,NA,NA
+2006,Canada,"Bookkeeping, compilation, payroll and general accounting services",91.3,NA,NA
+2006,Canada,Tax preparation services for corporate clients,93.2,NA,NA
+2006,Canada,Tax preparation services for individuals and unincorporated businesses,86.1,NA,NA
+2007,Canada,Accounting Services Price Index,92.3,NA,NA
+2007,Canada,"Audit, review, related services and other assurance services",91.9,NA,NA
+2007,Canada,"Bookkeeping, compilation, payroll and general accounting services",94.1,NA,NA
+2007,Canada,Tax preparation services for corporate clients,95.1,NA,NA
+2007,Canada,Tax preparation services for individuals and unincorporated businesses,88.6,NA,NA
+2008,Canada,Accounting Services Price Index,95,NA,NA
+2008,Canada,"Audit, review, related services and other assurance services",95.3,NA,NA
+2008,Canada,"Bookkeeping, compilation, payroll and general accounting services",95.7,NA,NA
+2008,Canada,Tax preparation services for corporate clients,96.8,NA,NA
+2008,Canada,Tax preparation services for individuals and unincorporated businesses,91.2,NA,NA
+2009,Canada,Accounting Services Price Index,97.9,NA,NA
+2009,Canada,"Audit, review, related services and other assurance services",98.4,NA,NA
+2009,Canada,"Bookkeeping, compilation, payroll and general accounting services",97.7,NA,NA
+2009,Canada,Tax preparation services for corporate clients,98.3,NA,NA
+2009,Canada,Tax preparation services for individuals and unincorporated businesses,95.9,NA,NA
+2010,Canada,Accounting Services Price Index,100,NA,NA
+2010,Canada,"Audit, review, related services and other assurance services",100,NA,NA
+2010,Canada,"Bookkeeping, compilation, payroll and general accounting services",100,NA,NA
+2010,Canada,Tax preparation services for corporate clients,100,NA,NA
+2010,Canada,Tax preparation services for individuals and unincorporated businesses,100,NA,NA
+2011,Canada,Accounting Services Price Index,100.3,NA,NA
+2011,Canada,"Audit, review, related services and other assurance services",97.9,NA,NA
+2011,Canada,"Bookkeeping, compilation, payroll and general accounting services",102.7,NA,NA
+2011,Canada,Tax preparation services for corporate clients,101,NA,NA
+2011,Canada,Tax preparation services for individuals and unincorporated businesses,101.9,NA,NA
+2012,Canada,Accounting Services Price Index,101.1,NA,NA
+2012,Canada,"Audit, review, related services and other assurance services",98,NA,NA
+2012,Canada,"Bookkeeping, compilation, payroll and general accounting services",103.6,NA,NA
+2012,Canada,Tax preparation services for corporate clients,102.2,NA,NA
+2012,Canada,Tax preparation services for individuals and unincorporated businesses,103.9,NA,NA
+2013,Canada,Accounting Services Price Index,101.9,NA,NA
+2013,Canada,"Audit, review, related services and other assurance services",98.6,NA,NA
+2013,Canada,"Bookkeeping, compilation, payroll and general accounting services",105.2,NA,NA
+2013,Canada,Tax preparation services for corporate clients,101.1,NA,NA
+2013,Canada,Tax preparation services for individuals and unincorporated businesses,106.2,NA,NA
+2014,Canada,Accounting Services Price Index,103.4,NA,NA
+2014,Canada,"Audit, review, related services and other assurance services",98.8,NA,NA
+2014,Canada,"Bookkeeping, compilation, payroll and general accounting services",106.6,NA,NA
+2014,Canada,Tax preparation services for corporate clients,104,NA,NA
+2014,Canada,Tax preparation services for individuals and unincorporated businesses,109.7,NA,NA
+2015,Canada,Accounting Services Price Index,105.8,NA,NA
+2015,Canada,"Audit, review, related services and other assurance services",101.6,NA,NA
+2015,Canada,"Bookkeeping, compilation, payroll and general accounting services",107.8,NA,NA
+2015,Canada,Tax preparation services for corporate clients,106.8,NA,NA
+2015,Canada,Tax preparation services for individuals and unincorporated businesses,113.5,NA,NA
+2016,Canada,Accounting Services Price Index,108.8,NA,NA
+2016,Canada,"Audit, review, related services and other assurance services",104.6,NA,NA
+2016,Canada,"Bookkeeping, compilation, payroll and general accounting services",111.1,NA,NA
+2016,Canada,Tax preparation services for corporate clients,110.3,NA,NA
+2016,Canada,Tax preparation services for individuals and unincorporated businesses,115.8,NA,NA
+2017,Canada,Accounting Services Price Index,110.9,NA,NA
+2017,Canada,"Audit, review, related services and other assurance services",107.4,NA,NA
+2017,Canada,"Bookkeeping, compilation, payroll and general accounting services",113.2,NA,NA
+2017,Canada,Tax preparation services for corporate clients,108.5,NA,NA
+2017,Canada,Tax preparation services for individuals and unincorporated businesses,120.1,NA,NA
+2018,Canada,Accounting Services Price Index,111.7,NA,NA
+2018,Canada,"Audit, review, related services and other assurance services",106.8,NA,NA
+2018,Canada,"Bookkeeping, compilation, payroll and general accounting services",115.4,NA,NA
+2018,Canada,Tax preparation services for corporate clients,108.9,NA,NA
+2018,Canada,Tax preparation services for individuals and unincorporated businesses,122.3,NA,NA
+2019,Canada,Accounting Services Price Index,113.6,NA,NA
+2019,Canada,"Audit, review, related services and other assurance services",108.8,NA,NA
+2019,Canada,"Bookkeeping, compilation, payroll and general accounting services",118.2,NA,NA
+2019,Canada,Tax preparation services for corporate clients,110.7,NA,NA
+2019,Canada,Tax preparation services for individuals and unincorporated businesses,122.2,NA,NA

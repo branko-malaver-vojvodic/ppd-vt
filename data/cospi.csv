@@ -1,0 +1,85 @@
+REF_DATE,GEO,Class of service,VALUE,STATUS,Classification Code for Class of service
+2014-01,Canada,Total price,94.1,NA,NA
+2014-01,Canada,Management consulting services,95.1,NA,NA
+2014-01,Canada,"Environmental, scientific and technical consulting services",92.3,NA,NA
+2014-04,Canada,Total price,94.3,NA,NA
+2014-04,Canada,Management consulting services,95.4,NA,NA
+2014-04,Canada,"Environmental, scientific and technical consulting services",91.6,NA,NA
+2014-07,Canada,Total price,97.2,NA,NA
+2014-07,Canada,Management consulting services,99.3,NA,NA
+2014-07,Canada,"Environmental, scientific and technical consulting services",90.1,NA,NA
+2014-10,Canada,Total price,98.8,NA,NA
+2014-10,Canada,Management consulting services,101.2,NA,NA
+2014-10,Canada,"Environmental, scientific and technical consulting services",90,NA,NA
+2015-01,Canada,Total price,96,NA,NA
+2015-01,Canada,Management consulting services,97.7,NA,NA
+2015-01,Canada,"Environmental, scientific and technical consulting services",90.5,NA,NA
+2015-04,Canada,Total price,93.5,NA,NA
+2015-04,Canada,Management consulting services,94.6,NA,NA
+2015-04,Canada,"Environmental, scientific and technical consulting services",91.2,NA,NA
+2015-07,Canada,Total price,92.8,NA,NA
+2015-07,Canada,Management consulting services,93.8,NA,NA
+2015-07,Canada,"Environmental, scientific and technical consulting services",91.1,NA,NA
+2015-10,Canada,Total price,97.4,NA,NA
+2015-10,Canada,Management consulting services,99,NA,NA
+2015-10,Canada,"Environmental, scientific and technical consulting services",92.9,NA,NA
+2016-01,Canada,Total price,96.3,NA,NA
+2016-01,Canada,Management consulting services,97.2,NA,NA
+2016-01,Canada,"Environmental, scientific and technical consulting services",94.9,NA,NA
+2016-04,Canada,Total price,95.6,NA,NA
+2016-04,Canada,Management consulting services,96.3,NA,NA
+2016-04,Canada,"Environmental, scientific and technical consulting services",95.3,NA,NA
+2016-07,Canada,Total price,97.2,NA,NA
+2016-07,Canada,Management consulting services,97.9,NA,NA
+2016-07,Canada,"Environmental, scientific and technical consulting services",96.7,NA,NA
+2016-10,Canada,Total price,99,NA,NA
+2016-10,Canada,Management consulting services,100,NA,NA
+2016-10,Canada,"Environmental, scientific and technical consulting services",97.3,NA,NA
+2017-01,Canada,Total price,97.1,NA,NA
+2017-01,Canada,Management consulting services,98,NA,NA
+2017-01,Canada,"Environmental, scientific and technical consulting services",95.9,NA,NA
+2017-04,Canada,Total price,98,NA,NA
+2017-04,Canada,Management consulting services,98.8,NA,NA
+2017-04,Canada,"Environmental, scientific and technical consulting services",98.2,NA,NA
+2017-07,Canada,Total price,95.5,NA,NA
+2017-07,Canada,Management consulting services,96.1,NA,NA
+2017-07,Canada,"Environmental, scientific and technical consulting services",98.3,NA,NA
+2017-10,Canada,Total price,99.5,NA,NA
+2017-10,Canada,Management consulting services,100.6,NA,NA
+2017-10,Canada,"Environmental, scientific and technical consulting services",97.6,NA,NA
+2018-01,Canada,Total price,99.7,NA,NA
+2018-01,Canada,Management consulting services,100.9,NA,NA
+2018-01,Canada,"Environmental, scientific and technical consulting services",97.5,NA,NA
+2018-04,Canada,Total price,99.3,NA,NA
+2018-04,Canada,Management consulting services,99.4,NA,NA
+2018-04,Canada,"Environmental, scientific and technical consulting services",99.1,NA,NA
+2018-07,Canada,Total price,99.7,NA,NA
+2018-07,Canada,Management consulting services,98.8,NA,NA
+2018-07,Canada,"Environmental, scientific and technical consulting services",101.3,NA,NA
+2018-10,Canada,Total price,101.3,NA,NA
+2018-10,Canada,Management consulting services,100.9,NA,NA
+2018-10,Canada,"Environmental, scientific and technical consulting services",102,NA,NA
+2019-01,Canada,Total price,101.8,NA,NA
+2019-01,Canada,Management consulting services,101.4,NA,NA
+2019-01,Canada,"Environmental, scientific and technical consulting services",102.7,NA,NA
+2019-04,Canada,Total price,100.9,NA,NA
+2019-04,Canada,Management consulting services,99.8,NA,NA
+2019-04,Canada,"Environmental, scientific and technical consulting services",103.1,NA,NA
+2019-07,Canada,Total price,100.9,NA,NA
+2019-07,Canada,Management consulting services,99.6,NA,NA
+2019-07,Canada,"Environmental, scientific and technical consulting services",103.4,NA,NA
+2019-10,Canada,Total price,101.4,NA,NA
+2019-10,Canada,Management consulting services,100.5,NA,NA
+2019-10,Canada,"Environmental, scientific and technical consulting services",103.1,NA,NA
+2020-01,Canada,Total price,101.5,NA,NA
+2020-01,Canada,Management consulting services,100.2,NA,NA
+2020-01,Canada,"Environmental, scientific and technical consulting services",103.8,NA,NA
+2020-04,Canada,Total price,100.2,NA,NA
+2020-04,Canada,Management consulting services,98.8,NA,NA
+2020-04,Canada,"Environmental, scientific and technical consulting services",102.8,NA,NA
+2020-07,Canada,Total price,101,NA,NA
+2020-07,Canada,Management consulting services,99.6,NA,NA
+2020-07,Canada,"Environmental, scientific and technical consulting services",103.6,NA,NA
+2020-10,Canada,Total price,102.7,NA,NA
+2020-10,Canada,Management consulting services,102.3,NA,NA
+2020-10,Canada,"Environmental, scientific and technical consulting services",103.3,NA,NA

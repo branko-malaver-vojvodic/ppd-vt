@@ -1,0 +1,1156 @@
+REF_DATE,GEO,Type of peripheral,VALUE,STATUS
+2010-01,Canada,Computer monitors and computer printers [E12],133.6,NA
+2010-01,Canada,Computer monitors [3611123],120.4,NA
+2010-01,Canada,"Computer monitors, businesses and governments [36111231]",120.9,NA
+2010-01,Canada,Computer printers [3611124],138.5,NA
+2010-01,Canada,Inkjet printers [36111241],147.3,NA
+2010-01,Canada,"Inkjet printers, businesses and governments [361112411]",147.4,NA
+2010-01,Canada,Laser printers [36111242],132.3,NA
+2010-01,Canada,"Laser printers, businesses and governments [361112421]",132.1,NA
+2010-02,Canada,Computer monitors and computer printers [E12],133.1,NA
+2010-02,Canada,Computer monitors [3611123],121.5,NA
+2010-02,Canada,"Computer monitors, businesses and governments [36111231]",121.9,NA
+2010-02,Canada,Computer printers [3611124],136.5,NA
+2010-02,Canada,Inkjet printers [36111241],145.4,NA
+2010-02,Canada,"Inkjet printers, businesses and governments [361112411]",145.5,NA
+2010-02,Canada,Laser printers [36111242],130.1,NA
+2010-02,Canada,"Laser printers, businesses and governments [361112421]",129.9,NA
+2010-03,Canada,Computer monitors and computer printers [E12],133.5,NA
+2010-03,Canada,Computer monitors [3611123],119.3,NA
+2010-03,Canada,"Computer monitors, businesses and governments [36111231]",119.7,NA
+2010-03,Canada,Computer printers [3611124],139.4,NA
+2010-03,Canada,Inkjet printers [36111241],148.4,NA
+2010-03,Canada,"Inkjet printers, businesses and governments [361112411]",148.6,NA
+2010-03,Canada,Laser printers [36111242],132.8,NA
+2010-03,Canada,"Laser printers, businesses and governments [361112421]",132.6,NA
+2010-04,Canada,Computer monitors and computer printers [E12],132.1,NA
+2010-04,Canada,Computer monitors [3611123],118.8,NA
+2010-04,Canada,"Computer monitors, businesses and governments [36111231]",119.2,NA
+2010-04,Canada,Computer printers [3611124],137.2,NA
+2010-04,Canada,Inkjet printers [36111241],146.5,NA
+2010-04,Canada,"Inkjet printers, businesses and governments [361112411]",146.7,NA
+2010-04,Canada,Laser printers [36111242],130,NA
+2010-04,Canada,"Laser printers, businesses and governments [361112421]",129.7,NA
+2010-05,Canada,Computer monitors and computer printers [E12],129.9,NA
+2010-05,Canada,Computer monitors [3611123],115.8,NA
+2010-05,Canada,"Computer monitors, businesses and governments [36111231]",116.2,NA
+2010-05,Canada,Computer printers [3611124],135.8,NA
+2010-05,Canada,Inkjet printers [36111241],147,NA
+2010-05,Canada,"Inkjet printers, businesses and governments [361112411]",147.1,NA
+2010-05,Canada,Laser printers [36111242],124.6,NA
+2010-05,Canada,"Laser printers, businesses and governments [361112421]",124.4,NA
+2010-06,Canada,Computer monitors and computer printers [E12],127.3,NA
+2010-06,Canada,Computer monitors [3611123],116.1,NA
+2010-06,Canada,"Computer monitors, businesses and governments [36111231]",116.5,NA
+2010-06,Canada,Computer printers [3611124],130.6,NA
+2010-06,Canada,Inkjet printers [36111241],137.3,NA
+2010-06,Canada,"Inkjet printers, businesses and governments [361112411]",137.5,NA
+2010-06,Canada,Laser printers [36111242],128,NA
+2010-06,Canada,"Laser printers, businesses and governments [361112421]",127.8,NA
+2010-07,Canada,Computer monitors and computer printers [E12],130.1,NA
+2010-07,Canada,Computer monitors [3611123],114.8,NA
+2010-07,Canada,"Computer monitors, businesses and governments [36111231]",115.2,NA
+2010-07,Canada,Computer printers [3611124],137.1,NA
+2010-07,Canada,Inkjet printers [36111241],145.9,NA
+2010-07,Canada,"Inkjet printers, businesses and governments [361112411]",146,NA
+2010-07,Canada,Laser printers [36111242],131,NA
+2010-07,Canada,"Laser printers, businesses and governments [361112421]",130.8,NA
+2010-08,Canada,Computer monitors and computer printers [E12],129.3,NA
+2010-08,Canada,Computer monitors [3611123],113.1,NA
+2010-08,Canada,"Computer monitors, businesses and governments [36111231]",113.5,NA
+2010-08,Canada,Computer printers [3611124],137.4,NA
+2010-08,Canada,Inkjet printers [36111241],146.3,NA
+2010-08,Canada,"Inkjet printers, businesses and governments [361112411]",146.4,NA
+2010-08,Canada,Laser printers [36111242],130.9,NA
+2010-08,Canada,"Laser printers, businesses and governments [361112421]",130.7,NA
+2010-09,Canada,Computer monitors and computer printers [E12],127.8,NA
+2010-09,Canada,Computer monitors [3611123],112.8,NA
+2010-09,Canada,"Computer monitors, businesses and governments [36111231]",113.2,NA
+2010-09,Canada,Computer printers [3611124],134.8,NA
+2010-09,Canada,Inkjet printers [36111241],146.6,NA
+2010-09,Canada,"Inkjet printers, businesses and governments [361112411]",146.7,NA
+2010-09,Canada,Laser printers [36111242],122.2,NA
+2010-09,Canada,"Laser printers, businesses and governments [361112421]",122,NA
+2010-10,Canada,Computer monitors and computer printers [E12],127.1,NA
+2010-10,Canada,Computer monitors [3611123],112.3,NA
+2010-10,Canada,"Computer monitors, businesses and governments [36111231]",112.7,NA
+2010-10,Canada,Computer printers [3611124],134,NA
+2010-10,Canada,Inkjet printers [36111241],144.4,NA
+2010-10,Canada,"Inkjet printers, businesses and governments [361112411]",144.5,NA
+2010-10,Canada,Laser printers [36111242],124.2,NA
+2010-10,Canada,"Laser printers, businesses and governments [361112421]",124,NA
+2010-11,Canada,Computer monitors and computer printers [E12],125.8,NA
+2010-11,Canada,Computer monitors [3611123],111.1,NA
+2010-11,Canada,"Computer monitors, businesses and governments [36111231]",111.5,NA
+2010-11,Canada,Computer printers [3611124],132.7,NA
+2010-11,Canada,Inkjet printers [36111241],142.7,NA
+2010-11,Canada,"Inkjet printers, businesses and governments [361112411]",142.8,NA
+2010-11,Canada,Laser printers [36111242],123.7,NA
+2010-11,Canada,"Laser printers, businesses and governments [361112421]",123.5,NA
+2010-12,Canada,Computer monitors and computer printers [E12],125.8,NA
+2010-12,Canada,Computer monitors [3611123],112.3,NA
+2010-12,Canada,"Computer monitors, businesses and governments [36111231]",112.7,NA
+2010-12,Canada,Computer printers [3611124],131.5,NA
+2010-12,Canada,Inkjet printers [36111241],141.9,NA
+2010-12,Canada,"Inkjet printers, businesses and governments [361112411]",142,NA
+2010-12,Canada,Laser printers [36111242],121.6,NA
+2010-12,Canada,"Laser printers, businesses and governments [361112421]",121.4,NA
+2011-01,Canada,Computer monitors and computer printers [E12],127.1,NA
+2011-01,Canada,Computer monitors [3611123],110.5,NA
+2011-01,Canada,"Computer monitors, businesses and governments [36111231]",110.9,NA
+2011-01,Canada,Computer printers [3611124],134,NA
+2011-01,Canada,Inkjet printers [36111241],139.5,NA
+2011-01,Canada,"Inkjet printers, businesses and governments [361112411]",139.6,NA
+2011-01,Canada,Laser printers [36111242],128.3,NA
+2011-01,Canada,"Laser printers, businesses and governments [361112421]",128.1,NA
+2011-02,Canada,Computer monitors and computer printers [E12],122.2,NA
+2011-02,Canada,Computer monitors [3611123],110.3,NA
+2011-02,Canada,"Computer monitors, businesses and governments [36111231]",110.7,NA
+2011-02,Canada,Computer printers [3611124],127.2,NA
+2011-02,Canada,Inkjet printers [36111241],128.8,NA
+2011-02,Canada,"Inkjet printers, businesses and governments [361112411]",128.9,NA
+2011-02,Canada,Laser printers [36111242],124.9,NA
+2011-02,Canada,"Laser printers, businesses and governments [361112421]",124.7,NA
+2011-03,Canada,Computer monitors and computer printers [E12],121,NA
+2011-03,Canada,Computer monitors [3611123],108.6,NA
+2011-03,Canada,"Computer monitors, businesses and governments [36111231]",109,NA
+2011-03,Canada,Computer printers [3611124],126.1,NA
+2011-03,Canada,Inkjet printers [36111241],126.9,NA
+2011-03,Canada,"Inkjet printers, businesses and governments [361112411]",127,NA
+2011-03,Canada,Laser printers [36111242],124.4,NA
+2011-03,Canada,"Laser printers, businesses and governments [361112421]",124.2,NA
+2011-04,Canada,Computer monitors and computer printers [E12],119.4,NA
+2011-04,Canada,Computer monitors [3611123],109.1,NA
+2011-04,Canada,"Computer monitors, businesses and governments [36111231]",109.5,NA
+2011-04,Canada,Computer printers [3611124],123.7,NA
+2011-04,Canada,Inkjet printers [36111241],123.6,NA
+2011-04,Canada,"Inkjet printers, businesses and governments [361112411]",123.7,NA
+2011-04,Canada,Laser printers [36111242],122.9,NA
+2011-04,Canada,"Laser printers, businesses and governments [361112421]",122.7,NA
+2011-05,Canada,Computer monitors and computer printers [E12],118.8,NA
+2011-05,Canada,Computer monitors [3611123],109.6,NA
+2011-05,Canada,"Computer monitors, businesses and governments [36111231]",110,NA
+2011-05,Canada,Computer printers [3611124],122.7,NA
+2011-05,Canada,Inkjet printers [36111241],121.6,NA
+2011-05,Canada,"Inkjet printers, businesses and governments [361112411]",121.7,NA
+2011-05,Canada,Laser printers [36111242],122.6,NA
+2011-05,Canada,"Laser printers, businesses and governments [361112421]",122.4,NA
+2011-06,Canada,Computer monitors and computer printers [E12],118.9,NA
+2011-06,Canada,Computer monitors [3611123],111.3,NA
+2011-06,Canada,"Computer monitors, businesses and governments [36111231]",111.7,NA
+2011-06,Canada,Computer printers [3611124],122.1,NA
+2011-06,Canada,Inkjet printers [36111241],119.3,NA
+2011-06,Canada,"Inkjet printers, businesses and governments [361112411]",119.4,NA
+2011-06,Canada,Laser printers [36111242],123.5,NA
+2011-06,Canada,"Laser printers, businesses and governments [361112421]",123.3,NA
+2011-07,Canada,Computer monitors and computer printers [E12],115.3,NA
+2011-07,Canada,Computer monitors [3611123],110.3,NA
+2011-07,Canada,"Computer monitors, businesses and governments [36111231]",110.7,NA
+2011-07,Canada,Computer printers [3611124],117.4,NA
+2011-07,Canada,Inkjet printers [36111241],110.3,NA
+2011-07,Canada,"Inkjet printers, businesses and governments [361112411]",110.4,NA
+2011-07,Canada,Laser printers [36111242],122.5,NA
+2011-07,Canada,"Laser printers, businesses and governments [361112421]",122.3,NA
+2011-08,Canada,Computer monitors and computer printers [E12],112.2,NA
+2011-08,Canada,Computer monitors [3611123],112,NA
+2011-08,Canada,"Computer monitors, businesses and governments [36111231]",112.4,NA
+2011-08,Canada,Computer printers [3611124],112.3,NA
+2011-08,Canada,Inkjet printers [36111241],112.6,NA
+2011-08,Canada,"Inkjet printers, businesses and governments [361112411]",112.7,NA
+2011-08,Canada,Laser printers [36111242],111.1,NA
+2011-08,Canada,"Laser printers, businesses and governments [361112421]",110.9,NA
+2011-09,Canada,Computer monitors and computer printers [E12],110.6,NA
+2011-09,Canada,Computer monitors [3611123],110.8,NA
+2011-09,Canada,"Computer monitors, businesses and governments [36111231]",111.2,NA
+2011-09,Canada,Computer printers [3611124],110.6,NA
+2011-09,Canada,Inkjet printers [36111241],108.9,NA
+2011-09,Canada,"Inkjet printers, businesses and governments [361112411]",109,NA
+2011-09,Canada,Laser printers [36111242],111.1,NA
+2011-09,Canada,"Laser printers, businesses and governments [361112421]",110.9,NA
+2011-10,Canada,Computer monitors and computer printers [E12],112,NA
+2011-10,Canada,Computer monitors [3611123],110.5,NA
+2011-10,Canada,"Computer monitors, businesses and governments [36111231]",110.9,NA
+2011-10,Canada,Computer printers [3611124],112.6,NA
+2011-10,Canada,Inkjet printers [36111241],109.7,NA
+2011-10,Canada,"Inkjet printers, businesses and governments [361112411]",109.8,NA
+2011-10,Canada,Laser printers [36111242],114.2,NA
+2011-10,Canada,"Laser printers, businesses and governments [361112421]",114,NA
+2011-11,Canada,Computer monitors and computer printers [E12],110.6,NA
+2011-11,Canada,Computer monitors [3611123],109.7,NA
+2011-11,Canada,"Computer monitors, businesses and governments [36111231]",110.1,NA
+2011-11,Canada,Computer printers [3611124],111,NA
+2011-11,Canada,Inkjet printers [36111241],109.4,NA
+2011-11,Canada,"Inkjet printers, businesses and governments [361112411]",109.4,NA
+2011-11,Canada,Laser printers [36111242],111.5,NA
+2011-11,Canada,"Laser printers, businesses and governments [361112421]",111.4,NA
+2011-12,Canada,Computer monitors and computer printers [E12],110.4,NA
+2011-12,Canada,Computer monitors [3611123],109.6,NA
+2011-12,Canada,"Computer monitors, businesses and governments [36111231]",110,NA
+2011-12,Canada,Computer printers [3611124],110.8,NA
+2011-12,Canada,Inkjet printers [36111241],108.5,NA
+2011-12,Canada,"Inkjet printers, businesses and governments [361112411]",108.6,NA
+2011-12,Canada,Laser printers [36111242],111.9,NA
+2011-12,Canada,"Laser printers, businesses and governments [361112421]",111.7,NA
+2012-01,Canada,Computer monitors and computer printers [E12],110,NA
+2012-01,Canada,Computer monitors [3611123],108.8,NA
+2012-01,Canada,"Computer monitors, businesses and governments [36111231]",109.2,NA
+2012-01,Canada,Computer printers [3611124],110.5,NA
+2012-01,Canada,Inkjet printers [36111241],106.4,NA
+2012-01,Canada,"Inkjet printers, businesses and governments [361112411]",106.5,NA
+2012-01,Canada,Laser printers [36111242],113,NA
+2012-01,Canada,"Laser printers, businesses and governments [361112421]",112.9,NA
+2012-02,Canada,Computer monitors and computer printers [E12],107.9,NA
+2012-02,Canada,Computer monitors [3611123],108.6,NA
+2012-02,Canada,"Computer monitors, businesses and governments [36111231]",109,NA
+2012-02,Canada,Computer printers [3611124],107.6,NA
+2012-02,Canada,Inkjet printers [36111241],106,NA
+2012-02,Canada,"Inkjet printers, businesses and governments [361112411]",106.1,NA
+2012-02,Canada,Laser printers [36111242],108.1,NA
+2012-02,Canada,"Laser printers, businesses and governments [361112421]",108,NA
+2012-03,Canada,Computer monitors and computer printers [E12],107.1,NA
+2012-03,Canada,Computer monitors [3611123],108.4,NA
+2012-03,Canada,"Computer monitors, businesses and governments [36111231]",108.8,NA
+2012-03,Canada,Computer printers [3611124],106.6,NA
+2012-03,Canada,Inkjet printers [36111241],105.3,NA
+2012-03,Canada,"Inkjet printers, businesses and governments [361112411]",105.4,NA
+2012-03,Canada,Laser printers [36111242],106.8,NA
+2012-03,Canada,"Laser printers, businesses and governments [361112421]",106.6,NA
+2012-04,Canada,Computer monitors and computer printers [E12],106.6,NA
+2012-04,Canada,Computer monitors [3611123],107.6,NA
+2012-04,Canada,"Computer monitors, businesses and governments [36111231]",108,NA
+2012-04,Canada,Computer printers [3611124],106.2,NA
+2012-04,Canada,Inkjet printers [36111241],105.3,NA
+2012-04,Canada,"Inkjet printers, businesses and governments [361112411]",105.4,NA
+2012-04,Canada,Laser printers [36111242],106.1,NA
+2012-04,Canada,"Laser printers, businesses and governments [361112421]",105.9,NA
+2012-05,Canada,Computer monitors and computer printers [E12],104.6,NA
+2012-05,Canada,Computer monitors [3611123],106.4,NA
+2012-05,Canada,"Computer monitors, businesses and governments [36111231]",106.8,NA
+2012-05,Canada,Computer printers [3611124],103.8,NA
+2012-05,Canada,Inkjet printers [36111241],102.3,NA
+2012-05,Canada,"Inkjet printers, businesses and governments [361112411]",102.4,NA
+2012-05,Canada,Laser printers [36111242],104.3,NA
+2012-05,Canada,"Laser printers, businesses and governments [361112421]",104.2,NA
+2012-06,Canada,Computer monitors and computer printers [E12],103.7,NA
+2012-06,Canada,Computer monitors [3611123],105.8,NA
+2012-06,Canada,"Computer monitors, businesses and governments [36111231]",106.1,NA
+2012-06,Canada,Computer printers [3611124],102.9,NA
+2012-06,Canada,Inkjet printers [36111241],103.5,NA
+2012-06,Canada,"Inkjet printers, businesses and governments [361112411]",103.6,NA
+2012-06,Canada,Laser printers [36111242],101.5,NA
+2012-06,Canada,"Laser printers, businesses and governments [361112421]",101.4,NA
+2012-07,Canada,Computer monitors and computer printers [E12],104.6,NA
+2012-07,Canada,Computer monitors [3611123],105.8,NA
+2012-07,Canada,"Computer monitors, businesses and governments [36111231]",106.2,NA
+2012-07,Canada,Computer printers [3611124],104,NA
+2012-07,Canada,Inkjet printers [36111241],108.8,NA
+2012-07,Canada,"Inkjet printers, businesses and governments [361112411]",108.9,NA
+2012-07,Canada,Laser printers [36111242],99.1,NA
+2012-07,Canada,"Laser printers, businesses and governments [361112421]",99,NA
+2012-08,Canada,Computer monitors and computer printers [E12],100.1,NA
+2012-08,Canada,Computer monitors [3611123],107.1,NA
+2012-08,Canada,"Computer monitors, businesses and governments [36111231]",107.5,NA
+2012-08,Canada,Computer printers [3611124],97.2,NA
+2012-08,Canada,Inkjet printers [36111241],98.4,NA
+2012-08,Canada,"Inkjet printers, businesses and governments [361112411]",98.5,NA
+2012-08,Canada,Laser printers [36111242],95.3,NA
+2012-08,Canada,"Laser printers, businesses and governments [361112421]",95.2,NA
+2012-09,Canada,Computer monitors and computer printers [E12],99.8,NA
+2012-09,Canada,Computer monitors [3611123],104.5,NA
+2012-09,Canada,"Computer monitors, businesses and governments [36111231]",104.9,NA
+2012-09,Canada,Computer printers [3611124],97.8,NA
+2012-09,Canada,Inkjet printers [36111241],100.8,NA
+2012-09,Canada,"Inkjet printers, businesses and governments [361112411]",100.9,NA
+2012-09,Canada,Laser printers [36111242],94.5,NA
+2012-09,Canada,"Laser printers, businesses and governments [361112421]",94.4,NA
+2012-10,Canada,Computer monitors and computer printers [E12],103.4,NA
+2012-10,Canada,Computer monitors [3611123],104.1,NA
+2012-10,Canada,"Computer monitors, businesses and governments [36111231]",104.5,NA
+2012-10,Canada,Computer printers [3611124],103.1,NA
+2012-10,Canada,Inkjet printers [36111241],104.4,NA
+2012-10,Canada,"Inkjet printers, businesses and governments [361112411]",104.5,NA
+2012-10,Canada,Laser printers [36111242],101.2,NA
+2012-10,Canada,"Laser printers, businesses and governments [361112421]",101,NA
+2012-11,Canada,Computer monitors and computer printers [E12],103,NA
+2012-11,Canada,Computer monitors [3611123],104.3,NA
+2012-11,Canada,"Computer monitors, businesses and governments [36111231]",104.7,NA
+2012-11,Canada,Computer printers [3611124],102.5,NA
+2012-11,Canada,Inkjet printers [36111241],103.2,NA
+2012-11,Canada,"Inkjet printers, businesses and governments [361112411]",103.3,NA
+2012-11,Canada,Laser printers [36111242],101.2,NA
+2012-11,Canada,"Laser printers, businesses and governments [361112421]",101,NA
+2012-12,Canada,Computer monitors and computer printers [E12],102.8,NA
+2012-12,Canada,Computer monitors [3611123],104.1,NA
+2012-12,Canada,"Computer monitors, businesses and governments [36111231]",104.5,NA
+2012-12,Canada,Computer printers [3611124],102.4,NA
+2012-12,Canada,Inkjet printers [36111241],103.2,NA
+2012-12,Canada,"Inkjet printers, businesses and governments [361112411]",103.3,NA
+2012-12,Canada,Laser printers [36111242],100.9,NA
+2012-12,Canada,"Laser printers, businesses and governments [361112421]",100.7,NA
+2013-01,Canada,Computer monitors and computer printers [E12],101,NA
+2013-01,Canada,Computer monitors [3611123],103.6,NA
+2013-01,Canada,"Computer monitors, businesses and governments [36111231]",103.9,NA
+2013-01,Canada,Computer printers [3611124],100.2,NA
+2013-01,Canada,Inkjet printers [36111241],102.1,NA
+2013-01,Canada,"Inkjet printers, businesses and governments [361112411]",102.2,NA
+2013-01,Canada,Laser printers [36111242],97.8,NA
+2013-01,Canada,"Laser printers, businesses and governments [361112421]",97.7,NA
+2013-02,Canada,Computer monitors and computer printers [E12],102.2,NA
+2013-02,Canada,Computer monitors [3611123],102.9,NA
+2013-02,Canada,"Computer monitors, businesses and governments [36111231]",103.2,NA
+2013-02,Canada,Computer printers [3611124],101.9,NA
+2013-02,Canada,Inkjet printers [36111241],102.6,NA
+2013-02,Canada,"Inkjet printers, businesses and governments [361112411]",102.7,NA
+2013-02,Canada,Laser printers [36111242],100.5,NA
+2013-02,Canada,"Laser printers, businesses and governments [361112421]",100.3,NA
+2013-03,Canada,Computer monitors and computer printers [E12],102.6,NA
+2013-03,Canada,Computer monitors [3611123],102.2,NA
+2013-03,Canada,"Computer monitors, businesses and governments [36111231]",102.6,NA
+2013-03,Canada,Computer printers [3611124],102.6,NA
+2013-03,Canada,Inkjet printers [36111241],102.9,NA
+2013-03,Canada,"Inkjet printers, businesses and governments [361112411]",103,NA
+2013-03,Canada,Laser printers [36111242],101.7,NA
+2013-03,Canada,"Laser printers, businesses and governments [361112421]",101.5,NA
+2013-04,Canada,Computer monitors and computer printers [E12],102.4,NA
+2013-04,Canada,Computer monitors [3611123],101.9,NA
+2013-04,Canada,"Computer monitors, businesses and governments [36111231]",102.3,NA
+2013-04,Canada,Computer printers [3611124],102.4,NA
+2013-04,Canada,Inkjet printers [36111241],103.2,NA
+2013-04,Canada,"Inkjet printers, businesses and governments [361112411]",103.3,NA
+2013-04,Canada,Laser printers [36111242],101,NA
+2013-04,Canada,"Laser printers, businesses and governments [361112421]",100.8,NA
+2013-05,Canada,Computer monitors and computer printers [E12],101.1,NA
+2013-05,Canada,Computer monitors [3611123],103.4,NA
+2013-05,Canada,"Computer monitors, businesses and governments [36111231]",103.7,NA
+2013-05,Canada,Computer printers [3611124],100.4,NA
+2013-05,Canada,Inkjet printers [36111241],99.2,NA
+2013-05,Canada,"Inkjet printers, businesses and governments [361112411]",99.3,NA
+2013-05,Canada,Laser printers [36111242],101,NA
+2013-05,Canada,"Laser printers, businesses and governments [361112421]",100.8,NA
+2013-06,Canada,Computer monitors and computer printers [E12],103.6,NA
+2013-06,Canada,Computer monitors [3611123],104.3,NA
+2013-06,Canada,"Computer monitors, businesses and governments [36111231]",104.7,NA
+2013-06,Canada,Computer printers [3611124],103.3,NA
+2013-06,Canada,Inkjet printers [36111241],103.6,NA
+2013-06,Canada,"Inkjet printers, businesses and governments [361112411]",103.6,NA
+2013-06,Canada,Laser printers [36111242],102.5,NA
+2013-06,Canada,"Laser printers, businesses and governments [361112421]",102.3,NA
+2013-07,Canada,Computer monitors and computer printers [E12],102.2,NA
+2013-07,Canada,Computer monitors [3611123],103.1,NA
+2013-07,Canada,"Computer monitors, businesses and governments [36111231]",103.5,NA
+2013-07,Canada,Computer printers [3611124],101.9,NA
+2013-07,Canada,Inkjet printers [36111241],101.4,NA
+2013-07,Canada,"Inkjet printers, businesses and governments [361112411]",101.5,NA
+2013-07,Canada,Laser printers [36111242],101.7,NA
+2013-07,Canada,"Laser printers, businesses and governments [361112421]",101.5,NA
+2013-08,Canada,Computer monitors and computer printers [E12],102.3,NA
+2013-08,Canada,Computer monitors [3611123],103.6,NA
+2013-08,Canada,"Computer monitors, businesses and governments [36111231]",104,NA
+2013-08,Canada,Computer printers [3611124],101.9,NA
+2013-08,Canada,Inkjet printers [36111241],101.4,NA
+2013-08,Canada,"Inkjet printers, businesses and governments [361112411]",101.5,NA
+2013-08,Canada,Laser printers [36111242],101.7,NA
+2013-08,Canada,"Laser printers, businesses and governments [361112421]",101.5,NA
+2013-09,Canada,Computer monitors and computer printers [E12],102.5,NA
+2013-09,Canada,Computer monitors [3611123],102.9,NA
+2013-09,Canada,"Computer monitors, businesses and governments [36111231]",103.2,NA
+2013-09,Canada,Computer printers [3611124],102.2,NA
+2013-09,Canada,Inkjet printers [36111241],102.1,NA
+2013-09,Canada,"Inkjet printers, businesses and governments [361112411]",102.2,NA
+2013-09,Canada,Laser printers [36111242],101.7,NA
+2013-09,Canada,"Laser printers, businesses and governments [361112421]",101.6,NA
+2013-10,Canada,Computer monitors and computer printers [E12],101.2,NA
+2013-10,Canada,Computer monitors [3611123],98.5,NA
+2013-10,Canada,"Computer monitors, businesses and governments [36111231]",98.9,NA
+2013-10,Canada,Computer printers [3611124],101.7,NA
+2013-10,Canada,Inkjet printers [36111241],101.6,NA
+2013-10,Canada,"Inkjet printers, businesses and governments [361112411]",101.7,NA
+2013-10,Canada,Laser printers [36111242],101.3,NA
+2013-10,Canada,"Laser printers, businesses and governments [361112421]",101.1,NA
+2013-11,Canada,Computer monitors and computer printers [E12],99.6,NA
+2013-11,Canada,Computer monitors [3611123],99.1,NA
+2013-11,Canada,"Computer monitors, businesses and governments [36111231]",99.4,NA
+2013-11,Canada,Computer printers [3611124],99.6,NA
+2013-11,Canada,Inkjet printers [36111241],97.8,NA
+2013-11,Canada,"Inkjet printers, businesses and governments [361112411]",97.9,NA
+2013-11,Canada,Laser printers [36111242],100.7,NA
+2013-11,Canada,"Laser printers, businesses and governments [361112421]",100.6,NA
+2013-12,Canada,Computer monitors and computer printers [E12],100.7,NA
+2013-12,Canada,Computer monitors [3611123],99.2,NA
+2013-12,Canada,"Computer monitors, businesses and governments [36111231]",99.6,NA
+2013-12,Canada,Computer printers [3611124],101,NA
+2013-12,Canada,Inkjet printers [36111241],100.1,NA
+2013-12,Canada,"Inkjet printers, businesses and governments [361112411]",100.2,NA
+2013-12,Canada,Laser printers [36111242],101.2,NA
+2013-12,Canada,"Laser printers, businesses and governments [361112421]",101.1,NA
+2014-01,Canada,Computer monitors and computer printers [E12],100.2,NA
+2014-01,Canada,Computer monitors [3611123],99,NA
+2014-01,Canada,"Computer monitors, businesses and governments [36111231]",99.4,NA
+2014-01,Canada,Computer printers [3611124],100.4,NA
+2014-01,Canada,Inkjet printers [36111241],99.9,NA
+2014-01,Canada,"Inkjet printers, businesses and governments [361112411]",100,NA
+2014-01,Canada,Laser printers [36111242],100.2,NA
+2014-01,Canada,"Laser printers, businesses and governments [361112421]",100,NA
+2014-02,Canada,Computer monitors and computer printers [E12],100,NA
+2014-02,Canada,Computer monitors [3611123],98.7,NA
+2014-02,Canada,"Computer monitors, businesses and governments [36111231]",99,NA
+2014-02,Canada,Computer printers [3611124],100.2,NA
+2014-02,Canada,Inkjet printers [36111241],98.7,NA
+2014-02,Canada,"Inkjet printers, businesses and governments [361112411]",98.7,NA
+2014-02,Canada,Laser printers [36111242],101.1,NA
+2014-02,Canada,"Laser printers, businesses and governments [361112421]",100.9,NA
+2014-03,Canada,Computer monitors and computer printers [E12],100.1,NA
+2014-03,Canada,Computer monitors [3611123],98.6,NA
+2014-03,Canada,"Computer monitors, businesses and governments [36111231]",98.9,NA
+2014-03,Canada,Computer printers [3611124],100.4,NA
+2014-03,Canada,Inkjet printers [36111241],99.6,NA
+2014-03,Canada,"Inkjet printers, businesses and governments [361112411]",99.7,NA
+2014-03,Canada,Laser printers [36111242],100.5,NA
+2014-03,Canada,"Laser printers, businesses and governments [361112421]",100.4,NA
+2014-04,Canada,Computer monitors and computer printers [E12],100.1,NA
+2014-04,Canada,Computer monitors [3611123],98.7,NA
+2014-04,Canada,"Computer monitors, businesses and governments [36111231]",99,NA
+2014-04,Canada,Computer printers [3611124],100.4,NA
+2014-04,Canada,Inkjet printers [36111241],99.6,NA
+2014-04,Canada,"Inkjet printers, businesses and governments [361112411]",99.7,NA
+2014-04,Canada,Laser printers [36111242],100.5,NA
+2014-04,Canada,"Laser printers, businesses and governments [361112421]",100.3,NA
+2014-05,Canada,Computer monitors and computer printers [E12],100,NA
+2014-05,Canada,Computer monitors [3611123],97.9,NA
+2014-05,Canada,"Computer monitors, businesses and governments [36111231]",98.2,NA
+2014-05,Canada,Computer printers [3611124],100.5,NA
+2014-05,Canada,Inkjet printers [36111241],100.2,NA
+2014-05,Canada,"Inkjet printers, businesses and governments [361112411]",100.3,NA
+2014-05,Canada,Laser printers [36111242],100.5,NA
+2014-05,Canada,"Laser printers, businesses and governments [361112421]",100.3,NA
+2014-06,Canada,Computer monitors and computer printers [E12],100.1,NA
+2014-06,Canada,Computer monitors [3611123],98.3,NA
+2014-06,Canada,"Computer monitors, businesses and governments [36111231]",98.7,NA
+2014-06,Canada,Computer printers [3611124],100.4,NA
+2014-06,Canada,Inkjet printers [36111241],99.6,NA
+2014-06,Canada,"Inkjet printers, businesses and governments [361112411]",99.7,NA
+2014-06,Canada,Laser printers [36111242],100.5,NA
+2014-06,Canada,"Laser printers, businesses and governments [361112421]",100.3,NA
+2014-07,Canada,Computer monitors and computer printers [E12],99.7,NA
+2014-07,Canada,Computer monitors [3611123],97.8,NA
+2014-07,Canada,"Computer monitors, businesses and governments [36111231]",98.2,NA
+2014-07,Canada,Computer printers [3611124],100,NA
+2014-07,Canada,Inkjet printers [36111241],97.9,NA
+2014-07,Canada,"Inkjet printers, businesses and governments [361112411]",98,NA
+2014-07,Canada,Laser printers [36111242],100.3,NA
+2014-07,Canada,"Laser printers, businesses and governments [361112421]",100.2,NA
+2014-08,Canada,Computer monitors and computer printers [E12],99.9,NA
+2014-08,Canada,Computer monitors [3611123],98.5,NA
+2014-08,Canada,"Computer monitors, businesses and governments [36111231]",98.9,NA
+2014-08,Canada,Computer printers [3611124],100.2,NA
+2014-08,Canada,Inkjet printers [36111241],99,NA
+2014-08,Canada,"Inkjet printers, businesses and governments [361112411]",99.1,NA
+2014-08,Canada,Laser printers [36111242],100.3,NA
+2014-08,Canada,"Laser printers, businesses and governments [361112421]",100.2,NA
+2014-09,Canada,Computer monitors and computer printers [E12],99.9,NA
+2014-09,Canada,Computer monitors [3611123],98.5,NA
+2014-09,Canada,"Computer monitors, businesses and governments [36111231]",98.8,NA
+2014-09,Canada,Computer printers [3611124],100.1,NA
+2014-09,Canada,Inkjet printers [36111241],99,NA
+2014-09,Canada,"Inkjet printers, businesses and governments [361112411]",99.1,NA
+2014-09,Canada,Laser printers [36111242],100.3,NA
+2014-09,Canada,"Laser printers, businesses and governments [361112421]",100.1,NA
+2014-10,Canada,Computer monitors and computer printers [E12],100.3,NA
+2014-10,Canada,Computer monitors [3611123],98.4,NA
+2014-10,Canada,"Computer monitors, businesses and governments [36111231]",98.7,NA
+2014-10,Canada,Computer printers [3611124],100.7,NA
+2014-10,Canada,Inkjet printers [36111241],100.4,NA
+2014-10,Canada,"Inkjet printers, businesses and governments [361112411]",100.4,NA
+2014-10,Canada,Laser printers [36111242],100.7,NA
+2014-10,Canada,"Laser printers, businesses and governments [361112421]",100.5,NA
+2014-11,Canada,Computer monitors and computer printers [E12],100.2,NA
+2014-11,Canada,Computer monitors [3611123],98.8,NA
+2014-11,Canada,"Computer monitors, businesses and governments [36111231]",99.1,NA
+2014-11,Canada,Computer printers [3611124],100.5,NA
+2014-11,Canada,Inkjet printers [36111241],99,NA
+2014-11,Canada,"Inkjet printers, businesses and governments [361112411]",99.1,NA
+2014-11,Canada,Laser printers [36111242],100.7,NA
+2014-11,Canada,"Laser printers, businesses and governments [361112421]",100.6,NA
+2014-12,Canada,Computer monitors and computer printers [E12],100.1,NA
+2014-12,Canada,Computer monitors [3611123],99,NA
+2014-12,Canada,"Computer monitors, businesses and governments [36111231]",99.4,NA
+2014-12,Canada,Computer printers [3611124],100.3,NA
+2014-12,Canada,Inkjet printers [36111241],99.7,NA
+2014-12,Canada,"Inkjet printers, businesses and governments [361112411]",99.8,NA
+2014-12,Canada,Laser printers [36111242],100.3,NA
+2014-12,Canada,"Laser printers, businesses and governments [361112421]",100.2,NA
+2015-01,Canada,Computer monitors and computer printers [E12],100.1,NA
+2015-01,Canada,Computer monitors [3611123],99.1,NA
+2015-01,Canada,"Computer monitors, businesses and governments [36111231]",99.5,NA
+2015-01,Canada,"Computer monitors, household [36111232]",98.7,NA
+2015-01,Canada,Computer printers [3611124],100.3,NA
+2015-01,Canada,Inkjet printers [36111241],99.7,NA
+2015-01,Canada,"Inkjet printers, businesses and governments [361112411]",99.7,NA
+2015-01,Canada,Laser printers [36111242],100.3,NA
+2015-01,Canada,"Laser printers, businesses and governments [361112421]",100.2,NA
+2015-02,Canada,Computer monitors and computer printers [E12],99.8,NA
+2015-02,Canada,Computer monitors [3611123],99.2,NA
+2015-02,Canada,"Computer monitors, businesses and governments [36111231]",99.7,NA
+2015-02,Canada,"Computer monitors, household [36111232]",98.7,NA
+2015-02,Canada,Computer printers [3611124],99.9,NA
+2015-02,Canada,Inkjet printers [36111241],99.6,NA
+2015-02,Canada,"Inkjet printers, businesses and governments [361112411]",99.6,NA
+2015-02,Canada,Laser printers [36111242],99.9,NA
+2015-02,Canada,"Laser printers, businesses and governments [361112421]",100,NA
+2015-03,Canada,Computer monitors and computer printers [E12],99.9,NA
+2015-03,Canada,Computer monitors [3611123],98.4,NA
+2015-03,Canada,"Computer monitors, businesses and governments [36111231]",100.1,NA
+2015-03,Canada,"Computer monitors, household [36111232]",96.5,NA
+2015-03,Canada,Computer printers [3611124],100.1,NA
+2015-03,Canada,Inkjet printers [36111241],99.7,NA
+2015-03,Canada,"Inkjet printers, businesses and governments [361112411]",99.8,NA
+2015-03,Canada,Laser printers [36111242],100.2,NA
+2015-03,Canada,"Laser printers, businesses and governments [361112421]",100.1,NA
+2015-04,Canada,Computer monitors and computer printers [E12],100.2,NA
+2015-04,Canada,Computer monitors [3611123],100,NA
+2015-04,Canada,"Computer monitors, businesses and governments [36111231]",100,NA
+2015-04,Canada,"Computer monitors, household [36111232]",100.1,NA
+2015-04,Canada,Computer printers [3611124],100.2,NA
+2015-04,Canada,Inkjet printers [36111241],101.6,NA
+2015-04,Canada,"Inkjet printers, businesses and governments [361112411]",99.9,NA
+2015-04,Canada,Laser printers [36111242],100,NA
+2015-04,Canada,"Laser printers, businesses and governments [361112421]",100,NA
+2015-05,Canada,Computer monitors and computer printers [E12],100,NA
+2015-05,Canada,Computer monitors [3611123],99.5,NA
+2015-05,Canada,"Computer monitors, businesses and governments [36111231]",99.5,NA
+2015-05,Canada,"Computer monitors, household [36111232]",99.7,NA
+2015-05,Canada,Computer printers [3611124],100.1,NA
+2015-05,Canada,Inkjet printers [36111241],99.3,NA
+2015-05,Canada,"Inkjet printers, businesses and governments [361112411]",100.1,NA
+2015-05,Canada,Laser printers [36111242],100.2,NA
+2015-05,Canada,"Laser printers, businesses and governments [361112421]",100.2,NA
+2015-06,Canada,Computer monitors and computer printers [E12],100,NA
+2015-06,Canada,Computer monitors [3611123],98.8,NA
+2015-06,Canada,"Computer monitors, businesses and governments [36111231]",99.2,NA
+2015-06,Canada,"Computer monitors, household [36111232]",98.5,NA
+2015-06,Canada,Computer printers [3611124],100.1,NA
+2015-06,Canada,Inkjet printers [36111241],99.7,NA
+2015-06,Canada,"Inkjet printers, businesses and governments [361112411]",100,NA
+2015-06,Canada,Laser printers [36111242],100.2,NA
+2015-06,Canada,"Laser printers, businesses and governments [361112421]",100.1,NA
+2015-07,Canada,Computer monitors and computer printers [E12],99.7,NA
+2015-07,Canada,Computer monitors [3611123],98.9,NA
+2015-07,Canada,"Computer monitors, businesses and governments [36111231]",99.1,NA
+2015-07,Canada,"Computer monitors, household [36111232]",98.8,NA
+2015-07,Canada,Computer printers [3611124],99.9,NA
+2015-07,Canada,Inkjet printers [36111241],98.5,NA
+2015-07,Canada,"Inkjet printers, businesses and governments [361112411]",100.1,NA
+2015-07,Canada,Laser printers [36111242],100,NA
+2015-07,Canada,"Laser printers, businesses and governments [361112421]",100.1,NA
+2015-08,Canada,Computer monitors and computer printers [E12],99.9,NA
+2015-08,Canada,Computer monitors [3611123],99.1,NA
+2015-08,Canada,"Computer monitors, businesses and governments [36111231]",99.2,NA
+2015-08,Canada,"Computer monitors, household [36111232]",99.1,NA
+2015-08,Canada,Computer printers [3611124],100.1,NA
+2015-08,Canada,Inkjet printers [36111241],101.2,NA
+2015-08,Canada,"Inkjet printers, businesses and governments [361112411]",100.1,NA
+2015-08,Canada,Laser printers [36111242],99.9,NA
+2015-08,Canada,"Laser printers, businesses and governments [361112421]",100.1,NA
+2015-09,Canada,Computer monitors and computer printers [E12],99.8,NA
+2015-09,Canada,Computer monitors [3611123],99.8,NA
+2015-09,Canada,"Computer monitors, businesses and governments [36111231]",99.3,NA
+2015-09,Canada,"Computer monitors, household [36111232]",100.5,NA
+2015-09,Canada,Computer printers [3611124],99.8,NA
+2015-09,Canada,Inkjet printers [36111241],99.2,NA
+2015-09,Canada,"Inkjet printers, businesses and governments [361112411]",100,NA
+2015-09,Canada,Laser printers [36111242],99.9,NA
+2015-09,Canada,"Laser printers, businesses and governments [361112421]",100,NA
+2015-10,Canada,Computer monitors and computer printers [E12],100,NA
+2015-10,Canada,Computer monitors [3611123],100.2,NA
+2015-10,Canada,"Computer monitors, businesses and governments [36111231]",99.5,NA
+2015-10,Canada,"Computer monitors, household [36111232]",101.1,NA
+2015-10,Canada,Computer printers [3611124],100,NA
+2015-10,Canada,Inkjet printers [36111241],100.2,NA
+2015-10,Canada,"Inkjet printers, businesses and governments [361112411]",100,NA
+2015-10,Canada,Laser printers [36111242],100,NA
+2015-10,Canada,"Laser printers, businesses and governments [361112421]",100,NA
+2015-11,Canada,Computer monitors and computer printers [E12],100.3,NA
+2015-11,Canada,Computer monitors [3611123],102.7,NA
+2015-11,Canada,"Computer monitors, businesses and governments [36111231]",102.6,NA
+2015-11,Canada,"Computer monitors, household [36111232]",102.9,NA
+2015-11,Canada,Computer printers [3611124],99.9,NA
+2015-11,Canada,Inkjet printers [36111241],100.5,NA
+2015-11,Canada,"Inkjet printers, businesses and governments [361112411]",100.3,NA
+2015-11,Canada,Laser printers [36111242],99.8,NA
+2015-11,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2015-12,Canada,Computer monitors and computer printers [E12],100.3,NA
+2015-12,Canada,Computer monitors [3611123],104,NA
+2015-12,Canada,"Computer monitors, businesses and governments [36111231]",102.6,NA
+2015-12,Canada,"Computer monitors, household [36111232]",105.6,NA
+2015-12,Canada,Computer printers [3611124],99.7,NA
+2015-12,Canada,Inkjet printers [36111241],100.8,NA
+2015-12,Canada,"Inkjet printers, businesses and governments [361112411]",100.4,NA
+2015-12,Canada,Laser printers [36111242],99.5,NA
+2015-12,Canada,"Laser printers, businesses and governments [361112421]",99.7,NA
+2016-01,Canada,Computer monitors and computer printers [E12],100.6,NA
+2016-01,Canada,Computer monitors [3611123],104,NA
+2016-01,Canada,"Computer monitors, businesses and governments [36111231]",102.7,NA
+2016-01,Canada,"Computer monitors, household [36111232]",105.6,NA
+2016-01,Canada,Computer printers [3611124],100,NA
+2016-01,Canada,Inkjet printers [36111241],101,NA
+2016-01,Canada,"Inkjet printers, businesses and governments [361112411]",99.8,NA
+2016-01,Canada,Laser printers [36111242],99.9,NA
+2016-01,Canada,"Laser printers, businesses and governments [361112421]",99.7,NA
+2016-02,Canada,Computer monitors and computer printers [E12],100.6,NA
+2016-02,Canada,Computer monitors [3611123],104.2,NA
+2016-02,Canada,"Computer monitors, businesses and governments [36111231]",102.5,NA
+2016-02,Canada,"Computer monitors, household [36111232]",106.1,NA
+2016-02,Canada,Computer printers [3611124],100.1,NA
+2016-02,Canada,Inkjet printers [36111241],101,NA
+2016-02,Canada,"Inkjet printers, businesses and governments [361112411]",99.8,NA
+2016-02,Canada,Laser printers [36111242],99.9,NA
+2016-02,Canada,"Laser printers, businesses and governments [361112421]",99.8,NA
+2016-03,Canada,Computer monitors and computer printers [E12],100.7,NA
+2016-03,Canada,Computer monitors [3611123],103.7,NA
+2016-03,Canada,"Computer monitors, businesses and governments [36111231]",102.6,NA
+2016-03,Canada,"Computer monitors, household [36111232]",104.9,NA
+2016-03,Canada,Computer printers [3611124],100.2,NA
+2016-03,Canada,Inkjet printers [36111241],101,NA
+2016-03,Canada,"Inkjet printers, businesses and governments [361112411]",99.8,NA
+2016-03,Canada,Laser printers [36111242],100.1,NA
+2016-03,Canada,"Laser printers, businesses and governments [361112421]",99.8,NA
+2016-04,Canada,Computer monitors and computer printers [E12],100.6,NA
+2016-04,Canada,Computer monitors [3611123],103.4,NA
+2016-04,Canada,"Computer monitors, businesses and governments [36111231]",102.2,NA
+2016-04,Canada,"Computer monitors, household [36111232]",104.7,NA
+2016-04,Canada,Computer printers [3611124],100.1,NA
+2016-04,Canada,Inkjet printers [36111241],101.1,NA
+2016-04,Canada,"Inkjet printers, businesses and governments [361112411]",99.9,NA
+2016-04,Canada,Laser printers [36111242],100,NA
+2016-04,Canada,"Laser printers, businesses and governments [361112421]",99.8,NA
+2016-05,Canada,Computer monitors and computer printers [E12],101.1,NA
+2016-05,Canada,Computer monitors [3611123],102.8,NA
+2016-05,Canada,"Computer monitors, businesses and governments [36111231]",101.8,NA
+2016-05,Canada,"Computer monitors, household [36111232]",103.8,NA
+2016-05,Canada,Computer printers [3611124],100.9,NA
+2016-05,Canada,Inkjet printers [36111241],99.6,NA
+2016-05,Canada,"Inkjet printers, businesses and governments [361112411]",99.9,NA
+2016-05,Canada,Laser printers [36111242],101,NA
+2016-05,Canada,"Laser printers, businesses and governments [361112421]",101,NA
+2016-06,Canada,Computer monitors and computer printers [E12],101.3,NA
+2016-06,Canada,Computer monitors [3611123],102.7,NA
+2016-06,Canada,"Computer monitors, businesses and governments [36111231]",101.7,NA
+2016-06,Canada,"Computer monitors, household [36111232]",103.8,NA
+2016-06,Canada,Computer printers [3611124],101.1,NA
+2016-06,Canada,Inkjet printers [36111241],99.2,NA
+2016-06,Canada,"Inkjet printers, businesses and governments [361112411]",99.6,NA
+2016-06,Canada,Laser printers [36111242],101.4,NA
+2016-06,Canada,"Laser printers, businesses and governments [361112421]",101.3,NA
+2016-07,Canada,Computer monitors and computer printers [E12],101.3,NA
+2016-07,Canada,Computer monitors [3611123],102.2,NA
+2016-07,Canada,"Computer monitors, businesses and governments [36111231]",101.6,NA
+2016-07,Canada,"Computer monitors, household [36111232]",102.8,NA
+2016-07,Canada,Computer printers [3611124],101.1,NA
+2016-07,Canada,Inkjet printers [36111241],100.2,NA
+2016-07,Canada,"Inkjet printers, businesses and governments [361112411]",101.1,NA
+2016-07,Canada,Laser printers [36111242],101.2,NA
+2016-07,Canada,"Laser printers, businesses and governments [361112421]",101.2,NA
+2016-08,Canada,Computer monitors and computer printers [E12],100.9,NA
+2016-08,Canada,Computer monitors [3611123],101.8,NA
+2016-08,Canada,"Computer monitors, businesses and governments [36111231]",101.8,NA
+2016-08,Canada,"Computer monitors, household [36111232]",101.8,NA
+2016-08,Canada,Computer printers [3611124],100.7,NA
+2016-08,Canada,Inkjet printers [36111241],97.3,NA
+2016-08,Canada,"Inkjet printers, businesses and governments [361112411]",100.2,NA
+2016-08,Canada,Laser printers [36111242],101.2,NA
+2016-08,Canada,"Laser printers, businesses and governments [361112421]",101.2,NA
+2016-09,Canada,Computer monitors and computer printers [E12],100.9,NA
+2016-09,Canada,Computer monitors [3611123],101.8,NA
+2016-09,Canada,"Computer monitors, businesses and governments [36111231]",101.8,NA
+2016-09,Canada,"Computer monitors, household [36111232]",101.7,NA
+2016-09,Canada,Computer printers [3611124],100.8,NA
+2016-09,Canada,Inkjet printers [36111241],97.4,NA
+2016-09,Canada,"Inkjet printers, businesses and governments [361112411]",100.4,NA
+2016-09,Canada,Laser printers [36111242],101.2,NA
+2016-09,Canada,"Laser printers, businesses and governments [361112421]",101.3,NA
+2016-10,Canada,Computer monitors and computer printers [E12],101.2,NA
+2016-10,Canada,Computer monitors [3611123],101.6,NA
+2016-10,Canada,"Computer monitors, businesses and governments [36111231]",102,NA
+2016-10,Canada,"Computer monitors, household [36111232]",101.1,NA
+2016-10,Canada,Computer printers [3611124],101.2,NA
+2016-10,Canada,Inkjet printers [36111241],101.6,NA
+2016-10,Canada,"Inkjet printers, businesses and governments [361112411]",100.4,NA
+2016-10,Canada,Laser printers [36111242],101.1,NA
+2016-10,Canada,"Laser printers, businesses and governments [361112421]",101.2,NA
+2016-11,Canada,Computer monitors and computer printers [E12],101.3,NA
+2016-11,Canada,Computer monitors [3611123],101.6,NA
+2016-11,Canada,"Computer monitors, businesses and governments [36111231]",101.8,NA
+2016-11,Canada,"Computer monitors, household [36111232]",101.4,NA
+2016-11,Canada,Computer printers [3611124],101.2,NA
+2016-11,Canada,Inkjet printers [36111241],101.7,NA
+2016-11,Canada,"Inkjet printers, businesses and governments [361112411]",100.7,NA
+2016-11,Canada,Laser printers [36111242],101.2,NA
+2016-11,Canada,"Laser printers, businesses and governments [361112421]",101.3,NA
+2016-12,Canada,Computer monitors and computer printers [E12],100.9,NA
+2016-12,Canada,Computer monitors [3611123],101.4,NA
+2016-12,Canada,"Computer monitors, businesses and governments [36111231]",101.6,NA
+2016-12,Canada,"Computer monitors, household [36111232]",101.2,NA
+2016-12,Canada,Computer printers [3611124],100.8,NA
+2016-12,Canada,Inkjet printers [36111241],98,NA
+2016-12,Canada,"Inkjet printers, businesses and governments [361112411]",100.6,NA
+2016-12,Canada,Laser printers [36111242],101.1,NA
+2016-12,Canada,"Laser printers, businesses and governments [361112421]",101.2,NA
+2017-01,Canada,Computer monitors and computer printers [E12],101,NA
+2017-01,Canada,Computer monitors [3611123],101,NA
+2017-01,Canada,"Computer monitors, businesses and governments [36111231]",101.7,NA
+2017-01,Canada,"Computer monitors, household [36111232]",100.2,NA
+2017-01,Canada,Computer printers [3611124],101,NA
+2017-01,Canada,Inkjet printers [36111241],99.5,NA
+2017-01,Canada,"Inkjet printers, businesses and governments [361112411]",100.6,NA
+2017-01,Canada,Laser printers [36111242],101.2,NA
+2017-01,Canada,"Laser printers, businesses and governments [361112421]",101.2,NA
+2017-02,Canada,Computer monitors and computer printers [E12],100.3,NA
+2017-02,Canada,Computer monitors [3611123],99.7,NA
+2017-02,Canada,"Computer monitors, businesses and governments [36111231]",101.8,NA
+2017-02,Canada,"Computer monitors, household [36111232]",97.3,NA
+2017-02,Canada,Computer printers [3611124],100.4,NA
+2017-02,Canada,Inkjet printers [36111241],99.4,NA
+2017-02,Canada,"Inkjet printers, businesses and governments [361112411]",100.6,NA
+2017-02,Canada,Laser printers [36111242],100.6,NA
+2017-02,Canada,"Laser printers, businesses and governments [361112421]",100.8,NA
+2017-03,Canada,Computer monitors and computer printers [E12],100.5,NA
+2017-03,Canada,Computer monitors [3611123],99.5,NA
+2017-03,Canada,"Computer monitors, businesses and governments [36111231]",101.7,NA
+2017-03,Canada,"Computer monitors, household [36111232]",97.1,NA
+2017-03,Canada,Computer printers [3611124],100.7,NA
+2017-03,Canada,Inkjet printers [36111241],99,NA
+2017-03,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-03,Canada,Laser printers [36111242],100.9,NA
+2017-03,Canada,"Laser printers, businesses and governments [361112421]",100.8,NA
+2017-04,Canada,Computer monitors and computer printers [E12],100.3,NA
+2017-04,Canada,Computer monitors [3611123],99.5,NA
+2017-04,Canada,"Computer monitors, businesses and governments [36111231]",101.6,NA
+2017-04,Canada,"Computer monitors, household [36111232]",97,NA
+2017-04,Canada,Computer printers [3611124],100.4,NA
+2017-04,Canada,Inkjet printers [36111241],98.5,NA
+2017-04,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-04,Canada,Laser printers [36111242],100.7,NA
+2017-04,Canada,"Laser printers, businesses and governments [361112421]",100.6,NA
+2017-05,Canada,Computer monitors and computer printers [E12],100.2,NA
+2017-05,Canada,Computer monitors [3611123],99.5,NA
+2017-05,Canada,"Computer monitors, businesses and governments [36111231]",101.4,NA
+2017-05,Canada,"Computer monitors, household [36111232]",97.3,NA
+2017-05,Canada,Computer printers [3611124],100.3,NA
+2017-05,Canada,Inkjet printers [36111241],98.9,NA
+2017-05,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-05,Canada,Laser printers [36111242],100.5,NA
+2017-05,Canada,"Laser printers, businesses and governments [361112421]",100.6,NA
+2017-06,Canada,Computer monitors and computer printers [E12],99.1,NA
+2017-06,Canada,Computer monitors [3611123],99.3,NA
+2017-06,Canada,"Computer monitors, businesses and governments [36111231]",101.3,NA
+2017-06,Canada,"Computer monitors, household [36111232]",97,NA
+2017-06,Canada,Computer printers [3611124],99.1,NA
+2017-06,Canada,Inkjet printers [36111241],95.3,NA
+2017-06,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-06,Canada,Laser printers [36111242],99.6,NA
+2017-06,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2017-07,Canada,Computer monitors and computer printers [E12],99,NA
+2017-07,Canada,Computer monitors [3611123],99.1,NA
+2017-07,Canada,"Computer monitors, businesses and governments [36111231]",101.7,NA
+2017-07,Canada,"Computer monitors, household [36111232]",96.2,NA
+2017-07,Canada,Computer printers [3611124],98.9,NA
+2017-07,Canada,Inkjet printers [36111241],93.8,NA
+2017-07,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-07,Canada,Laser printers [36111242],99.6,NA
+2017-07,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2017-08,Canada,Computer monitors and computer printers [E12],99.1,NA
+2017-08,Canada,Computer monitors [3611123],99,NA
+2017-08,Canada,"Computer monitors, businesses and governments [36111231]",101.5,NA
+2017-08,Canada,"Computer monitors, household [36111232]",96.1,NA
+2017-08,Canada,Computer printers [3611124],99.1,NA
+2017-08,Canada,Inkjet printers [36111241],95.4,NA
+2017-08,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-08,Canada,Laser printers [36111242],99.6,NA
+2017-08,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2017-09,Canada,Computer monitors and computer printers [E12],99,NA
+2017-09,Canada,Computer monitors [3611123],98.5,NA
+2017-09,Canada,"Computer monitors, businesses and governments [36111231]",101,NA
+2017-09,Canada,"Computer monitors, household [36111232]",95.7,NA
+2017-09,Canada,Computer printers [3611124],99.1,NA
+2017-09,Canada,Inkjet printers [36111241],95.4,NA
+2017-09,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-09,Canada,Laser printers [36111242],99.6,NA
+2017-09,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2017-10,Canada,Computer monitors and computer printers [E12],99,NA
+2017-10,Canada,Computer monitors [3611123],98,NA
+2017-10,Canada,"Computer monitors, businesses and governments [36111231]",100.7,NA
+2017-10,Canada,"Computer monitors, household [36111232]",94.8,NA
+2017-10,Canada,Computer printers [3611124],99.1,NA
+2017-10,Canada,Inkjet printers [36111241],95.4,NA
+2017-10,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-10,Canada,Laser printers [36111242],99.7,NA
+2017-10,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2017-11,Canada,Computer monitors and computer printers [E12],98.9,NA
+2017-11,Canada,Computer monitors [3611123],97.5,NA
+2017-11,Canada,"Computer monitors, businesses and governments [36111231]",100.3,NA
+2017-11,Canada,"Computer monitors, household [36111232]",94.5,NA
+2017-11,Canada,Computer printers [3611124],99.2,NA
+2017-11,Canada,Inkjet printers [36111241],95.4,NA
+2017-11,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-11,Canada,Laser printers [36111242],99.7,NA
+2017-11,Canada,"Laser printers, businesses and governments [361112421]",99.7,NA
+2017-12,Canada,Computer monitors and computer printers [E12],98.9,NA
+2017-12,Canada,Computer monitors [3611123],97.6,NA
+2017-12,Canada,"Computer monitors, businesses and governments [36111231]",100.2,NA
+2017-12,Canada,"Computer monitors, household [36111232]",94.5,NA
+2017-12,Canada,Computer printers [3611124],99.2,NA
+2017-12,Canada,Inkjet printers [36111241],95.4,NA
+2017-12,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2017-12,Canada,Laser printers [36111242],99.7,NA
+2017-12,Canada,"Laser printers, businesses and governments [361112421]",99.7,NA
+2018-01,Canada,Computer monitors and computer printers [E12],98.9,NA
+2018-01,Canada,Computer monitors [3611123],97.5,NA
+2018-01,Canada,"Computer monitors, businesses and governments [36111231]",99.9,NA
+2018-01,Canada,"Computer monitors, household [36111232]",94.8,NA
+2018-01,Canada,Computer printers [3611124],99.1,NA
+2018-01,Canada,Inkjet printers [36111241],95.4,NA
+2018-01,Canada,"Inkjet printers, businesses and governments [361112411]",100.5,NA
+2018-01,Canada,Laser printers [36111242],99.6,NA
+2018-01,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-02,Canada,Computer monitors and computer printers [E12],99,NA
+2018-02,Canada,Computer monitors [3611123],97.6,NA
+2018-02,Canada,"Computer monitors, businesses and governments [36111231]",100,NA
+2018-02,Canada,"Computer monitors, household [36111232]",95,NA
+2018-02,Canada,Computer printers [3611124],99.2,NA
+2018-02,Canada,Inkjet printers [36111241],96.1,NA
+2018-02,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-02,Canada,Laser printers [36111242],99.6,NA
+2018-02,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-03,Canada,Computer monitors and computer printers [E12],98.9,NA
+2018-03,Canada,Computer monitors [3611123],97.2,NA
+2018-03,Canada,"Computer monitors, businesses and governments [36111231]",99.9,NA
+2018-03,Canada,"Computer monitors, household [36111232]",94.2,NA
+2018-03,Canada,Computer printers [3611124],99.2,NA
+2018-03,Canada,Inkjet printers [36111241],96.1,NA
+2018-03,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-03,Canada,Laser printers [36111242],99.6,NA
+2018-03,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-04,Canada,Computer monitors and computer printers [E12],98.8,NA
+2018-04,Canada,Computer monitors [3611123],96.9,NA
+2018-04,Canada,"Computer monitors, businesses and governments [36111231]",99.5,NA
+2018-04,Canada,"Computer monitors, household [36111232]",93.8,NA
+2018-04,Canada,Computer printers [3611124],99.2,NA
+2018-04,Canada,Inkjet printers [36111241],96.1,NA
+2018-04,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-04,Canada,Laser printers [36111242],99.6,NA
+2018-04,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-05,Canada,Computer monitors and computer printers [E12],99.6,NA
+2018-05,Canada,Computer monitors [3611123],96.8,NA
+2018-05,Canada,"Computer monitors, businesses and governments [36111231]",99.7,NA
+2018-05,Canada,"Computer monitors, household [36111232]",93.4,NA
+2018-05,Canada,Computer printers [3611124],100.3,NA
+2018-05,Canada,Inkjet printers [36111241],103.4,NA
+2018-05,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-05,Canada,Laser printers [36111242],99.6,NA
+2018-05,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-06,Canada,Computer monitors and computer printers [E12],99.3,NA
+2018-06,Canada,Computer monitors [3611123],96.9,NA
+2018-06,Canada,"Computer monitors, businesses and governments [36111231]",99.7,NA
+2018-06,Canada,"Computer monitors, household [36111232]",93.6,NA
+2018-06,Canada,Computer printers [3611124],99.8,NA
+2018-06,Canada,Inkjet printers [36111241],101.7,NA
+2018-06,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-06,Canada,Laser printers [36111242],99.3,NA
+2018-06,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-07,Canada,Computer monitors and computer printers [E12],99.6,NA
+2018-07,Canada,Computer monitors [3611123],96.8,NA
+2018-07,Canada,"Computer monitors, businesses and governments [36111231]",99.6,NA
+2018-07,Canada,"Computer monitors, household [36111232]",93.5,NA
+2018-07,Canada,Computer printers [3611124],100.2,NA
+2018-07,Canada,Inkjet printers [36111241],102.7,NA
+2018-07,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-07,Canada,Laser printers [36111242],99.6,NA
+2018-07,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-08,Canada,Computer monitors and computer printers [E12],99.3,NA
+2018-08,Canada,Computer monitors [3611123],96.5,NA
+2018-08,Canada,"Computer monitors, businesses and governments [36111231]",99.2,NA
+2018-08,Canada,"Computer monitors, household [36111232]",93.4,NA
+2018-08,Canada,Computer printers [3611124],100,NA
+2018-08,Canada,Inkjet printers [36111241],100.6,NA
+2018-08,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-08,Canada,Laser printers [36111242],99.7,NA
+2018-08,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-09,Canada,Computer monitors and computer printers [E12],99.1,NA
+2018-09,Canada,Computer monitors [3611123],95.9,NA
+2018-09,Canada,"Computer monitors, businesses and governments [36111231]",98.5,NA
+2018-09,Canada,"Computer monitors, household [36111232]",92.9,NA
+2018-09,Canada,Computer printers [3611124],99.9,NA
+2018-09,Canada,Inkjet printers [36111241],100.4,NA
+2018-09,Canada,"Inkjet printers, businesses and governments [361112411]",102.1,NA
+2018-09,Canada,Laser printers [36111242],99.6,NA
+2018-09,Canada,"Laser printers, businesses and governments [361112421]",99.6,NA
+2018-10,Canada,Computer monitors and computer printers [E12],98.3,NA
+2018-10,Canada,Computer monitors [3611123],95.7,NA
+2018-10,Canada,"Computer monitors, businesses and governments [36111231]",98.2,NA
+2018-10,Canada,"Computer monitors, household [36111232]",92.7,NA
+2018-10,Canada,Computer printers [3611124],98.9,NA
+2018-10,Canada,Inkjet printers [36111241],95.5,NA
+2018-10,Canada,"Inkjet printers, businesses and governments [361112411]",101.4,NA
+2018-10,Canada,Laser printers [36111242],99.4,NA
+2018-10,Canada,"Laser printers, businesses and governments [361112421]",99.4,NA
+2018-11,Canada,Computer monitors and computer printers [E12],98.5,NA
+2018-11,Canada,Computer monitors [3611123],95.8,NA
+2018-11,Canada,"Computer monitors, businesses and governments [36111231]",98.2,NA
+2018-11,Canada,"Computer monitors, household [36111232]",93.1,NA
+2018-11,Canada,Computer printers [3611124],99.1,NA
+2018-11,Canada,Inkjet printers [36111241],96.8,NA
+2018-11,Canada,"Inkjet printers, businesses and governments [361112411]",101.2,NA
+2018-11,Canada,Laser printers [36111242],99.4,NA
+2018-11,Canada,"Laser printers, businesses and governments [361112421]",99.4,NA
+2018-12,Canada,Computer monitors and computer printers [E12],98.2,NA
+2018-12,Canada,Computer monitors [3611123],95.4,NA
+2018-12,Canada,"Computer monitors, businesses and governments [36111231]",98,NA
+2018-12,Canada,"Computer monitors, household [36111232]",92.6,NA
+2018-12,Canada,Computer printers [3611124],98.9,NA
+2018-12,Canada,Inkjet printers [36111241],94.8,NA
+2018-12,Canada,"Inkjet printers, businesses and governments [361112411]",101.2,NA
+2018-12,Canada,Laser printers [36111242],99.5,NA
+2018-12,Canada,"Laser printers, businesses and governments [361112421]",99.4,NA
+2019-01,Canada,Computer monitors and computer printers [E12],99,NA
+2019-01,Canada,Computer monitors [3611123],95.1,NA
+2019-01,Canada,"Computer monitors, businesses and governments [36111231]",97.5,NA
+2019-01,Canada,"Computer monitors, household [36111232]",92.6,NA
+2019-01,Canada,Computer printers [3611124],100.1,NA
+2019-01,Canada,Inkjet printers [36111241],102.6,NA
+2019-01,Canada,"Inkjet printers, businesses and governments [361112411]",102.4,NA
+2019-01,Canada,Laser printers [36111242],99.6,NA
+2019-01,Canada,"Laser printers, businesses and governments [361112421]",99.5,NA
+2019-02,Canada,Computer monitors and computer printers [E12],98.2,NA
+2019-02,Canada,Computer monitors [3611123],95.1,NA
+2019-02,Canada,"Computer monitors, businesses and governments [36111231]",97.4,NA
+2019-02,Canada,"Computer monitors, household [36111232]",92.6,NA
+2019-02,Canada,Computer printers [3611124],99,NA
+2019-02,Canada,Inkjet printers [36111241],96.9,NA
+2019-02,Canada,"Inkjet printers, businesses and governments [361112411]",102.3,NA
+2019-02,Canada,Laser printers [36111242],99.3,NA
+2019-02,Canada,"Laser printers, businesses and governments [361112421]",99.4,NA
+2019-03,Canada,Computer monitors and computer printers [E12],98.2,NA
+2019-03,Canada,Computer monitors [3611123],95,NA
+2019-03,Canada,"Computer monitors, businesses and governments [36111231]",97.3,NA
+2019-03,Canada,"Computer monitors, household [36111232]",92.5,NA
+2019-03,Canada,Computer printers [3611124],99,NA
+2019-03,Canada,Inkjet printers [36111241],98.1,NA
+2019-03,Canada,"Inkjet printers, businesses and governments [361112411]",102.4,NA
+2019-03,Canada,Laser printers [36111242],99,NA
+2019-03,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-04,Canada,Computer monitors and computer printers [E12],98,NA
+2019-04,Canada,Computer monitors [3611123],95,NA
+2019-04,Canada,"Computer monitors, businesses and governments [36111231]",97.3,NA
+2019-04,Canada,"Computer monitors, household [36111232]",92.5,NA
+2019-04,Canada,Computer printers [3611124],98.8,NA
+2019-04,Canada,Inkjet printers [36111241],97,NA
+2019-04,Canada,"Inkjet printers, businesses and governments [361112411]",102.3,NA
+2019-04,Canada,Laser printers [36111242],99,NA
+2019-04,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-05,Canada,Computer monitors and computer printers [E12],98.3,NA
+2019-05,Canada,Computer monitors [3611123],94.4,NA
+2019-05,Canada,"Computer monitors, businesses and governments [36111231]",96.7,NA
+2019-05,Canada,"Computer monitors, household [36111232]",92.3,NA
+2019-05,Canada,Computer printers [3611124],99.3,NA
+2019-05,Canada,Inkjet printers [36111241],100.8,NA
+2019-05,Canada,"Inkjet printers, businesses and governments [361112411]",102.3,NA
+2019-05,Canada,Laser printers [36111242],99,NA
+2019-05,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-06,Canada,Computer monitors and computer printers [E12],97.7,NA
+2019-06,Canada,Computer monitors [3611123],93.3,NA
+2019-06,Canada,"Computer monitors, businesses and governments [36111231]",95,NA
+2019-06,Canada,"Computer monitors, household [36111232]",92.4,NA
+2019-06,Canada,Computer printers [3611124],99,NA
+2019-06,Canada,Inkjet printers [36111241],98.3,NA
+2019-06,Canada,"Inkjet printers, businesses and governments [361112411]",102.3,NA
+2019-06,Canada,Laser printers [36111242],99,NA
+2019-06,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-07,Canada,Computer monitors and computer printers [E12],97.2,NA
+2019-07,Canada,Computer monitors [3611123],92.6,NA
+2019-07,Canada,"Computer monitors, businesses and governments [36111231]",93.9,NA
+2019-07,Canada,"Computer monitors, household [36111232]",92.3,NA
+2019-07,Canada,Computer printers [3611124],98.5,NA
+2019-07,Canada,Inkjet printers [36111241],95,NA
+2019-07,Canada,"Inkjet printers, businesses and governments [361112411]",102.3,NA
+2019-07,Canada,Laser printers [36111242],99,NA
+2019-07,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-08,Canada,Computer monitors and computer printers [E12],97.2,NA
+2019-08,Canada,Computer monitors [3611123],92.4,NA
+2019-08,Canada,"Computer monitors, businesses and governments [36111231]",93.8,NA
+2019-08,Canada,"Computer monitors, household [36111232]",91.9,NA
+2019-08,Canada,Computer printers [3611124],98.6,NA
+2019-08,Canada,Inkjet printers [36111241],95.1,NA
+2019-08,Canada,"Inkjet printers, businesses and governments [361112411]",102.3,NA
+2019-08,Canada,Laser printers [36111242],99,NA
+2019-08,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-09,Canada,Computer monitors and computer printers [E12],97.2,NA
+2019-09,Canada,Computer monitors [3611123],92.1,NA
+2019-09,Canada,"Computer monitors, businesses and governments [36111231]",93.3,NA
+2019-09,Canada,"Computer monitors, household [36111232]",92,NA
+2019-09,Canada,Computer printers [3611124],98.7,NA
+2019-09,Canada,Inkjet printers [36111241],96.4,NA
+2019-09,Canada,"Inkjet printers, businesses and governments [361112411]",102.2,NA
+2019-09,Canada,Laser printers [36111242],99,NA
+2019-09,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-10,Canada,Computer monitors and computer printers [E12],96.7,NA
+2019-10,Canada,Computer monitors [3611123],90.2,NA
+2019-10,Canada,"Computer monitors, businesses and governments [36111231]",90.6,NA
+2019-10,Canada,"Computer monitors, household [36111232]",91.9,NA
+2019-10,Canada,Computer printers [3611124],98.7,NA
+2019-10,Canada,Inkjet printers [36111241],97.2,NA
+2019-10,Canada,"Inkjet printers, businesses and governments [361112411]",102,NA
+2019-10,Canada,Laser printers [36111242],98.9,NA
+2019-10,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-11,Canada,Computer monitors and computer printers [E12],96.6,NA
+2019-11,Canada,Computer monitors [3611123],90.2,NA
+2019-11,Canada,"Computer monitors, businesses and governments [36111231]",90.5,NA
+2019-11,Canada,"Computer monitors, household [36111232]",92.2,NA
+2019-11,Canada,Computer printers [3611124],98.5,NA
+2019-11,Canada,Inkjet printers [36111241],95.4,NA
+2019-11,Canada,"Inkjet printers, businesses and governments [361112411]",101.7,NA
+2019-11,Canada,Laser printers [36111242],98.9,NA
+2019-11,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2019-12,Canada,Computer monitors and computer printers [E12],96.5,NA
+2019-12,Canada,Computer monitors [3611123],90,NA
+2019-12,Canada,"Computer monitors, businesses and governments [36111231]",90.4,NA
+2019-12,Canada,"Computer monitors, household [36111232]",91.6,NA
+2019-12,Canada,Computer printers [3611124],98.5,NA
+2019-12,Canada,Inkjet printers [36111241],95.3,NA
+2019-12,Canada,"Inkjet printers, businesses and governments [361112411]",101.7,NA
+2019-12,Canada,Laser printers [36111242],98.9,NA
+2019-12,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2020-01,Canada,Computer monitors and computer printers [E12],96.6,NA
+2020-01,Canada,Computer monitors [3611123],89.7,NA
+2020-01,Canada,"Computer monitors, businesses and governments [36111231]",89.9,NA
+2020-01,Canada,"Computer monitors, household [36111232]",91.8,NA
+2020-01,Canada,Computer printers [3611124],98.7,NA
+2020-01,Canada,Inkjet printers [36111241],96.9,NA
+2020-01,Canada,"Inkjet printers, businesses and governments [361112411]",101.7,NA
+2020-01,Canada,Laser printers [36111242],98.9,NA
+2020-01,Canada,"Laser printers, businesses and governments [361112421]",99.2,NA
+2020-02,Canada,Computer monitors and computer printers [E12],96.4,NA
+2020-02,Canada,Computer monitors [3611123],89.3,NA
+2020-02,Canada,"Computer monitors, businesses and governments [36111231]",89.4,NA
+2020-02,Canada,"Computer monitors, household [36111232]",91.5,NA
+2020-02,Canada,Computer printers [3611124],98.6,NA
+2020-02,Canada,Inkjet printers [36111241],98.7,NA
+2020-02,Canada,"Inkjet printers, businesses and governments [361112411]",101.6,NA
+2020-02,Canada,Laser printers [36111242],98.5,NA
+2020-02,Canada,"Laser printers, businesses and governments [361112421]",98.8,NA
+2020-03,Canada,Computer monitors and computer printers [E12],96.2,NA
+2020-03,Canada,Computer monitors [3611123],89.4,NA
+2020-03,Canada,"Computer monitors, businesses and governments [36111231]",89.4,NA
+2020-03,Canada,"Computer monitors, household [36111232]",91.9,NA
+2020-03,Canada,Computer printers [3611124],98.2,NA
+2020-03,Canada,Inkjet printers [36111241],95.1,NA
+2020-03,Canada,"Inkjet printers, businesses and governments [361112411]",101.7,NA
+2020-03,Canada,Laser printers [36111242],98.6,NA
+2020-03,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-04,Canada,Computer monitors and computer printers [E12],96.2,NA
+2020-04,Canada,Computer monitors [3611123],89.6,NA
+2020-04,Canada,"Computer monitors, businesses and governments [36111231]",89.3,NA
+2020-04,Canada,"Computer monitors, household [36111232]",93,NA
+2020-04,Canada,Computer printers [3611124],98.2,NA
+2020-04,Canada,Inkjet printers [36111241],95.1,NA
+2020-04,Canada,"Inkjet printers, businesses and governments [361112411]",101.5,NA
+2020-04,Canada,Laser printers [36111242],98.6,NA
+2020-04,Canada,"Laser printers, businesses and governments [361112421]",98.8,NA
+2020-05,Canada,Computer monitors and computer printers [E12],96.6,NA
+2020-05,Canada,Computer monitors [3611123],89,NA
+2020-05,Canada,"Computer monitors, businesses and governments [36111231]",88,NA
+2020-05,Canada,"Computer monitors, household [36111232]",93.7,NA
+2020-05,Canada,Computer printers [3611124],99,NA
+2020-05,Canada,Inkjet printers [36111241],100,NA
+2020-05,Canada,"Inkjet printers, businesses and governments [361112411]",101.6,NA
+2020-05,Canada,Laser printers [36111242],98.7,NA
+2020-05,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-06,Canada,Computer monitors and computer printers [E12],96.2,NA
+2020-06,Canada,Computer monitors [3611123],88.4,NA
+2020-06,Canada,"Computer monitors, businesses and governments [36111231]",87.8,NA
+2020-06,Canada,"Computer monitors, household [36111232]",92.3,NA
+2020-06,Canada,Computer printers [3611124],98.6,NA
+2020-06,Canada,Inkjet printers [36111241],98.4,NA
+2020-06,Canada,"Inkjet printers, businesses and governments [361112411]",101.6,NA
+2020-06,Canada,Laser printers [36111242],98.5,NA
+2020-06,Canada,"Laser printers, businesses and governments [361112421]",98.7,NA
+2020-07,Canada,Computer monitors and computer printers [E12],95.8,NA
+2020-07,Canada,Computer monitors [3611123],88.4,NA
+2020-07,Canada,"Computer monitors, businesses and governments [36111231]",87.8,NA
+2020-07,Canada,"Computer monitors, household [36111232]",92.1,NA
+2020-07,Canada,Computer printers [3611124],98.1,NA
+2020-07,Canada,Inkjet printers [36111241],94.4,NA
+2020-07,Canada,"Inkjet printers, businesses and governments [361112411]",101.6,NA
+2020-07,Canada,Laser printers [36111242],98.7,NA
+2020-07,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-08,Canada,Computer monitors and computer printers [E12],96.6,NA
+2020-08,Canada,Computer monitors [3611123],88.1,NA
+2020-08,Canada,"Computer monitors, businesses and governments [36111231]",87.2,NA
+2020-08,Canada,"Computer monitors, household [36111232]",92.6,NA
+2020-08,Canada,Computer printers [3611124],99.2,NA
+2020-08,Canada,Inkjet printers [36111241],101.1,NA
+2020-08,Canada,"Inkjet printers, businesses and governments [361112411]",101.4,NA
+2020-08,Canada,Laser printers [36111242],98.8,NA
+2020-08,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-09,Canada,Computer monitors and computer printers [E12],96.6,NA
+2020-09,Canada,Computer monitors [3611123],88,NA
+2020-09,Canada,"Computer monitors, businesses and governments [36111231]",87.1,NA
+2020-09,Canada,"Computer monitors, household [36111232]",92.5,NA
+2020-09,Canada,Computer printers [3611124],99.3,NA
+2020-09,Canada,Inkjet printers [36111241],100.9,NA
+2020-09,Canada,"Inkjet printers, businesses and governments [361112411]",101.4,NA
+2020-09,Canada,Laser printers [36111242],98.9,NA
+2020-09,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-10,Canada,Computer monitors and computer printers [E12],96.5,NA
+2020-10,Canada,Computer monitors [3611123],87.2,NA
+2020-10,Canada,"Computer monitors, businesses and governments [36111231]",86.1,NA
+2020-10,Canada,"Computer monitors, household [36111232]",92.1,NA
+2020-10,Canada,Computer printers [3611124],99.5,NA
+2020-10,Canada,Inkjet printers [36111241],102.7,NA
+2020-10,Canada,"Inkjet printers, businesses and governments [361112411]",101.4,NA
+2020-10,Canada,Laser printers [36111242],98.9,NA
+2020-10,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-11,Canada,Computer monitors and computer printers [E12],96.4,NA
+2020-11,Canada,Computer monitors [3611123],87,NA
+2020-11,Canada,"Computer monitors, businesses and governments [36111231]",85.9,NA
+2020-11,Canada,"Computer monitors, household [36111232]",92.1,NA
+2020-11,Canada,Computer printers [3611124],99.4,NA
+2020-11,Canada,Inkjet printers [36111241],102.3,NA
+2020-11,Canada,"Inkjet printers, businesses and governments [361112411]",100.6,NA
+2020-11,Canada,Laser printers [36111242],98.8,NA
+2020-11,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2020-12,Canada,Computer monitors and computer printers [E12],96.5,NA
+2020-12,Canada,Computer monitors [3611123],87,NA
+2020-12,Canada,"Computer monitors, businesses and governments [36111231]",86,NA
+2020-12,Canada,"Computer monitors, household [36111232]",91.8,NA
+2020-12,Canada,Computer printers [3611124],99.5,NA
+2020-12,Canada,Inkjet printers [36111241],102.8,NA
+2020-12,Canada,"Inkjet printers, businesses and governments [361112411]",101.1,NA
+2020-12,Canada,Laser printers [36111242],98.9,NA
+2020-12,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2021-01,Canada,Computer monitors and computer printers [E12],96.6,NA
+2021-01,Canada,Computer monitors [3611123],87.6,NA
+2021-01,Canada,"Computer monitors, businesses and governments [36111231]",86.7,NA
+2021-01,Canada,"Computer monitors, household [36111232]",91.9,NA
+2021-01,Canada,Computer printers [3611124],99.5,NA
+2021-01,Canada,Inkjet printers [36111241],102.7,NA
+2021-01,Canada,"Inkjet printers, businesses and governments [361112411]",100.2,NA
+2021-01,Canada,Laser printers [36111242],98.9,NA
+2021-01,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2021-02,Canada,Computer monitors and computer printers [E12],96.6,NA
+2021-02,Canada,Computer monitors [3611123],87.6,NA
+2021-02,Canada,"Computer monitors, businesses and governments [36111231]",86.7,NA
+2021-02,Canada,"Computer monitors, household [36111232]",92.1,NA
+2021-02,Canada,Computer printers [3611124],99.5,NA
+2021-02,Canada,Inkjet printers [36111241],102.7,NA
+2021-02,Canada,"Inkjet printers, businesses and governments [361112411]",100.2,NA
+2021-02,Canada,Laser printers [36111242],98.9,NA
+2021-02,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
+2021-03,Canada,Computer monitors and computer printers [E12],96.5,NA
+2021-03,Canada,Computer monitors [3611123],87.3,NA
+2021-03,Canada,"Computer monitors, businesses and governments [36111231]",86.3,NA
+2021-03,Canada,"Computer monitors, household [36111232]",92.1,NA
+2021-03,Canada,Computer printers [3611124],99.4,NA
+2021-03,Canada,Inkjet printers [36111241],102.3,NA
+2021-03,Canada,"Inkjet printers, businesses and governments [361112411]",100.3,NA
+2021-03,Canada,Laser printers [36111242],98.9,NA
+2021-03,Canada,"Laser printers, businesses and governments [361112421]",98.9,NA
