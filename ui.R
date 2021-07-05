@@ -7,8 +7,7 @@ library(shinyanimate)
 source('preprocessing.R')
 
 ui <- fluidPage( 
-  
-  
+
   theme = shinytheme("cyborg"),
   
   img(src = "cad.gif", align = "right", height='47px', width='80px',
@@ -33,22 +32,11 @@ ui <- fluidPage(
   tabsetPanel(type = "tabs",
               tabPanel("Home",
                        br(),
-                       # img(src = "bannersc.png", height='160px', width='600px',
-                       #     style = 'display: block;
-                       #     margin-left: auto;
-                       #     margin-right: auto;'),
-                       # img(src = "penguin.gif", height='200px', width='140px',
-                       #     style = 'display: block;
-                       #          margin-left: 2em;
-                       #          margin-top: 6em;'),
                        withAnim(),
                        div(id = 'animator',h1("Welcome! Bienvenue!", align = "center")),
-                       # br(),
-                       # uiOutput("images", align = "center")),
                        br(),
                        br(),
                        div(id = 'animator2', uiOutput("images", align = "center")),
-                       
                        br(),
                        br(),
                        br(),
@@ -109,15 +97,7 @@ ui <- fluidPage(
                        
               ),
               tabPanel("AESPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
-                       withAnim(),
                        div(id = 'animaespi', h4("Architectural, Engineering and Related Services Price Index (AESPI)",
                                                 style = 'margin-left: 1em')),
                        br(),
@@ -155,7 +135,8 @@ ui <- fluidPage(
                                            margin-left: 2em;
                                            margin-right: 2em
                                    '),
-                       p("For more information please click ", tags$a(href = "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&Id=1291660", "here."),
+                       p("For more information please click ", tags$a(href = "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&Id=1291660", 
+                                                                      "here."),
                          'To download the data used to generate the plots, please press the button \"Download".',
                          style = 'text-align: justify;
                                            color: white;
@@ -165,38 +146,20 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlaespi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
-                       # selectInput("regaespi", "Select Region:",
-                       #             choices = unique(aespi$`GEO`),
-                       #             selected = "Canada",
-                       #             multiple = FALSE),
                        selectInput("prodaespi", "Select a figure:",
                                    choices = unique(aespi_special$`NAICS`),
                                    selected = "Architectural, engineering and related services price index (Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotaespi", height = 650),
                        br(),
                        plotlyOutput("percentaespi", height = 650),
-                       # 
+                       br(),
+                       plotlyOutput("yearpercentaespi", height = 650),
                        br()
               ),
               
               tabPanel("ASPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animaspi', h4("Accounting Services Price Index (ASPI)",
                                                style = 'margin-left: 1em')),
@@ -241,15 +204,6 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlaspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
-                       
-                       
-                       # selectInput("prodaspi", "Select a figure:",
-                       #             choices = unique(aspi$`Class of service`),
-                       #             selected = "Accounting Services Price Index",
-                       #             multiple = TRUE, 
-                       #             width = "100%"),
-                       
-                       
                        selectizeInput(
                          inputId = "prodaspi", 
                          label = "Select a figure:", 
@@ -258,34 +212,12 @@ ui <- fluidPage(
                          multiple = TRUE,
                          width = "100%"
                        ),
-                       
-                       
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       #br(),
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotaspi", height = 650),
                        br(),
                        plotlyOutput("percentaspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               tabPanel("CIMERLSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
-                       
                        br(),
                        div(id = 'animcimerlspi', h4("Commercial and Industrial Machinery and Equipment Rental and Leasing Services Price Index (CIMERLSPI)",
                                                     style = 'margin-left: 1em')),
@@ -338,33 +270,14 @@ ui <- fluidPage(
                                    selected = "Commercial and industrial machinery and equipment rental and leasing [5324]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcimerlspi", height = 650),
                        br(),
                        plotlyOutput("percentcimerlspi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentcimerlspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               tabPanel("CMSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
-                       
                        br(),
                        div(id = 'animcmspi', h4("Couriers and Messengers Services Price Index (CMSPI)",
                                                 style = 'margin-left: 1em')),
@@ -415,34 +328,17 @@ ui <- fluidPage(
                                    selected = "Local messengers and local delivery [4922]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcmspi", height = 650),
                        br(),
                        plotlyOutput("percentcmspi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentcmspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               
               
               tabPanel("COSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animcospi', h4("Consulting Services Price Index (COSPI)",
                                                 style = 'margin-left: 1em')),
@@ -493,32 +389,15 @@ ui <- fluidPage(
                                    selected = "Total price",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcospi", height = 650),
                        br(),
                        plotlyOutput("percentcospi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentcospi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("CPPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animcppi', h4("Computer and Peripherals Price Indexes (CPPI)",
                                                style = 'margin-left: 1em')),
@@ -568,32 +447,15 @@ ui <- fluidPage(
                                    selected = "Computer monitors and computer printers [E12]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcppi", height = 650),
                        br(),
                        plotlyOutput("percentcppi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentcppi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("CRSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animcrspi', h4("Commercial Rents Services Price Index (CRSPI)",
                                                 style = 'margin-left: 1em')),
@@ -644,26 +506,15 @@ ui <- fluidPage(
                                    selected = "Total, building type (Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcrspi", height = 650),
                        br(),
                        plotlyOutput("percentcrspi", height = 650),
-                       
-                       
+                       br(),
+                       plotlyOutput("yearpercentcrspi", height = 650),
                        br()
-                       
               ),
               
               tabPanel("CSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animcspi', h4("Commercial Software Price Index (CSPI)",
                                                style = 'margin-left: 1em')),
@@ -710,33 +561,16 @@ ui <- fluidPage(
                                    selected = "Commercial software",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcspi", height = 650),
                        br(),
                        plotlyOutput("percentcspi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentcspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               
               tabPanel("CUWRI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animcuwri', h4("Construction Union Wage Rate Index (CUWRI)",
                                                 style = 'margin-left: 1em')),
@@ -785,33 +619,17 @@ ui <- fluidPage(
                                    selected = "Reinforcing steel erector (Basic construction union wage rate indexes - Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotcuwri", height = 650),
                        br(),
                        plotlyOutput("percentcuwri", height = 650),
-                       
+                       br(),
+                       plotlyOutput("yearpercentcuwri", height = 650),
                        br()
               ),
               
               
               
               tabPanel("EPSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animepspi', h4("Electric Power Selling Price Indexes for Non-residential Customers (EPSPI)",
                                                 style = 'margin-left: 1em')),
@@ -857,33 +675,15 @@ ui <- fluidPage(
                                    selected = "Electric power selling price under 5000kw (Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotepspi", height = 650),
                        br(),
                        plotlyOutput("percentepspi", height = 650),
-                       
-                       
+                       br(),
+                       plotlyOutput("yearpercentepspi", height = 650),
                        br()
-                       
               ),
               
               tabPanel("FHMCFSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animf', h4("For-hire Motor Carrier Freight Services Price Index (FHMCFSPI)",
                                             style = 'margin-left: 1em')),
@@ -939,32 +739,15 @@ ui <- fluidPage(
                                    selected = "Specialized freight (except used goods) trucking, local [48422]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotf", height = 650),
                        br(),
                        plotlyOutput("percentf", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentf", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("FIPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animfipi', h4("Farm Input Price Index (FIPI)",
                                                style = 'margin-left: 1em')),
@@ -1011,33 +794,15 @@ ui <- fluidPage(
                                    selected = "Farm input total (Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotfipi", height = 650),
                        br(),
                        plotlyOutput("percentfipi", height = 650),
-                       
+                       br(),
+                       plotlyOutput("yearpercentfipi", height = 650),
                        br()
-                       
-                       # )
-                       # )
               ),
               
               tabPanel("IBSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animibspi', h4("Investment Banking Services Price Index (IBSPI)",
                                                 style = 'margin-left: 1em')),
@@ -1085,32 +850,13 @@ ui <- fluidPage(
                                    selected = "Canada",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotibspi", height = 650),
                        br(),
                        plotlyOutput("percentibspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("IPPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animippi', h4("Industrial Product Price Index (IPPI)", 
                                                style = 'margin-left: 1em')),
@@ -1158,42 +904,20 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlippi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
-                       
-                       
-                       
-                       
-                       
                        selectInput("prod", "Select a figure:",
                                    choices = unique(ippi$`North American Product Classification System (NAPCS)`),
                                    selected = "Total Industrial product price index (IPPI), excluding energy and petroleum products",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       #br(),
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plot", height = 650),
                        br(),
                        plotlyOutput("percentplot", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentplot", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("IPSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animipspi', h4("Informatics Professional Services Price Indexes (IPSPI)",
                                                 style = 'margin-left: 1em')),
@@ -1245,32 +969,13 @@ ui <- fluidPage(
                                    selected = "Data processing, hosting, and related services [75111]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotipspi", height = 650),
                        br(),
                        plotlyOutput("percentipspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("MEPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animmepi', h4("Machinery and Equipment Price Index (MEPI)",
                                                style = 'margin-left: 1em')),
@@ -1321,33 +1026,15 @@ ui <- fluidPage(
                                    selected = "Carpets and rugs (Total domestic and imported)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotmepi", height = 650),
                        br(),
                        plotlyOutput("percentmepi", height = 650),
-                       
-                       
+                       br(),
+                       plotlyOutput("yearpercentmepi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("NHPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animnhpi', h4("New Housing Price Index (NHPI)",
                                                style = 'margin-left: 1em')),
@@ -1398,34 +1085,15 @@ ui <- fluidPage(
                                    selected = "Total (house and land) (Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotnhpi", height = 650),
                        br(),
                        plotlyOutput("percentnhpi", height = 650),
-                       
-                       
+                       br(),
+                       plotlyOutput("yearpercentnhpi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("NLSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animnlspi', h4("New Lending Services Price Index (NLSPI)",
                                                 style = 'margin-left: 1em')),
@@ -1480,36 +1148,16 @@ ui <- fluidPage(
                                    selected = "Canada",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotnlspi", height = 650),
                        br(),
                        plotlyOutput("percentnlspi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentnlspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
-              
-              
-              
-              
+ 
               
               tabPanel("PASPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animpaspi', h4("Passenger Air Services Price Index (PASPI)",
                                                 style = 'margin-left: 1em')),
@@ -1563,32 +1211,13 @@ ui <- fluidPage(
                                    selected = "Total, domestic and international",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotpaspi", height = 650),
                        br(),
                        plotlyOutput("percentpaspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("RMPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animrmpi', h4("Raw Materials Price Index (RMPI)",
                                                style = 'margin-left: 1em')),
@@ -1644,32 +1273,15 @@ ui <- fluidPage(
                                    selected = "Total Raw materials price indexes (RMPI), excluding crude energy products",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotrmpi", height = 650),
                        br(),
                        plotlyOutput("percentrmpi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentrmpi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("RSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animrspi', h4("Retail Service Price Index (RSPI)", style = 'margin-left: 1em')),
                        br(),
@@ -1715,32 +1327,15 @@ ui <- fluidPage(
                                    selected = "Retail trade [44-45]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotrspi", height = 650),
                        br(),
                        plotlyOutput("percentrspi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentrspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("TASPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animtaspi', h4("Traveller Accommodation Services Price Index (TASPI)",
                                                 style = 'margin-left: 1em')),
@@ -1794,34 +1389,15 @@ ui <- fluidPage(
                                    selected = "Total, all client groups (Canada)",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plottaspi", height = 650),
                        br(),
                        plotlyOutput("percenttaspi", height = 650),
-                       
+                       br(),
+                       plotlyOutput("yearpercenttaspi", height = 650),
                        br()
-                       
-                       # )
-                       # )
               ),
               
               tabPanel("WSPI",
-                       # Sidebar layout with input and output definitions ----
-                       # sidebarLayout(
-                       
-                       # Sidebar panel for inputs ----
-                       # sidebarPanel(
-                       
-                       # Input: Select the random distribution type ----
                        br(),
                        div(id = 'animwspi', h4("Wholesale Services Price Index (WSPI)",
                                                style = 'margin-left: 1em')),
@@ -1871,22 +1447,12 @@ ui <- fluidPage(
                                    selected = "Wholesale trade [41]",
                                    multiple = TRUE, 
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("plotwspi", height = 650),
                        br(),
                        plotlyOutput("percentwspi", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentwspi", height = 650),
                        br()
-                       # )
-                       # )
               ),
               
               tabPanel("Editor",
@@ -1931,26 +1497,11 @@ ui <- fluidPage(
                                            margin-right: 2em
                                    '),
                        tags$hr(),
-                       # selectInput("prodeditorsurvey", "Select the surveys you wish to compare:",
-                       #             choices = unique(mega_dataset$`Survey`),
-                       #             selected = "AESPI",
-                       #             multiple = TRUE,
-                       #             width = "100%"),
                        selectInput("prodeditor", "Select a figure:",
                                    choices = unique(mega_dataset$`Figure`),
                                    selected = "Architectural, engineering and related services price index (Canada) [AESPI] - NAICS",
                                    multiple = TRUE,
                                    width = "100%"),
-                       
-                       # uiOutput("prodnum"),
-                       
-                       # br() element to introduce extra vertical spacing ----
-                       
-                       
-                       # ),
-                       
-                       # Main panel for displaying outputs ----
-                       # mainPanel(
                        plotlyOutput("ploteditor", height = 650),
                        br(),
                        plotlyOutput("percentmega_dataset", height = 650),
@@ -1959,7 +1510,6 @@ ui <- fluidPage(
               
               
               tabPanel("Contact", 
-                       tableOutput("table"),
                        br(),
                        br(),
                        div(p("If you encounter any bugs in the Application or
@@ -1975,8 +1525,5 @@ ui <- fluidPage(
                            style = 'display: block;
                                  margin-left: auto;
                                  margin-right: auto;')
-                       
               )
-              
-              
   ))

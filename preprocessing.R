@@ -480,13 +480,10 @@ download_cuwri <- function() {
 
 
 update_dataset <- function() {
-  ## Updates datasets every more than 192 hours (8 days)
   
   current_time <- Sys.time()
-  "2020-07-05 10:51:40 EDT"
   
   file_time_ippi <- file.info(ippi_path)$mtime 
-  "2020-07-05 10:45:58 EDT"
   
   file_time_rspi <- file.info(rspi_path)$mtime
   
@@ -590,7 +587,7 @@ update_dataset <- function() {
   
   if (is.na(diff_ippi) | diff_ippi >= 24) {
     ippi <- download_ippi()
-    write_csv(ippi, ippi_path) #, row.names = FALSE
+    write_csv(ippi, ippi_path)
   }
   
   if (is.na(diff_rspi) | diff_rspi >= 24) {
@@ -685,8 +682,6 @@ update_dataset <- function() {
 }
 
 update_dataset()
-
-
 
 ippi <- read_csv(ippi_path)
 rspi <- read_csv(rspi_path)
@@ -816,7 +811,8 @@ ibspi_mega <- ibspi %>% mutate(Survey = "IBSPI") %>%
 
 ippi_mega <- ippi %>% mutate(Survey = "IPPI") %>%
   select(Survey, `North American Product Classification System (NAPCS)`, REF_DATE, VALUE) %>%
-  mutate(`North American Product Classification System (NAPCS)` = paste0(`North American Product Classification System (NAPCS)`," [IPPI] - NAPCS"))%>%
+  mutate(`North American Product Classification System (NAPCS)` = 
+           paste0(`North American Product Classification System (NAPCS)`," [IPPI] - NAPCS"))%>%
   rename(Figure =`North American Product Classification System (NAPCS)`)
 
 ipspi_mega <- ipspi %>% mutate(Survey = "IPSPI") %>%
