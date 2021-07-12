@@ -208,6 +208,21 @@ download_rspi <- function() {
     filter(!is.na(VALUE))
 }
 
+
+rspi_path_q <- './data/rspi_q.csv'
+
+download_rspi_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  rspi_q <- get_cansim("18-10-0252-01", refresh=TRUE)%>%
+    select(REF_DATE, GEO, `North American Industry Classification System (NAICS)`,
+           VALUE, STATUS, 
+           `Classification Code for North American Industry Classification System (NAICS)`)%>%
+    filter(!is.na(VALUE))
+}
+
+
+
+
 aespi_path <- './data/aespi.csv'
 
 download_aespi <- function() {
@@ -252,6 +267,20 @@ download_cimerlspi <- function() {
     filter(!is.na(VALUE))
 }
 
+cimerlspi_path_q <- './data/cimerlspi_q.csv'
+
+download_cimerlspi_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  cimerlspi_q <- get_cansim("18-10-0064-01", refresh=TRUE)%>%
+    select(REF_DATE, GEO, `North American Industry Classification System (NAICS)`,
+           VALUE, STATUS, 
+           `Classification Code for North American Industry Classification System (NAICS)`)%>%
+    filter(!is.na(VALUE))
+}
+
+
+
+
 cospi_path <- './data/cospi.csv'
 
 download_cospi <- function() {
@@ -275,11 +304,35 @@ download_crspi <- function() {
 }
 
 
+crspi_path_q <- './data/crspi_q.csv'
+
+download_crspi_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  crspi_q <- get_cansim("18-10-0260-01", refresh=TRUE)%>%
+    select(REF_DATE, GEO, `Building Type`,
+           VALUE, STATUS)%>%
+    filter(!is.na(VALUE))
+}
+
+
+
 f_path <- './data/fhmcfspi.csv'
 
 download_f <- function() {
   # Industrial product price index, by major product group, monthly
   f <- get_cansim("18-10-0043-01", refresh=TRUE)%>%
+    select(REF_DATE, GEO, `North American Industry Classification System (NAICS)`,
+           VALUE, STATUS, 
+           `Classification Code for North American Industry Classification System (NAICS)`)%>%
+    filter(!is.na(VALUE))
+}
+
+
+f_path_q <- './data/fhmcfspi_q.csv'
+
+download_f_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  f_q <- get_cansim("18-10-0044-02", refresh=TRUE)%>%
     select(REF_DATE, GEO, `North American Industry Classification System (NAICS)`,
            VALUE, STATUS, 
            `Classification Code for North American Industry Classification System (NAICS)`)%>%
@@ -317,6 +370,19 @@ wspi_path <- './data/wspi.csv'
 download_wspi <- function() {
   # Industrial product price index, by major product group, monthly
   wspi <- get_cansim("18-10-0253-01", refresh=TRUE)%>%
+    select(REF_DATE, GEO, `North American Industry Classification System (NAICS)`,
+           VALUE, STATUS, 
+           `Classification Code for North American Industry Classification System (NAICS)`)%>%
+    filter(!is.na(VALUE))
+}
+
+
+
+wspi_path_q <- './data/wspi_q.csv'
+
+download_wspi_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  wspi_q <- get_cansim("18-10-0254-01", refresh=TRUE)%>%
     select(REF_DATE, GEO, `North American Industry Classification System (NAICS)`,
            VALUE, STATUS, 
            `Classification Code for North American Industry Classification System (NAICS)`)%>%
@@ -405,6 +471,17 @@ download_taspi <- function() {
 }
 
 
+taspi_path_q <- './data/taspi_q.csv'
+
+download_taspi_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  taspi_q <- get_cansim("18-10-0250-01", refresh=TRUE)%>%
+    select(REF_DATE, GEO, `Client groups`,
+           VALUE, STATUS)%>%
+    filter(!is.na(VALUE))
+}
+
+
 nlspi_path <- './data/nlspi.csv'
 
 download_nlspi <- function() {
@@ -414,6 +491,19 @@ download_nlspi <- function() {
            VALUE, STATUS)%>%
     filter(!is.na(VALUE))
 }
+
+
+nlspi_path_q <- './data/nlspi_q.csv'
+
+download_nlspi_q <- function() {
+  # Industrial product price index, by major product group, monthly
+  nlspi_q <- get_cansim("18-10-0262-02", refresh=TRUE)%>%
+    select(REF_DATE, GEO,
+           VALUE, STATUS, `Lending services price index`)%>%
+    filter(!is.na(VALUE))
+}
+
+
 
 
 ibspi_path <- './data/ibspi.csv'
@@ -487,6 +577,8 @@ update_dataset <- function() {
   
   file_time_rspi <- file.info(rspi_path)$mtime
   
+  file_time_rspi_q <- file.info(rspi_path_q)$mtime
+  
   file_time_aespi <- file.info(aespi_path)$mtime
   
   file_time_aspi <- file.info(aspi_path)$mtime
@@ -495,17 +587,25 @@ update_dataset <- function() {
   
   file_time_cimerlspi <- file.info(cimerlspi_path)$mtime
   
+  file_time_cimerlspi_q <- file.info(cimerlspi_path_q)$mtime
+  
   file_time_cospi <- file.info(cospi_path)$mtime
   
   file_time_crspi <- file.info(crspi_path)$mtime
   
+  file_time_crspi_q <- file.info(crspi_path_q)$mtime
+  
   file_time_f <- file.info(f_path)$mtime
+  
+  file_time_f_q <- file.info(f_path_q)$mtime
   
   file_time_rmpi <- file.info(rmpi_path)$mtime
   
   file_time_ipspi <- file.info(ipspi_path)$mtime
   
   file_time_wspi <- file.info(wspi_path)$mtime
+  
+  file_time_wspi_q <- file.info(wspi_path_q)$mtime
   
   file_time_mepi <- file.info(mepi_path)$mtime
   
@@ -521,7 +621,11 @@ update_dataset <- function() {
   
   file_time_taspi <- file.info(taspi_path)$mtime
   
+  file_time_taspi_q <- file.info(taspi_path_q)$mtime
+  
   file_time_nlspi <- file.info(nlspi_path)$mtime
+  
+  file_time_nlspi_q <- file.info(nlspi_path_q)$mtime
   
   file_time_ibspi <- file.info(ibspi_path)$mtime
   
@@ -546,16 +650,26 @@ update_dataset <- function() {
   
   diff_ippi <- difftime(current_time, file_time_ippi) %>% as.numeric(units = 'hours')
   diff_rspi <- difftime(current_time, file_time_rspi) %>% as.numeric(units = 'hours')
+  diff_rspi_q <- difftime(current_time, file_time_rspi_q) %>% as.numeric(units = 'hours')
+  
   diff_aespi <- difftime(current_time, file_time_aespi) %>% as.numeric(units = 'hours')
   diff_aspi <- difftime(current_time, file_time_aspi) %>% as.numeric(units = 'hours')
   diff_cmspi <- difftime(current_time, file_time_cmspi) %>% as.numeric(units = 'hours')
   diff_cimerlspi <- difftime(current_time, file_time_cimerlspi) %>% as.numeric(units = 'hours')
+  diff_cimerlspi_q <- difftime(current_time, file_time_cimerlspi_q) %>% as.numeric(units = 'hours')
+  
   diff_cospi <- difftime(current_time, file_time_cospi) %>% as.numeric(units = 'hours')
   diff_crspi <- difftime(current_time, file_time_crspi) %>% as.numeric(units = 'hours')
+  diff_crspi_q <- difftime(current_time, file_time_crspi_q) %>% as.numeric(units = 'hours')
+  
   diff_f <- difftime(current_time, file_time_f) %>% as.numeric(units = 'hours')
+  diff_f_q <- difftime(current_time, file_time_f_q) %>% as.numeric(units = 'hours')
+  
   diff_rmpi <- difftime(current_time, file_time_rmpi) %>% as.numeric(units = 'hours')
   diff_ipspi <- difftime(current_time, file_time_ipspi) %>% as.numeric(units = 'hours')
   diff_wspi <- difftime(current_time, file_time_wspi) %>% as.numeric(units = 'hours')
+  diff_wspi_q <- difftime(current_time, file_time_wspi_q) %>% as.numeric(units = 'hours')
+  
   diff_mepi <- difftime(current_time, file_time_mepi) %>% as.numeric(units = 'hours')
   diff_cppi <- difftime(current_time, file_time_cppi) %>% as.numeric(units = 'hours')
   diff_fipi <- difftime(current_time, file_time_fipi) %>% as.numeric(units = 'hours')
@@ -563,7 +677,11 @@ update_dataset <- function() {
   diff_cspi <- difftime(current_time, file_time_cspi) %>% as.numeric(units = 'hours')
   diff_epspi <- difftime(current_time, file_time_epspi) %>% as.numeric(units = 'hours')
   diff_taspi <- difftime(current_time, file_time_taspi) %>% as.numeric(units = 'hours')
+  diff_taspi_q <- difftime(current_time, file_time_taspi_q) %>% as.numeric(units = 'hours')
+  
   diff_nlspi <- difftime(current_time, file_time_nlspi) %>% as.numeric(units = 'hours')
+  diff_nlspi_q <- difftime(current_time, file_time_nlspi_q) %>% as.numeric(units = 'hours')
+  
   diff_ibspi <- difftime(current_time, file_time_ibspi) %>% as.numeric(units = 'hours')
   diff_nhpi <- difftime(current_time, file_time_nhpi) %>% as.numeric(units = 'hours')
   diff_cuwri <- difftime(current_time, file_time_cuwri) %>% as.numeric(units = 'hours')
@@ -594,6 +712,10 @@ update_dataset <- function() {
     rspi <- download_rspi()
     write_csv(rspi, rspi_path)
   }
+  if (is.na(diff_rspi_q) | diff_rspi_q >= 24) {
+    rspi_q <- download_rspi_q()
+    write_csv(rspi_q, rspi_path_q)
+  }
   if (is.na(diff_aespi) | diff_aespi >= 24) {
     aespi <- download_aespi()
     write_csv(aespi, aespi_path)
@@ -610,6 +732,10 @@ update_dataset <- function() {
     cimerlspi <- download_cimerlspi()
     write_csv(cimerlspi, cimerlspi_path)
   }
+  if (is.na(diff_cimerlspi_q) | diff_cimerlspi_q >= 24) {
+    cimerlspi_q <- download_cimerlspi_q()
+    write_csv(cimerlspi_q, cimerlspi_path_q)
+  }
   if (is.na(diff_cospi) | diff_cospi >= 24) {
     cospi <- download_cospi()
     write_csv(cospi, cospi_path)
@@ -618,9 +744,17 @@ update_dataset <- function() {
     crspi <- download_crspi()
     write_csv(crspi, crspi_path)
   }
+  if (is.na(diff_crspi_q) | diff_crspi_q >= 24) {
+    crspi_q <- download_crspi_q()
+    write_csv(crspi_q, crspi_path_q)
+  }
   if (is.na(diff_f) | diff_f >= 24) {
     f <- download_f()
     write_csv(f, f_path)
+  }
+  if (is.na(diff_f_q) | diff_f_q >= 24) {
+    f_q <- download_f_q()
+    write_csv(f_q, f_path_q)
   }
   if (is.na(diff_rmpi) | diff_rmpi >= 24) {
     rmpi <- download_rmpi()
@@ -633,6 +767,10 @@ update_dataset <- function() {
   if (is.na(diff_wspi) | diff_wspi >= 24) {
     wspi <- download_wspi()
     write_csv(wspi, wspi_path)
+  }
+  if (is.na(diff_wspi_q) | diff_wspi_q >= 24) {
+    wspi_q <- download_wspi_q()
+    write_csv(wspi_q, wspi_path_q)
   }
   if (is.na(diff_mepi) | diff_mepi >= 24) {
     mepi <- download_mepi()
@@ -662,9 +800,17 @@ update_dataset <- function() {
     taspi <- download_taspi()
     write_csv(taspi, taspi_path)
   }
+  if (is.na(diff_taspi_q) | diff_taspi_q >= 24) {
+    taspi_q <- download_taspi_q()
+    write_csv(taspi_q, taspi_path_q)
+  }
   if (is.na(diff_nlspi) | diff_nlspi >= 24) {
     nlspi <- download_nlspi()
     write_csv(nlspi, nlspi_path)
+  }
+  if (is.na(diff_nlspi_q) | diff_nlspi_q >= 24) {
+    nlspi_q <- download_nlspi_q()
+    write_csv(nlspi_q, nlspi_path_q)
   }
   if (is.na(diff_ibspi) | diff_ibspi >= 24) {
     ibspi <- download_ibspi()
@@ -685,16 +831,28 @@ update_dataset()
 
 ippi <- read_csv(ippi_path)
 rspi <- read_csv(rspi_path)
+rspi_q <- read_csv(rspi_path_q)
+
+
 aespi <- read_csv(aespi_path)
 aspi <- read_csv(aspi_path)
 cmspi <- read_csv(cmspi_path)
 cimerlspi <- read_csv(cimerlspi_path)
+cimerlspi_q <- read_csv(cimerlspi_path_q)
+
 cospi <- read_csv(cospi_path)
 crspi <- read_csv(crspi_path)
+crspi_q <- read_csv(crspi_path_q)
+
+
 f <- read_csv(f_path)
+f_q <- read_csv(f_path_q)
+
 rmpi <- read_csv(rmpi_path)
 ipspi <- read_csv(ipspi_path)
 wspi <- read_csv(wspi_path)
+wspi_q <- read_csv(wspi_path_q)
+
 mepi <- read_csv(mepi_path)
 cppi <- read_csv(cppi_path)
 fipi <- read_csv(fipi_path)
@@ -702,7 +860,11 @@ paspi <- read_csv(paspi_path)
 cspi <- read_csv(cspi_path)
 epspi <- read_csv(epspi_path)
 taspi <- read_csv(taspi_path)
+taspi_q <- read_csv(taspi_path_q)
+
 nlspi <- read_csv(nlspi_path)
+nlspi_q <- read_csv(nlspi_path_q)
+
 ibspi <- read_csv(ibspi_path)
 nhpi <- read_csv(nhpi_path)
 cuwri <- read_csv(cuwri_path)
@@ -733,7 +895,12 @@ aspi_mega <- aspi %>% mutate(Survey = "ASPI") %>%
 
 cimerlspi_mega <- cimerlspi %>% mutate(Survey = "CIMERLSPI") %>%
   select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
-  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [CIMERLSPI] - NAICS"))%>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [CIMERLSPI] - NAICS (Monthly)"))%>%
+  rename(Figure =`North American Industry Classification System (NAICS)`)
+
+cimerlspi_mega_q <- cimerlspi_q %>% mutate(Survey = "CIMERLSPI") %>%
+  select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [CIMERLSPI] - NAICS (Quarterly)"))%>%
   rename(Figure =`North American Industry Classification System (NAICS)`)
 
 cmspi_mega <- cmspi %>% mutate(Survey = "CMSPI") %>%
@@ -752,14 +919,26 @@ cppi_mega <- cppi %>% mutate(Survey = "CPPI") %>%
   rename(Figure =`Type of peripheral`)
 
 crspi_mega <- crspi %>% mutate(Survey = "CRSPI") %>%
-  mutate(`Building Type` = paste0(`Building Type`, " (", `GEO`, ") [CRSPI] - Building Type")) %>%
+  mutate(`Building Type` = paste0(`Building Type`, " (", `GEO`, ") [CRSPI] - Building Type (Monthly)")) %>%
   select(Survey, `Building Type`, REF_DATE, VALUE)%>%
   rename(Figure =`Building Type`)
+
+
+crspi_mega_q <- crspi_q %>% mutate(Survey = "CRSPI") %>%
+  mutate(`Building Type` = paste0(`Building Type`, " (", `GEO`, ") [CRSPI] - Building Type (Quarterly)")) %>%
+  select(Survey, `Building Type`, REF_DATE, VALUE)%>%
+  rename(Figure =`Building Type`)
+
 
 
 crspi_special <- crspi %>% mutate(Survey = "CRSPI") %>%
   mutate(`Building Type` = paste0(`Building Type`, " (", `GEO`, ")")) %>%
   select(Survey, `Building Type`, REF_DATE, VALUE)
+
+crspi_special_q <- crspi_q %>% mutate(Survey = "CRSPI") %>%
+  mutate(`Building Type` = paste0(`Building Type`, " (", `GEO`, ")")) %>%
+  select(Survey, `Building Type`, REF_DATE, VALUE)
+
 
 
 cspi_mega <- cspi %>% mutate(Survey = "CSPI") %>%
@@ -791,8 +970,15 @@ epspi_special <- epspi %>% mutate(Survey = "EPSPI") %>%
 
 fhmcfspi_mega <- f %>% mutate(Survey = "FHMCFSPI") %>%
   select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
-  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [FHMCFSPI] - NAICS"))%>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [FHMCFSPI] - NAICS (Monthly)"))%>%
   rename(Figure =`North American Industry Classification System (NAICS)`)
+
+
+fhmcfspi_mega_q <- f_q %>% mutate(Survey = "FHMCFSPI") %>%
+  select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [FHMCFSPI] - NAICS (Quarterly)"))%>%
+  rename(Figure =`North American Industry Classification System (NAICS)`)
+
 
 fipi_mega <- fipi %>% mutate(Survey = "FIPI") %>%
   mutate(`Price index` = paste0(`Price index`, " (", `GEO`, ") [FIPI] - Price index" )) %>%
@@ -842,8 +1028,20 @@ nhpi_special <- nhpi %>% mutate(Survey = "NHPI") %>%
 
 nlspi_mega <- nlspi %>% mutate(Survey = "NLSPI") %>%
   select(Survey, REF_DATE, VALUE, GEO) %>%
-  mutate(`GEO` = paste0(`GEO`," [NLSPI]"))%>%
+  mutate(`GEO` = paste0(`GEO`," [NLSPI] (Monthly)"))%>%
   rename(Figure =`GEO`)
+
+
+nlspi_mega_q <- nlspi_q %>% mutate(Survey = "NLSPI") %>%
+  mutate(`GEO` = paste0(`GEO`, " (", `Lending services price index` , ") [NLSPI] (Quarterly)")) %>% 
+  select(Survey, GEO, REF_DATE, VALUE) %>%
+  rename(Figure =`GEO`)
+
+nlspi_special_q <- nlspi_q %>% mutate(Survey = "NLSPI") %>%
+  mutate(`GEO` = paste0(`GEO`, " (", `Lending services price index` , ")" )) %>% 
+  select(Survey, REF_DATE, VALUE, GEO)
+
+
 
 paspi_mega <- paspi %>% mutate(Survey = "PASPI") %>%
   select(Survey, Sector, REF_DATE, VALUE) %>%
@@ -858,11 +1056,21 @@ rmpi_mega <- rmpi %>% mutate(Survey = "RMPI") %>%
 
 rspi_mega <- rspi %>% mutate(Survey = "RSPI") %>%
   select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
-  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [RSPI] - NAICS"))%>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [RSPI] - NAICS (Monthly)"))%>%
+  rename(Figure =`North American Industry Classification System (NAICS)`)
+
+rspi_mega_q <- rspi_q %>% mutate(Survey = "RSPI") %>%
+  select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [RSPI] - NAICS (Quarterly)"))%>%
   rename(Figure =`North American Industry Classification System (NAICS)`)
 
 taspi_mega <- taspi %>% mutate(Survey = "TASPI") %>%
-  mutate(`Client groups` = paste0(`Client groups`, " (", `GEO`, ") [TASPI] - Client groups" )) %>%
+  mutate(`Client groups` = paste0(`Client groups`, " (", `GEO`, ") [TASPI] - Client groups (Monthly)" )) %>%
+  select(Survey, `Client groups`, REF_DATE, VALUE)%>%
+  rename(Figure =`Client groups`)
+
+taspi_mega_q <- taspi_q %>% mutate(Survey = "TASPI") %>%
+  mutate(`Client groups` = paste0(`Client groups`, " (", `GEO`, ") [TASPI] - Client groups (Quarterly)" )) %>%
   select(Survey, `Client groups`, REF_DATE, VALUE)%>%
   rename(Figure =`Client groups`)
 
@@ -870,22 +1078,36 @@ taspi_special <- taspi %>% mutate(Survey = "TASPI") %>%
   mutate(`Client groups` = paste0(`Client groups`, " (", `GEO`, ")" )) %>%
   select(Survey, `Client groups`, REF_DATE, VALUE)
 
+taspi_special_q <- taspi_q %>% mutate(Survey = "TASPI") %>%
+  mutate(`Client groups` = paste0(`Client groups`, " (", `GEO`, ")" )) %>%
+  select(Survey, `Client groups`, REF_DATE, VALUE)
+
 wspi_mega <- wspi %>% mutate(Survey = "WSPI") %>%
   select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
-  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [WSPI] - NAICS"))%>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [WSPI] - NAICS (Monthly)"))%>%
+  rename(Figure =`North American Industry Classification System (NAICS)`)
+
+wspi_mega_q <- wspi_q %>% mutate(Survey = "WSPI") %>%
+  select(Survey, `North American Industry Classification System (NAICS)`, REF_DATE, VALUE) %>%
+  mutate(`North American Industry Classification System (NAICS)` = paste0(`North American Industry Classification System (NAICS)`," [WSPI] - NAICS (Quarterly)"))%>%
   rename(Figure =`North American Industry Classification System (NAICS)`)
 
 mega_dataset <- rbind(aespi_mega,
                       aspi_mega,
                       cimerlspi_mega,
+                      cimerlspi_mega_q,
+                      
                       cmspi_mega,
                       cospi_mega,
                       cppi_mega,
                       crspi_mega,
+                      crspi_mega_q,
                       cspi_mega,
                       cuwri_mega,
                       epspi_mega,
                       fhmcfspi_mega,
+                      fhmcfspi_mega_q,
+                      
                       fipi_mega,
                       ibspi_mega,
                       ippi_mega,
@@ -893,9 +1115,16 @@ mega_dataset <- rbind(aespi_mega,
                       mepi_mega,
                       nhpi_mega,
                       nlspi_mega,
+                      nlspi_mega_q,
+                      
                       paspi_mega,
                       rmpi_mega,
                       rspi_mega,
+                      rspi_mega_q,
+                      
                       taspi_mega,
-                      wspi_mega)
+                      taspi_mega_q,
+                      
+                      wspi_mega,
+                      wspi_mega_q)
 

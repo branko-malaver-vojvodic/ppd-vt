@@ -1,0 +1,12 @@
+name: ppd-vt
+title: ppd-vt
+username:
+account: branko-malaver-vojvodic
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2731717
+bundleId: 4789565
+url: https://branko-malaver-vojvodic.shinyapps.io/ppd-vt/
+when: 1625512243.55567
+asMultiple: FALSE
+asStatic: FALSE

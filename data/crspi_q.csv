@@ -1,0 +1,593 @@
+REF_DATE,GEO,Building Type,VALUE,STATUS
+2006-01,Canada,"Total, building type",81,NA
+2006-04,Canada,"Total, building type",81.7,NA
+2006-07,Canada,"Total, building type",81.1,NA
+2006-10,Canada,"Total, building type",81.5,NA
+2007-01,Canada,"Total, building type",81.9,NA
+2007-04,Canada,"Total, building type",81.3,NA
+2007-07,Canada,"Total, building type",82.7,NA
+2007-10,Canada,"Total, building type",82.5,NA
+2008-01,Canada,"Total, building type",82.7,NA
+2008-04,Canada,"Total, building type",82.1,NA
+2008-07,Canada,"Total, building type",82.6,NA
+2008-10,Canada,"Total, building type",83.9,NA
+2009-01,Canada,"Total, building type",84.2,NA
+2009-04,Canada,"Total, building type",85.1,NA
+2009-07,Canada,"Total, building type",84.9,NA
+2009-10,Canada,"Total, building type",85.3,NA
+2010-01,Canada,"Total, building type",85.4,NA
+2010-04,Canada,"Total, building type",85.7,NA
+2010-07,Canada,"Total, building type",86,NA
+2010-10,Canada,"Total, building type",87,NA
+2011-01,Canada,"Total, building type",86.7,NA
+2011-04,Canada,"Total, building type",87.4,NA
+2011-07,Canada,"Total, building type",87.5,NA
+2011-10,Canada,"Total, building type",88,NA
+2012-01,Canada,"Total, building type",88.2,NA
+2012-04,Canada,"Total, building type",88.2,NA
+2012-07,Canada,"Total, building type",88.4,NA
+2012-10,Canada,"Total, building type",89,NA
+2013-01,Canada,"Total, building type",89.6,NA
+2013-04,Canada,"Total, building type",89.8,NA
+2013-07,Canada,"Total, building type",90.2,NA
+2013-10,Canada,"Total, building type",90.8,NA
+2014-01,Canada,"Total, building type",91.4,NA
+2014-04,Canada,"Total, building type",91.8,NA
+2014-07,Canada,"Total, building type",92.1,NA
+2014-10,Canada,"Total, building type",92.8,NA
+2015-01,Canada,"Total, building type",92.9,NA
+2015-04,Canada,"Total, building type",93.5,NA
+2015-07,Canada,"Total, building type",93.9,NA
+2015-10,Canada,"Total, building type",94.6,NA
+2016-01,Canada,"Total, building type",94.6,NA
+2016-04,Canada,"Total, building type",94.7,NA
+2016-07,Canada,"Total, building type",95,NA
+2016-10,Canada,"Total, building type",95.2,NA
+2017-01,Canada,"Total, building type",94.9,NA
+2017-04,Canada,"Total, building type",95,NA
+2017-07,Canada,"Total, building type",95.8,NA
+2017-10,Canada,"Total, building type",96.5,NA
+2018-01,Canada,"Total, building type",97.3,NA
+2018-04,Canada,"Total, building type",97.7,NA
+2018-07,Canada,"Total, building type",98,NA
+2018-10,Canada,"Total, building type",98.4,NA
+2019-01,Canada,"Total, building type",99.4,NA
+2019-01,Canada,Office buildings,99.9,NA
+2019-01,Canada,Retail buildings,99.4,NA
+2019-01,Canada,Industrial buildings and warehouses,98.9,NA
+2019-01,Atlantic Region,"Total, building type",100.5,NA
+2019-01,Atlantic Region,Office buildings,99.9,NA
+2019-01,Atlantic Region,Retail buildings,101.1,NA
+2019-01,Atlantic Region,Industrial buildings and warehouses,100.1,NA
+2019-01,Newfoundland and Labrador,"Total, building type",100.1,NA
+2019-01,"St. John's, Newfoundland and Labrador","Total, building type",100.1,NA
+2019-01,Prince Edward Island,"Total, building type",99.8,NA
+2019-01,"Charlottetown, Prince Edward Island","Total, building type",100.2,NA
+2019-01,New Brunswick,"Total, building type",99.8,NA
+2019-01,"Saint John, New Brunswick","Total, building type",99.8,NA
+2019-01,Nova Scotia,"Total, building type",101.2,NA
+2019-01,"Halifax, Nova Scotia","Total, building type",100,NA
+2019-01,Quebec,"Total, building type",99.6,NA
+2019-01,Quebec,Office buildings,100.6,NA
+2019-01,Quebec,Retail buildings,99.4,NA
+2019-01,Quebec,Industrial buildings and warehouses,98.9,NA
+2019-01,"Montréal, Quebec","Total, building type",99.1,NA
+2019-01,"Montréal, Quebec",Office buildings,100.5,NA
+2019-01,"Montréal, Quebec",Retail buildings,97.9,NA
+2019-01,"Montréal, Quebec",Industrial buildings and warehouses,98.6,NA
+2019-01,"Québec, Quebec","Total, building type",99.9,NA
+2019-01,Ontario,"Total, building type",98.8,NA
+2019-01,Ontario,Office buildings,99.5,NA
+2019-01,Ontario,Retail buildings,98.5,NA
+2019-01,Ontario,Industrial buildings and warehouses,98.6,NA
+2019-01,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",99.7,NA
+2019-01,"Toronto, Ontario","Total, building type",98.7,NA
+2019-01,"Toronto, Ontario",Office buildings,99.4,NA
+2019-01,"Toronto, Ontario",Retail buildings,98.3,NA
+2019-01,"Toronto, Ontario",Industrial buildings and warehouses,98.5,NA
+2019-01,Prairie Region,"Total, building type",99.6,NA
+2019-01,Prairie Region,Office buildings,100.6,NA
+2019-01,Prairie Region,Retail buildings,99.1,NA
+2019-01,Prairie Region,Industrial buildings and warehouses,99.5,NA
+2019-01,Manitoba,"Total, building type",99,NA
+2019-01,"Winnipeg, Manitoba","Total, building type",99.1,NA
+2019-01,Saskatchewan,"Total, building type",99.7,NA
+2019-01,"Saskatoon, Saskatchewan","Total, building type",99.4,NA
+2019-01,Alberta,"Total, building type",99.7,NA
+2019-01,Alberta,Office buildings,101.1,NA
+2019-01,Alberta,Retail buildings,99.2,NA
+2019-01,Alberta,Industrial buildings and warehouses,99.4,NA
+2019-01,"Calgary, Alberta","Total, building type",100.2,NA
+2019-01,"Calgary, Alberta",Office buildings,101.2,NA
+2019-01,"Calgary, Alberta",Retail buildings,99.3,NA
+2019-01,"Calgary, Alberta",Industrial buildings and warehouses,100,NA
+2019-01,"Edmonton, Alberta","Total, building type",99.4,NA
+2019-01,British Columbia,"Total, building type",100,NA
+2019-01,British Columbia,Office buildings,99.2,NA
+2019-01,British Columbia,Retail buildings,101.2,NA
+2019-01,British Columbia,Industrial buildings and warehouses,98.9,NA
+2019-01,"Vancouver, British Columbia","Total, building type",99.1,NA
+2019-01,"Vancouver, British Columbia",Office buildings,99.3,NA
+2019-01,"Vancouver, British Columbia",Retail buildings,99.3,NA
+2019-01,"Vancouver, British Columbia",Industrial buildings and warehouses,98.9,NA
+2019-01,Territories,"Total, building type",100.1,NA
+2019-04,Canada,"Total, building type",99.5,NA
+2019-04,Canada,Office buildings,99.4,NA
+2019-04,Canada,Retail buildings,99.4,NA
+2019-04,Canada,Industrial buildings and warehouses,99.8,NA
+2019-04,Atlantic Region,"Total, building type",99.4,NA
+2019-04,Atlantic Region,Office buildings,100,NA
+2019-04,Atlantic Region,Retail buildings,98.8,NA
+2019-04,Atlantic Region,Industrial buildings and warehouses,100.5,NA
+2019-04,Newfoundland and Labrador,"Total, building type",100.3,NA
+2019-04,"St. John's, Newfoundland and Labrador","Total, building type",100.3,NA
+2019-04,Prince Edward Island,"Total, building type",99.8,NA
+2019-04,"Charlottetown, Prince Edward Island","Total, building type",99.8,NA
+2019-04,New Brunswick,"Total, building type",100,NA
+2019-04,"Saint John, New Brunswick","Total, building type",100.3,NA
+2019-04,Nova Scotia,"Total, building type",98.7,NA
+2019-04,"Halifax, Nova Scotia","Total, building type",99.9,NA
+2019-04,Quebec,"Total, building type",99.3,NA
+2019-04,Quebec,Office buildings,99.5,NA
+2019-04,Quebec,Retail buildings,99.4,NA
+2019-04,Quebec,Industrial buildings and warehouses,99.1,NA
+2019-04,"Montréal, Quebec","Total, building type",98.9,NA
+2019-04,"Montréal, Quebec",Office buildings,98.8,NA
+2019-04,"Montréal, Quebec",Retail buildings,99.3,NA
+2019-04,"Montréal, Quebec",Industrial buildings and warehouses,98.8,NA
+2019-04,"Québec, Quebec","Total, building type",99.3,NA
+2019-04,Ontario,"Total, building type",99.8,NA
+2019-04,Ontario,Office buildings,99.4,NA
+2019-04,Ontario,Retail buildings,99.8,NA
+2019-04,Ontario,Industrial buildings and warehouses,100.2,NA
+2019-04,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",99.9,NA
+2019-04,"Toronto, Ontario","Total, building type",99.8,NA
+2019-04,"Toronto, Ontario",Office buildings,99.3,NA
+2019-04,"Toronto, Ontario",Retail buildings,99.6,NA
+2019-04,"Toronto, Ontario",Industrial buildings and warehouses,100.2,NA
+2019-04,Prairie Region,"Total, building type",99.9,NA
+2019-04,Prairie Region,Office buildings,99.8,NA
+2019-04,Prairie Region,Retail buildings,100.1,NA
+2019-04,Prairie Region,Industrial buildings and warehouses,99.9,NA
+2019-04,Manitoba,"Total, building type",100,NA
+2019-04,"Winnipeg, Manitoba","Total, building type",100.1,NA
+2019-04,Saskatchewan,"Total, building type",99.9,NA
+2019-04,"Saskatoon, Saskatchewan","Total, building type",100.1,NA
+2019-04,Alberta,"Total, building type",99.9,NA
+2019-04,Alberta,Office buildings,99.8,NA
+2019-04,Alberta,Retail buildings,100.1,NA
+2019-04,Alberta,Industrial buildings and warehouses,99.8,NA
+2019-04,"Calgary, Alberta","Total, building type",99.8,NA
+2019-04,"Calgary, Alberta",Office buildings,99.7,NA
+2019-04,"Calgary, Alberta",Retail buildings,99.9,NA
+2019-04,"Calgary, Alberta",Industrial buildings and warehouses,99.9,NA
+2019-04,"Edmonton, Alberta","Total, building type",99.9,NA
+2019-04,British Columbia,"Total, building type",98.6,NA
+2019-04,British Columbia,Office buildings,98.6,NA
+2019-04,British Columbia,Retail buildings,98.2,NA
+2019-04,British Columbia,Industrial buildings and warehouses,99.1,NA
+2019-04,"Vancouver, British Columbia","Total, building type",99.1,NA
+2019-04,"Vancouver, British Columbia",Office buildings,98.8,NA
+2019-04,"Vancouver, British Columbia",Retail buildings,99.5,NA
+2019-04,"Vancouver, British Columbia",Industrial buildings and warehouses,99.1,NA
+2019-04,Territories,"Total, building type",99.4,NA
+2019-07,Canada,"Total, building type",100.3,NA
+2019-07,Canada,Office buildings,100.1,NA
+2019-07,Canada,Retail buildings,100.3,NA
+2019-07,Canada,Industrial buildings and warehouses,100.4,NA
+2019-07,Atlantic Region,"Total, building type",99.6,NA
+2019-07,Atlantic Region,Office buildings,100.1,NA
+2019-07,Atlantic Region,Retail buildings,99.2,NA
+2019-07,Atlantic Region,Industrial buildings and warehouses,100,NA
+2019-07,Newfoundland and Labrador,"Total, building type",99.9,NA
+2019-07,"St. John's, Newfoundland and Labrador","Total, building type",99.8,NA
+2019-07,Prince Edward Island,"Total, building type",100.2,NA
+2019-07,"Charlottetown, Prince Edward Island","Total, building type",100,NA
+2019-07,New Brunswick,"Total, building type",100.1,NA
+2019-07,"Saint John, New Brunswick","Total, building type",100,NA
+2019-07,Nova Scotia,"Total, building type",99.2,NA
+2019-07,"Halifax, Nova Scotia","Total, building type",100.1,NA
+2019-07,Quebec,"Total, building type",100.4,NA
+2019-07,Quebec,Office buildings,100,NA
+2019-07,Quebec,Retail buildings,100.3,NA
+2019-07,Quebec,Industrial buildings and warehouses,101,NA
+2019-07,"Montréal, Quebec","Total, building type",100.9,NA
+2019-07,"Montréal, Quebec",Office buildings,100.2,NA
+2019-07,"Montréal, Quebec",Retail buildings,101.1,NA
+2019-07,"Montréal, Quebec",Industrial buildings and warehouses,101.3,NA
+2019-07,"Québec, Quebec","Total, building type",100.1,NA
+2019-07,Ontario,"Total, building type",100.3,NA
+2019-07,Ontario,Office buildings,100.4,NA
+2019-07,Ontario,Retail buildings,100.4,NA
+2019-07,Ontario,Industrial buildings and warehouses,100.2,NA
+2019-07,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",100.3,NA
+2019-07,"Toronto, Ontario","Total, building type",100.5,NA
+2019-07,"Toronto, Ontario",Office buildings,100.5,NA
+2019-07,"Toronto, Ontario",Retail buildings,100.9,NA
+2019-07,"Toronto, Ontario",Industrial buildings and warehouses,100.2,NA
+2019-07,Prairie Region,"Total, building type",100.2,NA
+2019-07,Prairie Region,Office buildings,99.8,NA
+2019-07,Prairie Region,Retail buildings,100.6,NA
+2019-07,Prairie Region,Industrial buildings and warehouses,100.2,NA
+2019-07,Manitoba,"Total, building type",100.6,NA
+2019-07,"Winnipeg, Manitoba","Total, building type",100.5,NA
+2019-07,Saskatchewan,"Total, building type",100.4,NA
+2019-07,"Saskatoon, Saskatchewan","Total, building type",100.4,NA
+2019-07,Alberta,"Total, building type",100.2,NA
+2019-07,Alberta,Office buildings,99.7,NA
+2019-07,Alberta,Retail buildings,100.3,NA
+2019-07,Alberta,Industrial buildings and warehouses,100.3,NA
+2019-07,"Calgary, Alberta","Total, building type",100.2,NA
+2019-07,"Calgary, Alberta",Office buildings,99.7,NA
+2019-07,"Calgary, Alberta",Retail buildings,100.4,NA
+2019-07,"Calgary, Alberta",Industrial buildings and warehouses,100.4,NA
+2019-07,"Edmonton, Alberta","Total, building type",100.2,NA
+2019-07,British Columbia,"Total, building type",100.3,NA
+2019-07,British Columbia,Office buildings,99.8,NA
+2019-07,British Columbia,Retail buildings,100.2,NA
+2019-07,British Columbia,Industrial buildings and warehouses,100.8,NA
+2019-07,"Vancouver, British Columbia","Total, building type",100.5,NA
+2019-07,"Vancouver, British Columbia",Office buildings,100.2,NA
+2019-07,"Vancouver, British Columbia",Retail buildings,100.3,NA
+2019-07,"Vancouver, British Columbia",Industrial buildings and warehouses,100.8,NA
+2019-07,Territories,"Total, building type",100.1,NA
+2019-10,Canada,"Total, building type",100.8,NA
+2019-10,Canada,Office buildings,100.6,NA
+2019-10,Canada,Retail buildings,100.9,NA
+2019-10,Canada,Industrial buildings and warehouses,100.9,NA
+2019-10,Atlantic Region,"Total, building type",100.4,NA
+2019-10,Atlantic Region,Office buildings,100.1,NA
+2019-10,Atlantic Region,Retail buildings,100.9,NA
+2019-10,Atlantic Region,Industrial buildings and warehouses,99.4,NA
+2019-10,Newfoundland and Labrador,"Total, building type",99.8,NA
+2019-10,"St. John's, Newfoundland and Labrador","Total, building type",99.7,NA
+2019-10,Prince Edward Island,"Total, building type",100.2,NA
+2019-10,"Charlottetown, Prince Edward Island","Total, building type",100.1,NA
+2019-10,New Brunswick,"Total, building type",100.2,NA
+2019-10,"Saint John, New Brunswick","Total, building type",99.8,NA
+2019-10,Nova Scotia,"Total, building type",100.8,NA
+2019-10,"Halifax, Nova Scotia","Total, building type",100,NA
+2019-10,Quebec,"Total, building type",100.6,NA
+2019-10,Quebec,Office buildings,99.9,NA
+2019-10,Quebec,Retail buildings,100.9,NA
+2019-10,Quebec,Industrial buildings and warehouses,100.9,NA
+2019-10,"Montréal, Quebec","Total, building type",101.1,NA
+2019-10,"Montréal, Quebec",Office buildings,100.5,NA
+2019-10,"Montréal, Quebec",Retail buildings,101.7,NA
+2019-10,"Montréal, Quebec",Industrial buildings and warehouses,101.3,NA
+2019-10,"Québec, Quebec","Total, building type",100.7,NA
+2019-10,Ontario,"Total, building type",101,NA
+2019-10,Ontario,Office buildings,100.7,NA
+2019-10,Ontario,Retail buildings,101.3,NA
+2019-10,Ontario,Industrial buildings and warehouses,101,NA
+2019-10,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",100.1,NA
+2019-10,"Toronto, Ontario","Total, building type",101.1,NA
+2019-10,"Toronto, Ontario",Office buildings,100.9,NA
+2019-10,"Toronto, Ontario",Retail buildings,101.1,NA
+2019-10,"Toronto, Ontario",Industrial buildings and warehouses,101.2,NA
+2019-10,Prairie Region,"Total, building type",100.2,NA
+2019-10,Prairie Region,Office buildings,99.8,NA
+2019-10,Prairie Region,Retail buildings,100.2,NA
+2019-10,Prairie Region,Industrial buildings and warehouses,100.4,NA
+2019-10,Manitoba,"Total, building type",100.4,NA
+2019-10,"Winnipeg, Manitoba","Total, building type",100.3,NA
+2019-10,Saskatchewan,"Total, building type",100,NA
+2019-10,"Saskatoon, Saskatchewan","Total, building type",100,NA
+2019-10,Alberta,"Total, building type",100.2,NA
+2019-10,Alberta,Office buildings,99.4,NA
+2019-10,Alberta,Retail buildings,100.4,NA
+2019-10,Alberta,Industrial buildings and warehouses,100.5,NA
+2019-10,"Calgary, Alberta","Total, building type",99.8,NA
+2019-10,"Calgary, Alberta",Office buildings,99.3,NA
+2019-10,"Calgary, Alberta",Retail buildings,100.3,NA
+2019-10,"Calgary, Alberta",Industrial buildings and warehouses,99.7,NA
+2019-10,"Edmonton, Alberta","Total, building type",100.4,NA
+2019-10,British Columbia,"Total, building type",101.1,NA
+2019-10,British Columbia,Office buildings,102.3,NA
+2019-10,British Columbia,Retail buildings,100.4,NA
+2019-10,British Columbia,Industrial buildings and warehouses,101.3,NA
+2019-10,"Vancouver, British Columbia","Total, building type",101.3,NA
+2019-10,"Vancouver, British Columbia",Office buildings,101.7,NA
+2019-10,"Vancouver, British Columbia",Retail buildings,100.9,NA
+2019-10,"Vancouver, British Columbia",Industrial buildings and warehouses,101.2,NA
+2019-10,Territories,"Total, building type",100.4,NA
+2020-01,Canada,"Total, building type",100.6,NA
+2020-01,Canada,Office buildings,100.5,NA
+2020-01,Canada,Retail buildings,99.9,NA
+2020-01,Canada,Industrial buildings and warehouses,101.4,NA
+2020-01,Atlantic Region,"Total, building type",99.3,NA
+2020-01,Atlantic Region,Office buildings,99.6,NA
+2020-01,Atlantic Region,Retail buildings,98.5,NA
+2020-01,Atlantic Region,Industrial buildings and warehouses,101.9,NA
+2020-01,Newfoundland and Labrador,"Total, building type",100,NA
+2020-01,"St. John's, Newfoundland and Labrador","Total, building type",100,NA
+2020-01,Prince Edward Island,"Total, building type",100.3,NA
+2020-01,"Charlottetown, Prince Edward Island","Total, building type",100.2,NA
+2020-01,New Brunswick,"Total, building type",100.7,NA
+2020-01,"Saint John, New Brunswick","Total, building type",100.5,NA
+2020-01,Nova Scotia,"Total, building type",98.1,NA
+2020-01,"Halifax, Nova Scotia","Total, building type",98.2,NA
+2020-01,Quebec,"Total, building type",100.8,NA
+2020-01,Quebec,Office buildings,100,NA
+2020-01,Quebec,Retail buildings,100.8,NA
+2020-01,Quebec,Industrial buildings and warehouses,101.4,NA
+2020-01,"Montréal, Quebec","Total, building type",101.2,NA
+2020-01,"Montréal, Quebec",Office buildings,99.9,NA
+2020-01,"Montréal, Quebec",Retail buildings,101.7,NA
+2020-01,"Montréal, Quebec",Industrial buildings and warehouses,101.9,NA
+2020-01,"Québec, Quebec","Total, building type",102.4,NA
+2020-01,Ontario,"Total, building type",100.5,NA
+2020-01,Ontario,Office buildings,100.4,NA
+2020-01,Ontario,Retail buildings,99.3,NA
+2020-01,Ontario,Industrial buildings and warehouses,101.7,NA
+2020-01,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",98.5,NA
+2020-01,"Toronto, Ontario","Total, building type",100.6,NA
+2020-01,"Toronto, Ontario",Office buildings,100.3,NA
+2020-01,"Toronto, Ontario",Retail buildings,99.5,NA
+2020-01,"Toronto, Ontario",Industrial buildings and warehouses,101.5,NA
+2020-01,Prairie Region,"Total, building type",100,NA
+2020-01,Prairie Region,Office buildings,99.6,NA
+2020-01,Prairie Region,Retail buildings,99.1,NA
+2020-01,Prairie Region,Industrial buildings and warehouses,100.9,NA
+2020-01,Manitoba,"Total, building type",99.3,NA
+2020-01,"Winnipeg, Manitoba","Total, building type",99.2,NA
+2020-01,Saskatchewan,"Total, building type",100.4,NA
+2020-01,"Saskatoon, Saskatchewan","Total, building type",100.6,NA
+2020-01,Alberta,"Total, building type",100.1,NA
+2020-01,Alberta,Office buildings,99.5,NA
+2020-01,Alberta,Retail buildings,99.5,NA
+2020-01,Alberta,Industrial buildings and warehouses,100.8,NA
+2020-01,"Calgary, Alberta","Total, building type",98.6,NA
+2020-01,"Calgary, Alberta",Office buildings,98.8,NA
+2020-01,"Calgary, Alberta",Retail buildings,98.3,NA
+2020-01,"Calgary, Alberta",Industrial buildings and warehouses,98.8,NA
+2020-01,"Edmonton, Alberta","Total, building type",100.8,NA
+2020-01,British Columbia,"Total, building type",101.5,NA
+2020-01,British Columbia,Office buildings,102.9,NA
+2020-01,British Columbia,Retail buildings,101.1,NA
+2020-01,British Columbia,Industrial buildings and warehouses,101.1,NA
+2020-01,"Vancouver, British Columbia","Total, building type",102.1,NA
+2020-01,"Vancouver, British Columbia",Office buildings,103.9,NA
+2020-01,"Vancouver, British Columbia",Retail buildings,103,NA
+2020-01,"Vancouver, British Columbia",Industrial buildings and warehouses,100.4,NA
+2020-01,Territories,"Total, building type",101.7,NA
+2020-04,Canada,"Total, building type",98.8,NA
+2020-04,Canada,Office buildings,100,NA
+2020-04,Canada,Retail buildings,98.3,NA
+2020-04,Canada,Industrial buildings and warehouses,98.6,NA
+2020-04,Atlantic Region,"Total, building type",97.9,NA
+2020-04,Atlantic Region,Office buildings,97.6,NA
+2020-04,Atlantic Region,Retail buildings,97.5,NA
+2020-04,Atlantic Region,Industrial buildings and warehouses,101.8,NA
+2020-04,Newfoundland and Labrador,"Total, building type",98.7,NA
+2020-04,"St. John's, Newfoundland and Labrador","Total, building type",98.7,NA
+2020-04,Prince Edward Island,"Total, building type",99.3,NA
+2020-04,"Charlottetown, Prince Edward Island","Total, building type",100.2,NA
+2020-04,New Brunswick,"Total, building type",99.9,NA
+2020-04,"Saint John, New Brunswick","Total, building type",100.6,NA
+2020-04,Nova Scotia,"Total, building type",96.2,NA
+2020-04,"Halifax, Nova Scotia","Total, building type",95.8,NA
+2020-04,Quebec,"Total, building type",100.3,NA
+2020-04,Quebec,Office buildings,99.6,NA
+2020-04,Quebec,Retail buildings,100,NA
+2020-04,Quebec,Industrial buildings and warehouses,101.4,NA
+2020-04,"Montréal, Quebec","Total, building type",100.2,NA
+2020-04,"Montréal, Quebec",Office buildings,98,NA
+2020-04,"Montréal, Quebec",Retail buildings,100.1,NA
+2020-04,"Montréal, Quebec",Industrial buildings and warehouses,101.9,NA
+2020-04,"Québec, Quebec","Total, building type",101.8,NA
+2020-04,Ontario,"Total, building type",98.7,NA
+2020-04,Ontario,Office buildings,100.8,NA
+2020-04,Ontario,Retail buildings,97.7,NA
+2020-04,Ontario,Industrial buildings and warehouses,98.2,NA
+2020-04,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",96.8,NA
+2020-04,"Toronto, Ontario","Total, building type",98.9,NA
+2020-04,"Toronto, Ontario",Office buildings,101.2,NA
+2020-04,"Toronto, Ontario",Retail buildings,98.8,NA
+2020-04,"Toronto, Ontario",Industrial buildings and warehouses,97.5,NA
+2020-04,Prairie Region,"Total, building type",96.2,NA
+2020-04,Prairie Region,Office buildings,97.9,NA
+2020-04,Prairie Region,Retail buildings,96.6,NA
+2020-04,Prairie Region,Industrial buildings and warehouses,95.1,NA
+2020-04,Manitoba,"Total, building type",98.8,NA
+2020-04,"Winnipeg, Manitoba","Total, building type",98.8,NA
+2020-04,Saskatchewan,"Total, building type",99.4,NA
+2020-04,"Saskatoon, Saskatchewan","Total, building type",100.5,NA
+2020-04,Alberta,"Total, building type",95.4,NA
+2020-04,Alberta,Office buildings,97.3,NA
+2020-04,Alberta,Retail buildings,96.6,NA
+2020-04,Alberta,Industrial buildings and warehouses,93.7,NA
+2020-04,"Calgary, Alberta","Total, building type",95.5,NA
+2020-04,"Calgary, Alberta",Office buildings,96.4,NA
+2020-04,"Calgary, Alberta",Retail buildings,93.6,NA
+2020-04,"Calgary, Alberta",Industrial buildings and warehouses,96.2,NA
+2020-04,"Edmonton, Alberta","Total, building type",94.7,NA
+2020-04,British Columbia,"Total, building type",100.5,NA
+2020-04,British Columbia,Office buildings,101.5,NA
+2020-04,British Columbia,Retail buildings,99.1,NA
+2020-04,British Columbia,Industrial buildings and warehouses,101.7,NA
+2020-04,"Vancouver, British Columbia","Total, building type",100,NA
+2020-04,"Vancouver, British Columbia",Office buildings,101.5,NA
+2020-04,"Vancouver, British Columbia",Retail buildings,97.7,NA
+2020-04,"Vancouver, British Columbia",Industrial buildings and warehouses,100.5,NA
+2020-04,Territories,"Total, building type",101.8,NA
+2020-07,Canada,"Total, building type",99.3,NA
+2020-07,Canada,Office buildings,101.4,NA
+2020-07,Canada,Retail buildings,98.6,NA
+2020-07,Canada,Industrial buildings and warehouses,98.7,NA
+2020-07,Atlantic Region,"Total, building type",98.7,NA
+2020-07,Atlantic Region,Office buildings,98.5,NA
+2020-07,Atlantic Region,Retail buildings,98.4,NA
+2020-07,Atlantic Region,Industrial buildings and warehouses,101.7,NA
+2020-07,Newfoundland and Labrador,"Total, building type",100.1,NA
+2020-07,"St. John's, Newfoundland and Labrador","Total, building type",100.1,NA
+2020-07,Prince Edward Island,"Total, building type",99.9,NA
+2020-07,"Charlottetown, Prince Edward Island","Total, building type",100.3,NA
+2020-07,New Brunswick,"Total, building type",99.9,NA
+2020-07,"Saint John, New Brunswick","Total, building type",99.1,NA
+2020-07,Nova Scotia,"Total, building type",97.5,NA
+2020-07,"Halifax, Nova Scotia","Total, building type",96.6,NA
+2020-07,Quebec,"Total, building type",101.4,NA
+2020-07,Quebec,Office buildings,104,NA
+2020-07,Quebec,Retail buildings,99.8,NA
+2020-07,Quebec,Industrial buildings and warehouses,101.4,NA
+2020-07,"Montréal, Quebec","Total, building type",102.1,NA
+2020-07,"Montréal, Quebec",Office buildings,103.9,NA
+2020-07,"Montréal, Quebec",Retail buildings,99.7,NA
+2020-07,"Montréal, Quebec",Industrial buildings and warehouses,101.9,NA
+2020-07,"Québec, Quebec","Total, building type",103.9,NA
+2020-07,Ontario,"Total, building type",99.8,NA
+2020-07,Ontario,Office buildings,101.2,NA
+2020-07,Ontario,Retail buildings,99.2,NA
+2020-07,Ontario,Industrial buildings and warehouses,99.4,NA
+2020-07,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",97,NA
+2020-07,"Toronto, Ontario","Total, building type",100.3,NA
+2020-07,"Toronto, Ontario",Office buildings,101.5,NA
+2020-07,"Toronto, Ontario",Retail buildings,99.9,NA
+2020-07,"Toronto, Ontario",Industrial buildings and warehouses,99.6,NA
+2020-07,Prairie Region,"Total, building type",94.7,NA
+2020-07,Prairie Region,Office buildings,98.4,NA
+2020-07,Prairie Region,Retail buildings,94.4,NA
+2020-07,Prairie Region,Industrial buildings and warehouses,92.7,NA
+2020-07,Manitoba,"Total, building type",99.9,NA
+2020-07,"Winnipeg, Manitoba","Total, building type",99.8,NA
+2020-07,Saskatchewan,"Total, building type",98.6,NA
+2020-07,"Saskatoon, Saskatchewan","Total, building type",98.9,NA
+2020-07,Alberta,"Total, building type",93.3,NA
+2020-07,Alberta,Office buildings,97.6,NA
+2020-07,Alberta,Retail buildings,93.4,NA
+2020-07,Alberta,Industrial buildings and warehouses,91,NA
+2020-07,"Calgary, Alberta","Total, building type",95.7,NA
+2020-07,"Calgary, Alberta",Office buildings,96.8,NA
+2020-07,"Calgary, Alberta",Retail buildings,93.5,NA
+2020-07,"Calgary, Alberta",Industrial buildings and warehouses,96.5,NA
+2020-07,"Edmonton, Alberta","Total, building type",89,NA
+2020-07,British Columbia,"Total, building type",100.9,NA
+2020-07,British Columbia,Office buildings,103,NA
+2020-07,British Columbia,Retail buildings,98.9,NA
+2020-07,British Columbia,Industrial buildings and warehouses,102.1,NA
+2020-07,"Vancouver, British Columbia","Total, building type",100.9,NA
+2020-07,"Vancouver, British Columbia",Office buildings,103.8,NA
+2020-07,"Vancouver, British Columbia",Retail buildings,97.6,NA
+2020-07,"Vancouver, British Columbia",Industrial buildings and warehouses,101.1,NA
+2020-07,Territories,"Total, building type",101.8,NA
+2020-10,Canada,"Total, building type",98.7,NA
+2020-10,Canada,Office buildings,101.8,NA
+2020-10,Canada,Retail buildings,95,NA
+2020-10,Canada,Industrial buildings and warehouses,100.6,NA
+2020-10,Atlantic Region,"Total, building type",99.9,NA
+2020-10,Atlantic Region,Office buildings,99.1,NA
+2020-10,Atlantic Region,Retail buildings,99.7,NA
+2020-10,Atlantic Region,Industrial buildings and warehouses,105.2,NA
+2020-10,Newfoundland and Labrador,"Total, building type",97.6,NA
+2020-10,"St. John's, Newfoundland and Labrador","Total, building type",97.6,NA
+2020-10,Prince Edward Island,"Total, building type",100,NA
+2020-10,"Charlottetown, Prince Edward Island","Total, building type",100.2,NA
+2020-10,New Brunswick,"Total, building type",100.7,NA
+2020-10,"Saint John, New Brunswick","Total, building type",100.5,NA
+2020-10,Nova Scotia,"Total, building type",100.2,NA
+2020-10,"Halifax, Nova Scotia","Total, building type",96.5,NA
+2020-10,Quebec,"Total, building type",101.3,NA
+2020-10,Quebec,Office buildings,105.6,NA
+2020-10,Quebec,Retail buildings,98.5,NA
+2020-10,Quebec,Industrial buildings and warehouses,101.7,NA
+2020-10,"Montréal, Quebec","Total, building type",102.8,NA
+2020-10,"Montréal, Quebec",Office buildings,106.2,NA
+2020-10,"Montréal, Quebec",Retail buildings,98.8,NA
+2020-10,"Montréal, Quebec",Industrial buildings and warehouses,102.3,NA
+2020-10,"Québec, Quebec","Total, building type",105.3,NA
+2020-10,Ontario,"Total, building type",98.2,NA
+2020-10,Ontario,Office buildings,102,NA
+2020-10,Ontario,Retail buildings,93.1,NA
+2020-10,Ontario,Industrial buildings and warehouses,101,NA
+2020-10,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",100.2,NA
+2020-10,"Toronto, Ontario","Total, building type",97.8,NA
+2020-10,"Toronto, Ontario",Office buildings,102.6,NA
+2020-10,"Toronto, Ontario",Retail buildings,87.4,NA
+2020-10,"Toronto, Ontario",Industrial buildings and warehouses,100,NA
+2020-10,Prairie Region,"Total, building type",96,NA
+2020-10,Prairie Region,Office buildings,96.1,NA
+2020-10,Prairie Region,Retail buildings,94.1,NA
+2020-10,Prairie Region,Industrial buildings and warehouses,97.2,NA
+2020-10,Manitoba,"Total, building type",99.8,NA
+2020-10,"Winnipeg, Manitoba","Total, building type",99.9,NA
+2020-10,Saskatchewan,"Total, building type",96.7,NA
+2020-10,"Saskatoon, Saskatchewan","Total, building type",98.5,NA
+2020-10,Alberta,"Total, building type",95.2,NA
+2020-10,Alberta,Office buildings,94.4,NA
+2020-10,Alberta,Retail buildings,93.5,NA
+2020-10,Alberta,Industrial buildings and warehouses,96.8,NA
+2020-10,"Calgary, Alberta","Total, building type",92.9,NA
+2020-10,"Calgary, Alberta",Office buildings,92.8,NA
+2020-10,"Calgary, Alberta",Retail buildings,87.9,NA
+2020-10,"Calgary, Alberta",Industrial buildings and warehouses,97,NA
+2020-10,"Edmonton, Alberta","Total, building type",89.2,NA
+2020-10,British Columbia,"Total, building type",99.6,NA
+2020-10,British Columbia,Office buildings,103.9,NA
+2020-10,British Columbia,Retail buildings,94.7,NA
+2020-10,British Columbia,Industrial buildings and warehouses,103,NA
+2020-10,"Vancouver, British Columbia","Total, building type",102.2,NA
+2020-10,"Vancouver, British Columbia",Office buildings,106.2,NA
+2020-10,"Vancouver, British Columbia",Retail buildings,99.4,NA
+2020-10,"Vancouver, British Columbia",Industrial buildings and warehouses,101.3,NA
+2020-10,Territories,"Total, building type",102.1,NA
+2021-01,Canada,"Total, building type",99.8,NA
+2021-01,Canada,Office buildings,102.8,NA
+2021-01,Canada,Retail buildings,96.1,NA
+2021-01,Canada,Industrial buildings and warehouses,101.7,NA
+2021-01,Atlantic Region,"Total, building type",99.1,NA
+2021-01,Atlantic Region,Office buildings,98.5,NA
+2021-01,Atlantic Region,Retail buildings,98.9,NA
+2021-01,Atlantic Region,Industrial buildings and warehouses,103.6,NA
+2021-01,Newfoundland and Labrador,"Total, building type",97.2,NA
+2021-01,"St. John's, Newfoundland and Labrador","Total, building type",97.2,NA
+2021-01,Prince Edward Island,"Total, building type",101.3,NA
+2021-01,"Charlottetown, Prince Edward Island","Total, building type",100.2,NA
+2021-01,New Brunswick,"Total, building type",98.8,NA
+2021-01,"Saint John, New Brunswick","Total, building type",99,NA
+2021-01,Nova Scotia,"Total, building type",99.7,NA
+2021-01,"Halifax, Nova Scotia","Total, building type",100,NA
+2021-01,Quebec,"Total, building type",102.2,NA
+2021-01,Quebec,Office buildings,106.5,NA
+2021-01,Quebec,Retail buildings,99.7,NA
+2021-01,Quebec,Industrial buildings and warehouses,102,NA
+2021-01,"Montréal, Quebec","Total, building type",104.6,NA
+2021-01,"Montréal, Quebec",Office buildings,107.8,NA
+2021-01,"Montréal, Quebec",Retail buildings,103,NA
+2021-01,"Montréal, Quebec",Industrial buildings and warehouses,102.9,NA
+2021-01,"Québec, Quebec","Total, building type",105,NA
+2021-01,Ontario,"Total, building type",99.7,NA
+2021-01,Ontario,Office buildings,103.6,NA
+2021-01,Ontario,Retail buildings,94.9,NA
+2021-01,Ontario,Industrial buildings and warehouses,102.1,NA
+2021-01,"Ottawa-Gatineau, Ontario Part, Ontario/Quebec","Total, building type",102.5,NA
+2021-01,"Toronto, Ontario","Total, building type",100,NA
+2021-01,"Toronto, Ontario",Office buildings,103.9,NA
+2021-01,"Toronto, Ontario",Retail buildings,92.3,NA
+2021-01,"Toronto, Ontario",Industrial buildings and warehouses,101.4,NA
+2021-01,Prairie Region,"Total, building type",96.7,NA
+2021-01,Prairie Region,Office buildings,97.5,NA
+2021-01,Prairie Region,Retail buildings,94.9,NA
+2021-01,Prairie Region,Industrial buildings and warehouses,97.5,NA
+2021-01,Manitoba,"Total, building type",101,NA
+2021-01,"Winnipeg, Manitoba","Total, building type",101,NA
+2021-01,Saskatchewan,"Total, building type",96.5,NA
+2021-01,"Saskatoon, Saskatchewan","Total, building type",98.2,NA
+2021-01,Alberta,"Total, building type",95.9,NA
+2021-01,Alberta,Office buildings,96.6,NA
+2021-01,Alberta,Retail buildings,93.9,NA
+2021-01,Alberta,Industrial buildings and warehouses,96.9,NA
+2021-01,"Calgary, Alberta","Total, building type",93.5,NA
+2021-01,"Calgary, Alberta",Office buildings,94.2,NA
+2021-01,"Calgary, Alberta",Retail buildings,88.9,NA
+2021-01,"Calgary, Alberta",Industrial buildings and warehouses,96.4,NA
+2021-01,"Edmonton, Alberta","Total, building type",89.7,NA
+2021-01,British Columbia,"Total, building type",100.3,NA
+2021-01,British Columbia,Office buildings,102.8,NA
+2021-01,British Columbia,Retail buildings,94.4,NA
+2021-01,British Columbia,Industrial buildings and warehouses,106.4,NA
+2021-01,"Vancouver, British Columbia","Total, building type",103.9,NA
+2021-01,"Vancouver, British Columbia",Office buildings,106.4,NA
+2021-01,"Vancouver, British Columbia",Retail buildings,98,NA
+2021-01,"Vancouver, British Columbia",Industrial buildings and warehouses,105.9,NA
+2021-01,Territories,"Total, building type",103.1,NA

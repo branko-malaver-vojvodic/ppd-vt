@@ -80,7 +80,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("IPPI Time Series (Reference Year: 2010)")+
+        ggtitle("IPPI Monthly Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(ippi_filt$REF_DATE),max(ippi_filt$REF_DATE),6/12))+
         scale_y_continuous(breaks = seq(min(ippi_filt$VALUE),max(ippi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -107,7 +107,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change IPPI Time Series (Reference Year: 2010)")+
+        ggtitle("IPPI Monthly Percentage Change Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(ippi_filt$REF_DATE),max(ippi_filt$REF_DATE),6/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -133,7 +133,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change IPPI Time Series (Reference Year: 2010)")+
+        ggtitle("IPPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(ippi_filt$REF_DATE),max(ippi_filt$REF_DATE),6/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -159,7 +159,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("RSPI Time Series (Reference Year: 2010)")+
+        ggtitle("RSPI Monthly Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(rspi_filt$REF_DATE),max(rspi_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(rspi_filt$VALUE),max(rspi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -186,7 +186,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change RSPI Time Series (Reference Year: 2010)")+
+        ggtitle("RSPI Monthly Percentage Change Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(rspi_filt$REF_DATE),max(rspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -212,13 +212,91 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change RSPI Time Series (Reference Year: 2010)")+
+        ggtitle("RSPI Year-to-year Percentage Change,by Months, Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(rspi_filt$REF_DATE),max(rspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(rspi_filt$REF_DATE)[13], max(rspi_filt$REF_DATE), thickness = 0.1)
   })
+  
+  
+  
+  output$plotrspi_q <- renderPlotly({
+    validate(
+      need(input$prodrspi_q != "", "Please select at least one entry.")
+    )
+    rspi_filt <- rspi_q %>% filter(`North American Industry Classification System (NAICS)`
+                                 %in% input$prodrspi_q) %>% 
+      rename(`NAICS` =`North American Industry Classification System (NAICS)` )
+    rspi_filt$REF_DATE <- zoo::as.yearmon(rspi_filt$REF_DATE)
+    
+    graphrspi <- ggplotly( 
+      ggplot(rspi_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Index")+
+        ggtitle("RSPI Quarterly Time Series (Reference Year: 2010)")+
+        scale_x_yearmon(breaks = seq(min(rspi_filt$REF_DATE),max(rspi_filt$REF_DATE),2/12))+
+        scale_y_continuous(breaks = seq(min(rspi_filt$VALUE),max(rspi_filt$VALUE),8))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(rspi_filt$REF_DATE), max(rspi_filt$REF_DATE), thickness = 0.1)
+    graphrspi
+  })
+  
+  output$percentrspi_q <- renderPlotly({
+    validate(
+      need(input$prodrspi_q != "", "Please select at least one entry.")
+    )
+    rspi_filt <- rspi_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodrspi_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100)%>% 
+      rename(`NAICS` =`North American Industry Classification System (NAICS)` )
+    
+    rspi_filt$REF_DATE <- zoo::as.yearmon(rspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(rspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("RSPI Quarterly Percentage Change Time Series (Reference Year: 2010)")+
+        scale_x_yearmon(breaks = seq(min(rspi_filt$REF_DATE),max(rspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(rspi_filt$REF_DATE)[2], max(rspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercentrspi_q <- renderPlotly({
+    validate(
+      need(input$prodrspi_q != "", "Please select at least one entry.")
+    )
+    rspi_filt <- rspi_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodrspi_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100)%>% 
+      rename(`NAICS` =`North American Industry Classification System (NAICS)` )
+    
+    rspi_filt$REF_DATE <- zoo::as.yearmon(rspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(rspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("RSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2010)")+
+        scale_x_yearmon(breaks = seq(min(rspi_filt$REF_DATE),max(rspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(rspi_filt$REF_DATE)[5], max(rspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
   
   
   #AESPI
@@ -237,7 +315,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("AESPI Time Series (Reference Year: 2018)")+
+        ggtitle("AESPI Quarterly Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(aespi_filt$REF_DATE),max(aespi_filt$REF_DATE),3/12))+
         scale_y_continuous(breaks = seq(min(aespi_filt$VALUE),max(aespi_filt$VALUE),2))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -267,7 +345,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Quarterly percentage change AESPI Time Series (Reference Year: 2018)")+
+        ggtitle("AESPI Quarterly Percentage Change Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(aespi_filt$REF_DATE),max(aespi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -292,7 +370,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change AESPI Time Series (Reference Year: 2018)")+
+        ggtitle("AESPI Year-to-year Percentage Change (by Quarters) Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(aespi_filt$REF_DATE),max(aespi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -314,7 +392,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Class of service`)) +
         xlab("Date") +
         ylab("Index")+
-        ggtitle("ASPI Time Series (Reference Year: 2010)")+
+        ggtitle("ASPI Annual Time Series (Reference Year: 2010)")+
         scale_x_continuous(breaks = seq(min(aspi_filt$REF_DATE),max(aspi_filt$REF_DATE),1))+
         #scale_x_discrete(breaks = seq(min(aspi_filt$REF_DATE),max(aspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -337,7 +415,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Class of service`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Annual percentage change ASPI Time Series (Reference Year: 2010)")+
+        ggtitle("ASPI Annual Percentage Change Time Series (Reference Year: 2010)")+
         scale_x_continuous(breaks = seq(min(aspi_filt$REF_DATE),max(aspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -363,7 +441,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("CMSPI Time Series (Reference Year: 2003)")+
+        ggtitle("CMSPI Monthly Time Series (Reference Year: 2003)")+
         scale_x_yearmon(breaks = seq(min(cmspi_filt$REF_DATE),max(cmspi_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(cmspi_filt$VALUE),max(cmspi_filt$VALUE),11))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -391,7 +469,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change CMSPI Time Series (Reference Year: 2003)")+
+        ggtitle("CMSPI Monthly Percentage Change Time Series (Reference Year: 2003)")+
         scale_x_yearmon(breaks = seq(min(cmspi_filt$REF_DATE),max(cmspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -417,7 +495,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change CMSPI Time Series (Reference Year: 2003)")+
+        ggtitle("CMSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2003)")+
         scale_x_yearmon(breaks = seq(min(cmspi_filt$REF_DATE),max(cmspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -443,7 +521,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("CIMERLSPI Time Series (Reference Year: 2007)")+
+        ggtitle("CIMERLSPI Monthly Time Series (Reference Year: 2007)")+
         scale_x_yearmon(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),2/12))+
         #limits = c(min(cimerlspi_filt$REF_DATE), max(cimerlspi_filt$REF_DATE)))+
         scale_y_continuous(breaks = seq(min(cimerlspi_filt$VALUE), max(cimerlspi_filt$VALUE), 2))+
@@ -474,7 +552,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change CIMERLSPI Time Series (Reference Year: 2007)")+
+        ggtitle("CIMERLSPI Monthly Percentage Change Time Series (Reference Year: 2007)")+
         scale_x_yearmon(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -500,12 +578,98 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change CIMERLSPI Time Series (Reference Year: 2007)")+
+        ggtitle("CIMERLSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2007)")+
         scale_x_yearmon(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(cimerlspi_filt$REF_DATE)[13], max(cimerlspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  
+  
+  # Quarterly
+  
+  
+  
+  output$plotcimerlspi_q <- renderPlotly({
+    validate(
+      need(input$prodcimerlspi_q != "", "Please select at least one entry.")
+    )
+    cimerlspi_filt <- cimerlspi_q %>% filter(`North American Industry Classification System (NAICS)`
+                                           %in% input$prodcimerlspi_q) %>% 
+      rename(`NAICS`=`North American Industry Classification System (NAICS)`)
+    cimerlspi_filt$REF_DATE <- zoo::as.yearmon(cimerlspi_filt$REF_DATE)
+    
+    graphcimerlspi <- ggplotly( 
+      ggplot(cimerlspi_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Index")+
+        ggtitle("CIMERLSPI Quarterly Time Series (Reference Year: 2007)")+
+        scale_x_yearmon(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),2/12))+
+        #limits = c(min(cimerlspi_filt$REF_DATE), max(cimerlspi_filt$REF_DATE)))+
+        scale_y_continuous(breaks = seq(min(cimerlspi_filt$VALUE), max(cimerlspi_filt$VALUE), 2))+
+        #scale_x_date(date_breaks  ="2 months")+ # Sol1
+        #scale_x_discrete(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),1))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(cimerlspi_filt$REF_DATE), max(cimerlspi_filt$REF_DATE), thickness = 0.1)
+    graphcimerlspi
+  })
+  
+  
+  output$percentcimerlspi_q <- renderPlotly({
+    validate(
+      need(input$prodcimerlspi_q != "", "Please select at least one entry.")
+    )
+    cimerlspi_filt <- cimerlspi_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodcimerlspi_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100) %>% 
+      rename(`NAICS`=`North American Industry Classification System (NAICS)`)
+    
+    cimerlspi_filt$REF_DATE <- zoo::as.yearmon(cimerlspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(cimerlspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("CIMERLSPI Quarterly Percentage Change Time Series (Reference Year: 2007)")+
+        scale_x_yearmon(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(cimerlspi_filt$REF_DATE)[2], max(cimerlspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercentcimerlspi_q <- renderPlotly({
+    validate(
+      need(input$prodcimerlspi_q != "", "Please select at least one entry.")
+    )
+    cimerlspi_filt <- cimerlspi_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodcimerlspi_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100) %>% 
+      rename(`NAICS`=`North American Industry Classification System (NAICS)`)
+    
+    cimerlspi_filt$REF_DATE <- zoo::as.yearmon(cimerlspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(cimerlspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("CIMERLSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2007)")+
+        scale_x_yearmon(breaks = seq(min(cimerlspi_filt$REF_DATE),max(cimerlspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(cimerlspi_filt$REF_DATE)[5], max(cimerlspi_filt$REF_DATE), thickness = 0.1)
   })
   
   
@@ -524,7 +688,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Class of service`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("COSPI Time Series (Reference Year: 2018)")+
+        ggtitle("COSPI Quarterly Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(cospi_filt$REF_DATE),max(cospi_filt$REF_DATE),3/12))+
         scale_y_continuous(breaks = seq(min(cospi_filt$VALUE),max(cospi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -550,7 +714,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Class of service`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Quarterly percentage change COSPI Time Series (Reference Year: 2018)")+
+        ggtitle("COSPI Quarterly Percentage Change Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(cospi_filt$REF_DATE),max(cospi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -575,7 +739,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Class of service`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change COSPI Time Series (Reference Year: 2018)")+
+        ggtitle("COSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(cospi_filt$REF_DATE),max(cospi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -591,7 +755,7 @@ server <- function(input, output, session) {
     validate(
       need(input$prodcrspi != "", "Please select at least one entry.")
     )
-    crspi_filt <- crspi_special%>% #filter(`Survey` %in% input$prodeditorsurvey) %>% 
+    crspi_filt <- crspi_special %>% #filter(`Survey` %in% input$prodeditorsurvey) %>% 
       filter(`Building Type` %in% input$prodcrspi)
     
     crspi_filt$REF_DATE <- zoo::as.yearmon(crspi_filt$REF_DATE)
@@ -601,7 +765,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Building Type`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("CRSPI Time Series (Reference Year: 2012)")+
+        ggtitle("CRSPI Monthly Time Series (Reference Year: 2012)")+
         scale_x_yearmon(breaks = seq(min(crspi_filt$REF_DATE),max(crspi_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(crspi_filt$VALUE),max(crspi_filt$VALUE),2))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -627,7 +791,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Building Type`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change CRSPI Time Series (Reference Year: 2012)")+
+        ggtitle("CRSPI Monthly Percentage Change Time Series (Reference Year: 2012)")+
         scale_x_yearmon(breaks = seq(min(crspi_filt$REF_DATE),max(crspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -652,13 +816,93 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Building Type`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change CRSPI Time Series (Reference Year: 2012)")+
+        ggtitle("CRSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2012)")+
         scale_x_yearmon(breaks = seq(min(crspi_filt$REF_DATE),max(crspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(crspi_filt$REF_DATE)[13], max(crspi_filt$REF_DATE), thickness = 0.1)
   })
+  
+  
+  # Quarterly
+  
+  
+  output$plotcrspi_q <- renderPlotly({
+    validate(
+      need(input$prodcrspi_q != "", "Please select at least one entry.")
+    )
+    crspi_filt <- crspi_special_q %>% #filter(`Survey` %in% input$prodeditorsurvey) %>% 
+      filter(`Building Type` %in% input$prodcrspi_q)
+    
+    crspi_filt$REF_DATE <- zoo::as.yearmon(crspi_filt$REF_DATE)
+    
+    graphcrspi <- ggplotly( 
+      ggplot(crspi_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Building Type`)) + 
+        xlab("Date") + 
+        ylab("Index")+ 
+        ggtitle("CRSPI Quarterly Time Series (Reference Year: 2012)")+
+        scale_x_yearmon(breaks = seq(min(crspi_filt$REF_DATE),max(crspi_filt$REF_DATE),2/12))+
+        scale_y_continuous(breaks = seq(min(crspi_filt$VALUE),max(crspi_filt$VALUE),2))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(crspi_filt$REF_DATE), max(crspi_filt$REF_DATE), thickness = 0.1)
+    graphcrspi
+  })
+  
+  output$percentcrspi_q <- renderPlotly({
+    validate(
+      need(input$prodcrspi_q != "", "Please select at least one entry.")
+    )
+    crspi_filt <- crspi_special_q %>% 
+      filter(`Building Type` %in% input$prodcrspi_q) %>%
+      group_by(`Building Type`) %>%
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100)
+    
+    crspi_filt$REF_DATE <- zoo::as.yearmon(crspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(crspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Building Type`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("CRSPI Quarterly Percentage Change Time Series (Reference Year: 2012)")+
+        scale_x_yearmon(breaks = seq(min(crspi_filt$REF_DATE),max(crspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(crspi_filt$REF_DATE)[2], max(crspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercentcrspi_q <- renderPlotly({
+    validate(
+      need(input$prodcrspi_q != "", "Please select at least one entry.")
+    )
+    crspi_filt <- crspi_special_q %>% 
+      filter(`Building Type` %in% input$prodcrspi_q) %>%
+      group_by(`Building Type`) %>%
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100)
+    
+    crspi_filt$REF_DATE <- zoo::as.yearmon(crspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(crspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Building Type`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("CRSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2012)")+
+        scale_x_yearmon(breaks = seq(min(crspi_filt$REF_DATE),max(crspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(crspi_filt$REF_DATE)[5], max(crspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  
   
   
   # FHMCFSPI
@@ -678,7 +922,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("FHMCFSPI Time Series (Reference Year: 2013)")+
+        ggtitle("FHMCFSPI Monthly Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(f_filt$REF_DATE),max(f_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(f_filt$VALUE),max(f_filt$VALUE),3))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -705,7 +949,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change FHMCFSPI Time Series (Reference Year: 2013)")+
+        ggtitle("FHMCFSPI Monthly Percentage Change Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(f_filt$REF_DATE),max(f_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -731,13 +975,96 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change FHMCFSPI Time Series (Reference Year: 2013)")+
+        ggtitle("FHMCFSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(f_filt$REF_DATE),max(f_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(f_filt$REF_DATE)[13], max(f_filt$REF_DATE), thickness = 0.1)
   })
+  
+  
+  # Quarterly
+  
+  
+  output$plotf_q <- renderPlotly({
+    validate(
+      need(input$prodf_q != "", "Please select at least one entry.")
+    )
+    f_filt <- f_q %>% filter(`North American Industry Classification System (NAICS)`
+                           %in% input$prodf_q) %>% 
+      rename(`NAICS`=`North American Industry Classification System (NAICS)`)
+    
+    f_filt$REF_DATE <- zoo::as.yearmon(f_filt$REF_DATE)
+    
+    graphf <- ggplotly( 
+      ggplot(f_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Index")+ 
+        ggtitle("FHMCFSPI Quarterly Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(f_filt$REF_DATE),max(f_filt$REF_DATE),2/12))+
+        scale_y_continuous(breaks = seq(min(f_filt$VALUE),max(f_filt$VALUE),3))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(f_filt$REF_DATE), max(f_filt$REF_DATE), thickness = 0.1)
+    graphf
+  })
+  
+  output$percentf_q <- renderPlotly({
+    validate(
+      need(input$prodf_q != "", "Please select at least one entry.")
+    )
+    f_filt <- f_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodf_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100) %>% 
+      rename(`NAICS`=`North American Industry Classification System (NAICS)`)
+    
+    f_filt$REF_DATE <- zoo::as.yearmon(f_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(f_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("FHMCFSPI Quarterly Percentage Change Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(f_filt$REF_DATE),max(f_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(f_filt$REF_DATE)[2], max(f_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercentf_q <- renderPlotly({
+    validate(
+      need(input$prodf_q != "", "Please select at least one entry.")
+    )
+    f_filt <- f_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodf_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100) %>% 
+      rename(`NAICS`=`North American Industry Classification System (NAICS)`)
+    
+    f_filt$REF_DATE <- zoo::as.yearmon(f_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(f_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("FHMCFSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(f_filt$REF_DATE),max(f_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(f_filt$REF_DATE)[5], max(f_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  
   
   
   # RMPI
@@ -756,7 +1083,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("RMPI Time Series (Reference Year: 2010)")+
+        ggtitle("RMPI Monthly Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(rmpi_filt$REF_DATE),max(rmpi_filt$REF_DATE),5/12))+
         scale_y_continuous(breaks = seq(min(rmpi_filt$VALUE),max(rmpi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -783,7 +1110,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change RMPI Time Series (Reference Year: 2010)")+
+        ggtitle("RMPI Monthly Percentage Change Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(rmpi_filt$REF_DATE),max(rmpi_filt$REF_DATE),5/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -809,7 +1136,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change RMPI Time Series (Reference Year: 2010)")+
+        ggtitle("RMPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(rmpi_filt$REF_DATE),max(rmpi_filt$REF_DATE),5/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -833,7 +1160,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("IPSPI Time Series (Reference Year: 2015)")+
+        ggtitle("IPSPI Annual Time Series (Reference Year: 2015)")+
         scale_x_continuous(breaks = seq(min(ipspi_filt$REF_DATE),max(ipspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -857,7 +1184,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Annual percentage change IPSPI Time Series (Reference Year: 2015)")+
+        ggtitle("IPSPI Annual Percentage Change Time Series (Reference Year: 2015)")+
         scale_x_continuous(breaks = seq(min(ipspi_filt$REF_DATE),max(ipspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -881,7 +1208,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("WSPI Time Series (Reference Year: 2013)")+
+        ggtitle("WSPI Monthly Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(wspi_filt$REF_DATE),max(wspi_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(wspi_filt$VALUE),max(wspi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -908,7 +1235,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change WSPI Time Series (Reference Year: 2013)")+
+        ggtitle("WSPI Monthly Percentage Change Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(wspi_filt$REF_DATE),max(wspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -934,12 +1261,91 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change WSPI Time Series (Reference Year: 2013)")+
+        ggtitle("WSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(wspi_filt$REF_DATE),max(wspi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(wspi_filt$REF_DATE)[13], max(wspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  # Quarterly
+  
+  
+  output$plotwspi_q <- renderPlotly({
+    validate(
+      need(input$prodwspi_q != "", "Please select at least one entry.")
+    )
+    wspi_filt <- wspi_q %>% filter(`North American Industry Classification System (NAICS)`
+                                 %in% input$prodwspi_q)%>% 
+      rename(`NAICS` =`North American Industry Classification System (NAICS)` )
+    wspi_filt$REF_DATE <- zoo::as.yearmon(wspi_filt$REF_DATE)
+    
+    graphwspi <- ggplotly( 
+      ggplot(wspi_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Index")+ 
+        ggtitle("WSPI Quarterly Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(wspi_filt$REF_DATE),max(wspi_filt$REF_DATE),2/12))+
+        scale_y_continuous(breaks = seq(min(wspi_filt$VALUE),max(wspi_filt$VALUE),8))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(wspi_filt$REF_DATE), max(wspi_filt$REF_DATE), thickness = 0.1)
+    graphwspi
+  })
+  
+  output$percentwspi_q <- renderPlotly({
+    validate(
+      need(input$prodwspi_q != "", "Please select at least one entry.")
+    )
+    wspi_filt <- wspi_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodwspi_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>%
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100)%>% 
+      rename(`NAICS` =`North American Industry Classification System (NAICS)` )
+    
+    wspi_filt$REF_DATE <- zoo::as.yearmon(wspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(wspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("WSPI Quarterly Percentage Change Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(wspi_filt$REF_DATE),max(wspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(wspi_filt$REF_DATE)[2], max(wspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercentwspi_q <- renderPlotly({
+    validate(
+      need(input$prodwspi_q != "", "Please select at least one entry.")
+    )
+    wspi_filt <- wspi_q %>% 
+      filter(`North American Industry Classification System (NAICS)` %in% input$prodwspi_q) %>% 
+      group_by(`North American Industry Classification System (NAICS)`) %>%
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100)%>% 
+      rename(`NAICS` =`North American Industry Classification System (NAICS)` )
+    
+    wspi_filt$REF_DATE <- zoo::as.yearmon(wspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(wspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `NAICS`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("WSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(wspi_filt$REF_DATE),max(wspi_filt$REF_DATE),2/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(wspi_filt$REF_DATE)[5], max(wspi_filt$REF_DATE), thickness = 0.1)
   })
   
   
@@ -961,7 +1367,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = Commodity)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("MEPI Time Series (Reference Year: 2010)")+
+        ggtitle("MEPI Quarterly Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(mepi_filt$REF_DATE),max(mepi_filt$REF_DATE),3/12))+
         scale_y_continuous(breaks = seq(min(mepi_filt$VALUE),max(mepi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -988,7 +1394,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Commodity`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Quarterly percentage change MEPI Time Series (Reference Year: 2010)")+
+        ggtitle("MEPI Quarterly Percentage Change Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(mepi_filt$REF_DATE),max(mepi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1013,7 +1419,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Commodity`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change MEPI Time Series (Reference Year: 2010)")+
+        ggtitle("MEPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2010)")+
         scale_x_yearmon(breaks = seq(min(mepi_filt$REF_DATE),max(mepi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1039,7 +1445,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Type of peripheral`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("CPPI Time Series (Reference Year: 2015)")+
+        ggtitle("CPPI Monthly Time Series (Reference Year: 2015)")+
         scale_x_yearmon(breaks = seq(min(cppi_filt$REF_DATE),max(cppi_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(cppi_filt$VALUE),max(cppi_filt$VALUE),3))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1065,7 +1471,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Type of peripheral`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change CPPI Time Series (Reference Year: 2015)")+
+        ggtitle("CPPI Monthly Percentage Change Time Series (Reference Year: 2015)")+
         scale_x_yearmon(breaks = seq(min(cppi_filt$REF_DATE),max(cppi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1090,7 +1496,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Type of peripheral`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change CPPI Time Series (Reference Year: 2015)")+
+        ggtitle("CPPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2015)")+
         scale_x_yearmon(breaks = seq(min(cppi_filt$REF_DATE),max(cppi_filt$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1114,7 +1520,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Price index`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("FIPI Time Series (Reference Year: 2012)")+
+        ggtitle("FIPI Quarterly Time Series (Reference Year: 2012)")+
         scale_x_yearmon(breaks = seq(min(fipi_filt$REF_DATE),max(fipi_filt$REF_DATE),3/12))+
         scale_y_continuous(breaks = seq(min(fipi_filt$VALUE),max(fipi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1140,7 +1546,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Price index`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Quarterly percentage change FIPI Time Series (Reference Year: 2012)")+
+        ggtitle("FIPI Quarterly Percentage Change Time Series (Reference Year: 2012)")+
         scale_x_yearmon(breaks = seq(min(fipi_filt$REF_DATE),max(fipi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1165,7 +1571,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Price index`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change FIPI Time Series (Reference Year: 2012)")+
+        ggtitle("FIPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2012)")+
         scale_x_yearmon(breaks = seq(min(fipi_filt$REF_DATE),max(fipi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1188,7 +1594,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Sector`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("PASPI Time Series (Reference Year: 2002)")+
+        ggtitle("PASPI Annual Time Series (Reference Year: 2002)")+
         scale_x_continuous(breaks = seq(min(paspi_filt$REF_DATE),max(paspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1211,7 +1617,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Sector`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Annual percentage change PASPI Time Series (Reference Year: 2002)")+
+        ggtitle("PASPI Annual Percentage Change Time Series (Reference Year: 2002)")+
         scale_x_continuous(breaks = seq(min(paspi_filt$REF_DATE),max(paspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1234,7 +1640,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Index`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("CSPI Time Series (Reference Year: 2011)")+
+        ggtitle("CSPI Monthly Time Series (Reference Year: 2011)")+
         scale_x_yearmon(breaks = seq(min(cspi_filt$REF_DATE),max(cspi_filt$REF_DATE),2/12))+
         scale_y_continuous(breaks = seq(min(cspi_filt$VALUE),max(cspi_filt$VALUE),2))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1261,7 +1667,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Index`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change CSPI Time Series (Reference Year: 2011)")+
+        ggtitle("CSPI Monthly Percentage Change Time Series (Reference Year: 2011)")+
         scale_x_yearmon(breaks = seq(min(cspi_filt$REF_DATE),max(cspi_filt$REF_DATE),2/12))+
         #scale_y_continuous(breaks = seq(min(cspi_filt$pct_change),max(cspi_filt$pct_change),0.02))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1287,7 +1693,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Index`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change CSPI Time Series (Reference Year: 2011)")+
+        ggtitle("CSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2011)")+
         scale_x_yearmon(breaks = seq(min(cspi_filt$REF_DATE),max(cspi_filt$REF_DATE),2/12))+
         #scale_y_continuous(breaks = seq(min(cspi_filt$pct_change),max(cspi_filt$pct_change),0.02))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1315,7 +1721,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Index`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("EPSPI Time Series (Reference Year: 2014)")+
+        ggtitle("EPSPI Monthly Time Series (Reference Year: 2014)")+
         scale_x_yearmon(breaks = seq(min(epspi_filt$REF_DATE),max(epspi_filt$REF_DATE),4/12))+
         scale_y_continuous(breaks = seq(min(epspi_filt$VALUE),max(epspi_filt$VALUE),4))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1341,7 +1747,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Index`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change EPSPI Time Series (Reference Year: 2014)")+
+        ggtitle("EPSPI Monthly Percentage Change Time Series (Reference Year: 2014)")+
         scale_x_yearmon(breaks = seq(min(epspi_filt$REF_DATE),max(epspi_filt$REF_DATE),4/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1366,7 +1772,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Index`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change EPSPI Time Series (Reference Year: 2014)")+
+        ggtitle("EPSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2014)")+
         scale_x_yearmon(breaks = seq(min(epspi_filt$REF_DATE),max(epspi_filt$REF_DATE),4/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1391,7 +1797,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Client groups`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("TASPI Time Series (Reference Year: 2013)")+
+        ggtitle("TASPI Monthly Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(taspi_filt$REF_DATE),max(taspi_filt$REF_DATE),3/12))+
         scale_y_continuous(breaks = seq(min(taspi_filt$VALUE),max(taspi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1419,7 +1825,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Client groups`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change TASPI Time Series (Reference Year: 2013)")+
+        ggtitle("TASPI Monthly Percentage Change Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(taspi_filt$REF_DATE),max(taspi_filt$REF_DATE),6/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1445,13 +1851,94 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Client groups`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change TASPI Time Series (Reference Year: 2013)")+
+        ggtitle("TASPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2013)")+
         scale_x_yearmon(breaks = seq(min(taspi_filt$REF_DATE),max(taspi_filt$REF_DATE),6/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(taspi_filt$REF_DATE)[13], max(taspi_filt$REF_DATE), thickness = 0.1)
   })
+  
+  
+  
+  
+  output$plottaspi_q <- renderPlotly({
+    validate(
+      need(input$prodtaspi_q != "", "Please select at least one entry.")
+    )
+    
+    taspi_filt <- taspi_special_q %>% filter(`Client groups`
+                                           %in% input$prodtaspi_q)
+    taspi_filt$REF_DATE <- zoo::as.yearmon(taspi_filt$REF_DATE)
+    
+    graphtaspi <- ggplotly( 
+      ggplot(taspi_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Client groups`)) + 
+        xlab("Date") + 
+        ylab("Index")+ 
+        ggtitle("TASPI Quarterly Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(taspi_filt$REF_DATE),max(taspi_filt$REF_DATE),3/12))+
+        scale_y_continuous(breaks = seq(min(taspi_filt$VALUE),max(taspi_filt$VALUE),8))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(taspi_filt$REF_DATE), max(taspi_filt$REF_DATE), thickness = 0.1)
+    graphtaspi
+    
+  })
+  
+  output$percenttaspi_q <- renderPlotly({
+    validate(
+      need(input$prodtaspi_q != "", "Please select at least one entry.")
+    )
+    
+    taspi_filt <- taspi_special_q %>% 
+      filter(`Client groups` %in% input$prodtaspi_q) %>%
+      group_by(`Client groups`) %>%
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100)
+    
+    taspi_filt$REF_DATE <- zoo::as.yearmon(taspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(taspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Client groups`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("TASPI Quarterly Percentage Change Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(taspi_filt$REF_DATE),max(taspi_filt$REF_DATE),6/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(taspi_filt$REF_DATE)[2], max(taspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercenttaspi_q <- renderPlotly({
+    validate(
+      need(input$prodtaspi_q != "", "Please select at least one entry.")
+    )
+    
+    taspi_filt <- taspi_special_q %>% 
+      filter(`Client groups` %in% input$prodtaspi_q) %>%
+      group_by(`Client groups`) %>%
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100)
+    
+    taspi_filt$REF_DATE <- zoo::as.yearmon(taspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(taspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Client groups`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("TASPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2013)")+
+        scale_x_yearmon(breaks = seq(min(taspi_filt$REF_DATE),max(taspi_filt$REF_DATE),6/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(taspi_filt$REF_DATE)[5], max(taspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
   
   
   # NLSPI
@@ -1469,7 +1956,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `GEO`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("NLSPI Time Series (Reference Year: 2011)")+
+        ggtitle("NLSPI Monthly Time Series (Reference Year: 2011)")+
         scale_x_yearmon(breaks = seq(min(nlspi_filt$REF_DATE),max(nlspi_filt$REF_DATE),1/12))+
         scale_y_continuous(breaks = seq(min(nlspi_filt$VALUE),max(nlspi_filt$VALUE),6))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1495,7 +1982,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `GEO`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change NLSPI Time Series (Reference Year: 2011)")+
+        ggtitle("NLSPI Monthly Percentage Change Time Series (Reference Year: 2011)")+
         scale_x_yearmon(breaks = seq(min(nlspi_filt$REF_DATE),max(nlspi_filt$REF_DATE),1/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1520,13 +2007,93 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `GEO`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change NLSPI Time Series (Reference Year: 2011)")+
+        ggtitle("NLSPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2011)")+
         scale_x_yearmon(breaks = seq(min(nlspi_filt$REF_DATE),max(nlspi_filt$REF_DATE),1/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
       layout(paper_bgcolor='#DFE6F8') %>% 
       rangeslider(unique(nlspi_filt$REF_DATE)[13], max(nlspi_filt$REF_DATE), thickness = 0.1)
   })
+  
+  
+  # Quarterly
+  
+  
+  output$plotnlspi_q <- renderPlotly({
+    validate(
+      need(input$prodnlspi_q != "", "Please select at least one entry.")
+    )
+    nlspi_filt <- nlspi_special_q %>% filter(`GEO`
+                                   %in% input$prodnlspi_q)
+    nlspi_filt$REF_DATE <- zoo::as.yearmon(nlspi_filt$REF_DATE)
+    
+    graphnlspi <- ggplotly( 
+      ggplot(nlspi_filt, aes( y=VALUE, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `GEO`)) + 
+        xlab("Date") + 
+        ylab("Index")+
+        ggtitle("NLSPI Quarterly Time Series (Reference Year: 2011)")+
+        scale_x_yearmon(breaks = seq(min(nlspi_filt$REF_DATE),max(nlspi_filt$REF_DATE),1/12))+
+        scale_y_continuous(breaks = seq(min(nlspi_filt$VALUE),max(nlspi_filt$VALUE),6))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(min(nlspi_filt$REF_DATE), max(nlspi_filt$REF_DATE), thickness = 0.1)
+    graphnlspi
+  })
+  
+  output$percentnlspi_q <- renderPlotly({
+    validate(
+      need(input$prodnlspi_q != "", "Please select at least one entry.")
+    )
+    nlspi_filt <- nlspi_special_q %>% 
+      filter(`GEO` %in% input$prodnlspi_q) %>% 
+      group_by(`GEO`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE) - 1) * 100)
+    
+    nlspi_filt$REF_DATE <- zoo::as.yearmon(nlspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(nlspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `GEO`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("NLSPI Quarterly Percentage Change Time Series (Reference Year: 2011)")+
+        scale_x_yearmon(breaks = seq(min(nlspi_filt$REF_DATE),max(nlspi_filt$REF_DATE),1/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(nlspi_filt$REF_DATE)[2], max(nlspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  output$yearpercentnlspi_q <- renderPlotly({
+    validate(
+      need(input$prodnlspi_q != "", "Please select at least one entry.")
+    )
+    nlspi_filt <- nlspi_special_q %>% 
+      filter(`GEO` %in% input$prodnlspi_q) %>% 
+      group_by(`GEO`) %>% 
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100)
+    
+    nlspi_filt$REF_DATE <- zoo::as.yearmon(nlspi_filt$REF_DATE)
+    
+    ggplotly( 
+      ggplot(nlspi_filt, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `GEO`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("NLSPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2011)")+
+        scale_x_yearmon(breaks = seq(min(nlspi_filt$REF_DATE),max(nlspi_filt$REF_DATE),1/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(nlspi_filt$REF_DATE)[5], max(nlspi_filt$REF_DATE), thickness = 0.1)
+  })
+  
+  
+  
+  
   
   # IBSPI
   
@@ -1543,7 +2110,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `GEO`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("IBSPI Time Series (Reference Year: 2010)")+
+        ggtitle("IBSPI Annual Time Series (Reference Year: 2010)")+
         scale_x_continuous(breaks = seq(min(ibspi_filt$REF_DATE),max(ibspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1566,7 +2133,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `GEO`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Annual percentage change IBSPI Time Series (Reference Year: 2010)")+
+        ggtitle("IBSPI Annual Percentage Change Time Series (Reference Year: 2010)")+
         scale_x_continuous(breaks = seq(min(ibspi_filt$REF_DATE),max(ibspi_filt$REF_DATE),1))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1591,7 +2158,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `New housing price indexes`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("NHPI Time Series (Reference Year: 2016)")+
+        ggtitle("NHPI Monthly Time Series (Reference Year: 2016)")+
         scale_x_yearmon(breaks = seq(min(nhpi_filt$REF_DATE),max(nhpi_filt$REF_DATE),4/12))+
         scale_y_continuous(breaks = seq(min(nhpi_filt$VALUE),max(nhpi_filt$VALUE),6))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1619,7 +2186,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `New housing price indexes`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change NHPI Time Series (Reference Year: 2016)")+
+        ggtitle("NHPI Monthly Percentage Change Time Series (Reference Year: 2016)")+
         scale_x_yearmon(breaks = seq(min(nhpi_filt$REF_DATE),max(nhpi_filt$REF_DATE),4/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1645,7 +2212,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `New housing price indexes`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change NHPI Time Series (Reference Year: 2016)")+
+        ggtitle("NHPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2016)")+
         scale_x_yearmon(breaks = seq(min(nhpi_filt$REF_DATE),max(nhpi_filt$REF_DATE),4/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1672,7 +2239,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Construction trades`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("CUWRI Time Series (Reference Year: 2015)")+
+        ggtitle("CUWRI Monthly Time Series (Reference Year: 2015)")+
         scale_x_yearmon(breaks = seq(min(cuwri_filt$REF_DATE),max(cuwri_filt$REF_DATE),4/12))+
         scale_y_continuous(breaks = seq(min(cuwri_filt$VALUE),max(cuwri_filt$VALUE),4))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1699,7 +2266,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Construction trades`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Monthly percentage change CUWRI Time Series (Reference Year: 2015)")+
+        ggtitle("CUWRI Monthly Percentage Change Time Series (Reference Year: 2015)")+
         scale_x_yearmon(breaks = seq(min(cuwri_filt$REF_DATE),max(cuwri_filt$REF_DATE),4/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1724,7 +2291,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Construction trades`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("Year-to-year percentage change CUWRI Time Series (Reference Year: 2015)")+
+        ggtitle("CUWRI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2015)")+
         scale_x_yearmon(breaks = seq(min(cuwri_filt$REF_DATE),max(cuwri_filt$REF_DATE),4/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1984,7 +2551,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Figure`)) +
         xlab("Date") +
         ylab("Percentage (%)")+
-        ggtitle("Percentage change Editor Time Series")+
+        ggtitle("Percentage Change Editor Time Series")+
         scale_x_yearmon(breaks = seq(min(mega_dataset$REF_DATE),max(mega_dataset$REF_DATE),2/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
