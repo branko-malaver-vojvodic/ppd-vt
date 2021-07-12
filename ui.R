@@ -1547,13 +1547,36 @@ ui <- fluidPage(
                                                  style = 'margin-left: 1em')),
                        br(),
                        p(strong(tags$u("Description:")), "This tab allows the user to select and sketch any figure from the 23 compiled surveys. To easily identify 
-                           a particular survey's figure, please search-name it in the Input bar. Please recall that the percentage change plot will follow the same timeliness 
-                           as the corresponding selected figure, i.e., if the selected figure has monthly data, then the second plot will reflect its monthly percentage change.",
+                           a particular survey's figure, please search-name it in the Input bar.",
                          style = 'text-align: justify;
                                    color: white;
                                    background-color: black;
                                    margin-left: 2em;
                                    margin-right: 2em
+                                   '),
+                       p(strong(tags$u("Percentage plots:")),
+                         tags$ul(tags$li("Please recall that the percentage change plot will follow the same timeliness 
+                           as the corresponding selected figure, i.e., if the selected figure has monthly data, then the second plot will reflect its monthly percentage change.", style = 'text-align: justify;
+                                   color: white;
+                                   background-color: black;
+                                   margin-left: 2em;
+                                   margin-right: 2em
+                                   '), tags$li("The third plot is only useful when the selected figures come from monthly-timely surveys", style = 'text-align: justify;
+                                   color: white;
+                                   background-color: black;
+                                   margin-left: 2em;
+                                   margin-right: 2em
+                                   '), tags$li("The fourth plot is only useful when the selected figures come from quarterly-timely surveys", style = 'text-align: justify;
+                                   color: white;
+                                   background-color: black;
+                                   margin-left: 2em;
+                                   margin-right: 2em
+                                   ')),
+                         style = 'text-align: justify;
+                                           color: white;
+                                           background-color: black;
+                                           margin-left: 2em;
+                                           margin-right: 2em
                                    '),
                        p(strong(tags$u("Warning:")), "Comparison among certain surveys may not be useful as it can induce misleading analysis. Please be warned that 
                            there can exist discrepancies between surveys in the ", strong("timeliness"), " (monthly, quarterly or annual),", strong("classification type"), " (NAPCS, 
@@ -1591,6 +1614,10 @@ ui <- fluidPage(
                        plotlyOutput("ploteditor", height = 650),
                        br(),
                        plotlyOutput("percentmega_dataset", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentmega_m", height = 650),
+                       br(),
+                       plotlyOutput("yearpercentmega_q", height = 650),
                        br()
               ),
               

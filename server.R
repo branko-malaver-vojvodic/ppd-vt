@@ -370,7 +370,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAICS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("AESPI Year-to-year Percentage Change (by Quarters) Time Series (Reference Year: 2018)")+
+        ggtitle("AESPI Year-to-year Percentage Change, by Quarters, Time Series (Reference Year: 2018)")+
         scale_x_yearmon(breaks = seq(min(aespi_filt$REF_DATE),max(aespi_filt$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -2558,4 +2558,54 @@ server <- function(input, output, session) {
       layout(paper_bgcolor='#DFE6F8') %>%
       rangeslider(unique(mega_dataset$REF_DATE)[2], max(mega_dataset$REF_DATE), thickness = 0.1)
   })
+  
+  output$yearpercentmega_m <- renderPlotly({
+    validate(
+      need(input$prodeditor != "", "Please select at least one entry.")
+    )
+    mega_dataset <- mega_dataset %>% 
+      filter(`Figure` %in% input$prodeditor) %>% 
+      group_by(Figure) %>%
+      mutate(pct_change = (VALUE/lag(VALUE, 12) - 1) * 100)
+    
+    mega_dataset$REF_DATE <- zoo::as.yearmon(mega_dataset$REF_DATE)
+    
+    ggplotly( 
+      ggplot(mega_dataset, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Figure`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("MEPI Year-to-year Percentage Change, by Months, Time Series")+
+        scale_x_yearmon(breaks = seq(min(mega_dataset$REF_DATE),max(mega_dataset$REF_DATE),3/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(mega_dataset$REF_DATE)[13], max(mega_dataset$REF_DATE), thickness = 0.1)
+  })
+  
+  output$yearpercentmega_q <- renderPlotly({
+    validate(
+      need(input$prodeditor != "", "Please select at least one entry.")
+    )
+    mega_dataset <- mega_dataset %>% 
+      filter(`Figure` %in% input$prodeditor) %>% 
+      group_by(Figure) %>%
+      mutate(pct_change = (VALUE/lag(VALUE, 4) - 1) * 100)
+    
+    mega_dataset$REF_DATE <- zoo::as.yearmon(mega_dataset$REF_DATE)
+    
+    ggplotly( 
+      ggplot(mega_dataset, aes( y=pct_change, x=REF_DATE, group=1)) + 
+        geom_line(aes(colour = `Figure`)) + 
+        xlab("Date") + 
+        ylab("Percentage (%)")+
+        ggtitle("Editor Year-to-year Percentage Change, by Quarters, Time Series")+
+        scale_x_yearmon(breaks = seq(min(mega_dataset$REF_DATE),max(mega_dataset$REF_DATE),3/12))+
+        theme(axis.text.x=element_text(angle=90, hjust=1),
+              plot.title = element_text(hjust = 0.5)))%>%
+      layout(paper_bgcolor='#DFE6F8') %>% 
+      rangeslider(unique(mega_dataset$REF_DATE)[5], max(mega_dataset$REF_DATE), thickness = 0.1)
+  })
+  
+  
 }
