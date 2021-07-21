@@ -7,6 +7,7 @@ library(shinyjs)
 library(shinythemes)
 library(tidyverse)
 library(zoo)
+library(vembedr)
 
 # a <- c(shiny, 
 #   tidyverse, 
@@ -25,6 +26,21 @@ source('preprocessing.R')
 
 server <- function(input, output, session) {
   
+  # output$video <- renderUI({
+  #   embed_url("https://www.youtube.com/watch?v=4rb0LJhVUhU")
+  # })
+  
+  output$video2 <- renderUI({
+    embed_youtube("bntYVg4g-1c",
+                  width = 1250,
+                  height = 700,
+                  ratio = c("16by9", "4by3"),
+                  frameborder = 1,
+                  allowfullscreen = TRUE,
+                  query = NULL
+    )
+  })
+  
   output$images <- renderUI({
     tags$div(img(src = "penguin.gif", height='200px', width='170px'), 
              img(src = "black.png", height='10px', width='200px'), 
@@ -35,6 +51,8 @@ server <- function(input, output, session) {
   
   # ANIMATION
   
+  observe(addScrollAnim(session, 'subtitle', 'fadeInRightBig'))
+  observe(addScrollAnim(session, 'footnote', 'fadeInUp'))
   observe(addHoverAnim(session, 'animator', 'tada'))
   observe(addHoverAnim(session, 'animator2', 'pulse'))
   observe(addScrollAnim(session, 'animaespi', 'fadeInRight'))
@@ -80,7 +98,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Index")+
-        ggtitle("IPPI Monthly Time Series (Reference Year: 2010)")+
+        ggtitle("IPPI Monthly Time Series (Reference Period: Jan 2020)")+
         scale_x_yearmon(breaks = seq(min(ippi_filt$REF_DATE),max(ippi_filt$REF_DATE),6/12))+
         scale_y_continuous(breaks = seq(min(ippi_filt$VALUE),max(ippi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -107,7 +125,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("IPPI Monthly Percentage Change Time Series (Reference Year: 2010)")+
+        ggtitle("IPPI Monthly Percentage Change Time Series (Reference Period: Jan 2020)")+
         scale_x_yearmon(breaks = seq(min(ippi_filt$REF_DATE),max(ippi_filt$REF_DATE),6/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -133,7 +151,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("IPPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2010)")+
+        ggtitle("IPPI Year-to-year Percentage Change, by Months, Time Series (Reference Period: Jan 2020)")+
         scale_x_yearmon(breaks = seq(min(ippi_filt$REF_DATE),max(ippi_filt$REF_DATE),6/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1083,7 +1101,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Index")+ 
-        ggtitle("RMPI Monthly Time Series (Reference Year: 2010)")+
+        ggtitle("RMPI Monthly Time Series (Reference Period: Jan 2020)")+
         scale_x_yearmon(breaks = seq(min(rmpi_filt$REF_DATE),max(rmpi_filt$REF_DATE),5/12))+
         scale_y_continuous(breaks = seq(min(rmpi_filt$VALUE),max(rmpi_filt$VALUE),8))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
@@ -1110,7 +1128,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("RMPI Monthly Percentage Change Time Series (Reference Year: 2010)")+
+        ggtitle("RMPI Monthly Percentage Change Time Series (Reference Period: Jan 2020)")+
         scale_x_yearmon(breaks = seq(min(rmpi_filt$REF_DATE),max(rmpi_filt$REF_DATE),5/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
@@ -1136,7 +1154,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `NAPCS`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("RMPI Year-to-year Percentage Change, by Months, Time Series (Reference Year: 2010)")+
+        ggtitle("RMPI Year-to-year Percentage Change, by Months, Time Series (Reference Period: Jan 2020)")+
         scale_x_yearmon(breaks = seq(min(rmpi_filt$REF_DATE),max(rmpi_filt$REF_DATE),5/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%

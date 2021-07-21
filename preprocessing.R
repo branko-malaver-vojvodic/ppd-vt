@@ -15,186 +15,191 @@ ippi_path <- './data/ippi.csv'
 
 download_ippi <- function() {
   # Industrial product price index, by major product group, monthly
-  ippi_raw <- get_cansim("18-10-0029-01", refresh=TRUE)%>%
+  # ippi_raw <- get_cansim("18-10-0029-01", refresh=TRUE)%>%
+  #   select(REF_DATE, GEO, `North American Product Classification System (NAPCS)`,
+  #          VALUE, STATUS, 
+  #          `Classification Code for North American Product Classification System (NAPCS)`)%>%
+  #   filter(!is.na(VALUE))%>% 
+  #   filter(`North American Product Classification System (NAPCS)`
+  #          %in% "Total Industrial product price index (IPPI), excluding energy and petroleum products") 
+  # 
+  # # Industrial product price index, by product, monthly
+  # # This table misses "Total industry IPPI excluding energy and petroleum"
+  # ippi_prod <- get_cansim("18-10-0030-01", refresh=TRUE)%>%
+  #   select(REF_DATE, GEO, `North American Product Classification System (NAPCS)`,
+  #          VALUE, STATUS, 
+  #          `Classification Code for North American Product Classification System (NAPCS)`)%>%
+  #   filter(!is.na(VALUE)) %>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Diesel fuel [26122]", "Diesel fuel"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Diesel fuel", "Diesel fuel [26122]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Kerosene (except jet fuel) [261321]", "Kerosene (except jet fuel)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Kerosene (except jet fuel)", "Kerosene (except jet fuel) [261321]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Light fuel oils (except kerosene and diesel) [261322]", "Light fuel oils (except kerosene and diesel)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Light fuel oils (except kerosene and diesel)", "Light fuel oils (except kerosene and diesel) [261322]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Heavy fuel oils [26133]", "Heavy fuel oils"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Heavy fuel oils", "Heavy fuel oils [26133]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen beef and veal [17211]", "Fresh and frozen beef and veal"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen beef and veal", "Fresh and frozen beef and veal [17211]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen pork [17212]", "Fresh and frozen pork"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen pork", "Fresh and frozen pork [17212]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Complete cattle feed [181121]", "Complete cattle feed"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Complete cattle feed", "Complete cattle feed [181121]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Margarine, butter blends, and butter substitutes [182111]", "Margarine, butter blends, and butter substitutes"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Margarine, butter blends, and butter substitutes", "Margarine, butter blends, and butter substitutes [182111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Bread, rolls and flatbreads [18313]", "Bread, rolls and flatbreads"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Bread, rolls and flatbreads", "Bread, rolls and flatbreads [18313]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Chocolate and chocolate-type confectionery products [183221]", "Chocolate and chocolate-type confectionery products"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Chocolate and chocolate-type confectionery products", "Chocolate and chocolate-type confectionery products [183221]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coffee, prepared for retail sale (except concentrates) [191111]", "Coffee, prepared for retail sale (except concentrates)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coffee, prepared for retail sale (except concentrates)", "Coffee, prepared for retail sale (except concentrates) [191111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Cigarettes [212111]", "Cigarettes"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Cigarettes", "Cigarettes [212111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's suits, sport jackets and blazers [231112]", "Men's suits, sport jackets and blazers"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's suits, sport jackets and blazers", "Men's suits, sport jackets and blazers [231112]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Softwood lumber (except tongue and groove and other edge worked lumber) [24112]", "Softwood lumber (except tongue and groove and other edge worked lumber)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Softwood lumber (except tongue and groove and other edge worked lumber)", "Softwood lumber (except tongue and groove and other edge worked lumber) [24112]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Facial tissue [252141]", "Facial tissue"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Facial tissue", "Facial tissue [252141]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Household refrigerators and freezers [382122]", "Household refrigerators and freezers"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Household refrigerators and freezers", "Household refrigerators and freezers [382122]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Corrugated and solid fibre boxes [474211]", "Corrugated and solid fibre boxes"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Corrugated and solid fibre boxes", "Corrugated and solid fibre boxes [474211]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen chicken [172131]", "Fresh and frozen chicken"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen chicken", "Fresh and frozen chicken [172131]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen turkey [172132]", "Fresh and frozen turkey"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen turkey", "Fresh and frozen turkey [172132]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ice cream, sherbet and similar frozen desserts [17314]", "Ice cream, sherbet and similar frozen desserts"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ice cream, sherbet and similar frozen desserts", "Ice cream, sherbet and similar frozen desserts [17314]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Dry pasta [183122]", "Dry pasta"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Dry pasta", "Dry pasta [183122]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Stemmed, redried or reconstituted tobacco [21212]", "Stemmed, redried or reconstituted tobacco"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Stemmed, redried or reconstituted tobacco", "Stemmed, redried or reconstituted tobacco [21212]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coated fabrics and coated yarns [221116]", "Coated fabrics and coated yarns"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coated fabrics and coated yarns", "Coated fabrics and coated yarns [221116]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Carpets, rugs and mats [23211]", "Carpets, rugs and mats"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Carpets, rugs and mats", "Carpets, rugs and mats [23211]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's pants (except jeans) [231114]", "Men's pants (except jeans)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's pants (except jeans)", "Men's pants (except jeans) [231114]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Protective footwear, of rubber or plastics [231213]", "Protective footwear, of rubber or plastics"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Protective footwear, of rubber or plastics", "Protective footwear, of rubber or plastics [231213]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Aromatic hydrocarbon gases [263212]", "Aromatic hydrocarbon gases"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Aromatic hydrocarbon gases", "Aromatic hydrocarbon gases [263212]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Mixed fertilizers [272114]", "Mixed fertilizers"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Mixed fertilizers", "Mixed fertilizers [272114]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pesticides and other agricultural chemicals [27212]", "Pesticides and other agricultural chemicals"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pesticides and other agricultural chemicals", "Pesticides and other agricultural chemicals [27212]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Printing, writing and stamping inks [272132]", "Printing, writing and stamping inks"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Printing, writing and stamping inks", "Printing, writing and stamping inks [272132]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Perfumes and colognes [274123]", "Perfumes and colognes"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Perfumes and colognes", "Perfumes and colognes [274123]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene resins [281112]", "Polyethylene resins"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene resins", "Polyethylene resins [281112]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Laminated plastic profile shapes [282321]", "Laminated plastic profile shapes"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Laminated plastic profile shapes", "Laminated plastic profile shapes [282321]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pneumatic tires for passenger cars and similar vehicles [283111]", "Pneumatic tires for passenger cars and similar vehicles"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pneumatic tires for passenger cars and similar vehicles", "Pneumatic tires for passenger cars and similar vehicles [283111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene plastic pipes and tubes (except flexible) [464111]", "Polyethylene plastic pipes and tubes (except flexible)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene plastic pipes and tubes (except flexible)", "Polyethylene plastic pipes and tubes (except flexible) [464111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other hardwood plywood and plywood products [241234]", "Other hardwood plywood and plywood products"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other hardwood plywood and plywood products", "Other hardwood plywood and plywood products [241234]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other softwood plywood and plywood products [241236]", "Other softwood plywood and plywood products"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other softwood plywood and plywood products", "Other softwood plywood and plywood products [241236]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wooden doors [462111]", "Wooden doors"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wooden doors", "Wooden doors [462111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wood chips [25111]", "Wood chips"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wood chips", "Wood chips [25111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Newsprint [25121]", "Newsprint"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Newsprint", "Newsprint [25121]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Metal windows and doors [46613]", "Metal windows and doors"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Metal windows and doors", "Metal windows and doors [46613]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Passenger cars [41111]", "Passenger cars"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Passenger cars", "Passenger cars [41111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor vehicle brakes and brake systems [41354]", "Motor vehicle brakes and brake systems"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor vehicle brakes and brake systems", "Motor vehicle brakes and brake systems [41354]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Industrial and commercial fans and blowers [344121]", "Industrial and commercial fans and blowers"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Industrial and commercial fans and blowers", "Industrial and commercial fans and blowers [344121]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ball and roller bearings [34513]", "Ball and roller bearings"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ball and roller bearings", "Ball and roller bearings [34513]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Materials handling trucks and tractors [345421]", "Materials handling trucks and tractors"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Materials handling trucks and tractors", "Materials handling trucks and tractors [345421]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Power and distribution transformers [381221]", "Power and distribution transformers"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Power and distribution transformers", "Power and distribution transformers [381221]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ready-mixed concrete [46512]", "Ready-mixed concrete"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ready-mixed concrete", "Ready-mixed concrete [46512]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Lime [465131]", "Lime"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Lime", "Lime [465131]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Prefabricated metal buildings and components [47111]", "Prefabricated metal buildings and components"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Prefabricated metal buildings and components", "Prefabricated metal buildings and components [47111]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Caskets and coffins [47513]", "Caskets and coffins"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Caskets and coffins", "Caskets and coffins [47513]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor gasoline [26121]", "Motor gasoline"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor gasoline", "Motor gasoline [26121]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Plastic pipe fittings and unions [464113]", "Plastic pipe fittings and unions"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Plastic pipe fittings and unions", "Plastic pipe fittings and unions [464113]"))%>%
+  #   
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Waferboard, particle board and medium density fibreboard (MDF) [241221]", "Waferboard, particle board and medium density fibreboard (MDF)"))%>%
+  #   mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Waferboard, particle board and medium density fibreboard (MDF)", "Waferboard, particle board and medium density fibreboard (MDF) [241221]"))
+  # 
+  # ippi <- rbind(ippi_prod,ippi_raw)
+  # 
+  # return(ippi)
+  ippi <- get_cansim("18-10-0266", refresh=TRUE)%>%
     select(REF_DATE, GEO, `North American Product Classification System (NAPCS)`,
            VALUE, STATUS, 
            `Classification Code for North American Product Classification System (NAPCS)`)%>%
-    filter(!is.na(VALUE))%>% 
-    filter(`North American Product Classification System (NAPCS)`
-           %in% "Total Industrial product price index (IPPI), excluding energy and petroleum products") 
-  
-  # Industrial product price index, by product, monthly
-  # This table misses "Total industry IPPI excluding energy and petroleum"
-  ippi_prod <- get_cansim("18-10-0030-01", refresh=TRUE)%>%
-    select(REF_DATE, GEO, `North American Product Classification System (NAPCS)`,
-           VALUE, STATUS, 
-           `Classification Code for North American Product Classification System (NAPCS)`)%>%
-    filter(!is.na(VALUE)) %>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Diesel fuel [26122]", "Diesel fuel"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Diesel fuel", "Diesel fuel [26122]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Kerosene (except jet fuel) [261321]", "Kerosene (except jet fuel)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Kerosene (except jet fuel)", "Kerosene (except jet fuel) [261321]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Light fuel oils (except kerosene and diesel) [261322]", "Light fuel oils (except kerosene and diesel)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Light fuel oils (except kerosene and diesel)", "Light fuel oils (except kerosene and diesel) [261322]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Heavy fuel oils [26133]", "Heavy fuel oils"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Heavy fuel oils", "Heavy fuel oils [26133]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen beef and veal [17211]", "Fresh and frozen beef and veal"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen beef and veal", "Fresh and frozen beef and veal [17211]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen pork [17212]", "Fresh and frozen pork"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen pork", "Fresh and frozen pork [17212]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Complete cattle feed [181121]", "Complete cattle feed"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Complete cattle feed", "Complete cattle feed [181121]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Margarine, butter blends, and butter substitutes [182111]", "Margarine, butter blends, and butter substitutes"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Margarine, butter blends, and butter substitutes", "Margarine, butter blends, and butter substitutes [182111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Bread, rolls and flatbreads [18313]", "Bread, rolls and flatbreads"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Bread, rolls and flatbreads", "Bread, rolls and flatbreads [18313]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Chocolate and chocolate-type confectionery products [183221]", "Chocolate and chocolate-type confectionery products"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Chocolate and chocolate-type confectionery products", "Chocolate and chocolate-type confectionery products [183221]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coffee, prepared for retail sale (except concentrates) [191111]", "Coffee, prepared for retail sale (except concentrates)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coffee, prepared for retail sale (except concentrates)", "Coffee, prepared for retail sale (except concentrates) [191111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Cigarettes [212111]", "Cigarettes"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Cigarettes", "Cigarettes [212111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's suits, sport jackets and blazers [231112]", "Men's suits, sport jackets and blazers"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's suits, sport jackets and blazers", "Men's suits, sport jackets and blazers [231112]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Softwood lumber (except tongue and groove and other edge worked lumber) [24112]", "Softwood lumber (except tongue and groove and other edge worked lumber)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Softwood lumber (except tongue and groove and other edge worked lumber)", "Softwood lumber (except tongue and groove and other edge worked lumber) [24112]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Facial tissue [252141]", "Facial tissue"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Facial tissue", "Facial tissue [252141]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Household refrigerators and freezers [382122]", "Household refrigerators and freezers"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Household refrigerators and freezers", "Household refrigerators and freezers [382122]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Corrugated and solid fibre boxes [474211]", "Corrugated and solid fibre boxes"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Corrugated and solid fibre boxes", "Corrugated and solid fibre boxes [474211]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen chicken [172131]", "Fresh and frozen chicken"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen chicken", "Fresh and frozen chicken [172131]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen turkey [172132]", "Fresh and frozen turkey"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Fresh and frozen turkey", "Fresh and frozen turkey [172132]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ice cream, sherbet and similar frozen desserts [17314]", "Ice cream, sherbet and similar frozen desserts"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ice cream, sherbet and similar frozen desserts", "Ice cream, sherbet and similar frozen desserts [17314]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Dry pasta [183122]", "Dry pasta"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Dry pasta", "Dry pasta [183122]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Stemmed, redried or reconstituted tobacco [21212]", "Stemmed, redried or reconstituted tobacco"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Stemmed, redried or reconstituted tobacco", "Stemmed, redried or reconstituted tobacco [21212]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coated fabrics and coated yarns [221116]", "Coated fabrics and coated yarns"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Coated fabrics and coated yarns", "Coated fabrics and coated yarns [221116]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Carpets, rugs and mats [23211]", "Carpets, rugs and mats"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Carpets, rugs and mats", "Carpets, rugs and mats [23211]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's pants (except jeans) [231114]", "Men's pants (except jeans)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Men's pants (except jeans)", "Men's pants (except jeans) [231114]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Protective footwear, of rubber or plastics [231213]", "Protective footwear, of rubber or plastics"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Protective footwear, of rubber or plastics", "Protective footwear, of rubber or plastics [231213]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Aromatic hydrocarbon gases [263212]", "Aromatic hydrocarbon gases"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Aromatic hydrocarbon gases", "Aromatic hydrocarbon gases [263212]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Mixed fertilizers [272114]", "Mixed fertilizers"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Mixed fertilizers", "Mixed fertilizers [272114]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pesticides and other agricultural chemicals [27212]", "Pesticides and other agricultural chemicals"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pesticides and other agricultural chemicals", "Pesticides and other agricultural chemicals [27212]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Printing, writing and stamping inks [272132]", "Printing, writing and stamping inks"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Printing, writing and stamping inks", "Printing, writing and stamping inks [272132]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Perfumes and colognes [274123]", "Perfumes and colognes"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Perfumes and colognes", "Perfumes and colognes [274123]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene resins [281112]", "Polyethylene resins"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene resins", "Polyethylene resins [281112]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Laminated plastic profile shapes [282321]", "Laminated plastic profile shapes"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Laminated plastic profile shapes", "Laminated plastic profile shapes [282321]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pneumatic tires for passenger cars and similar vehicles [283111]", "Pneumatic tires for passenger cars and similar vehicles"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Pneumatic tires for passenger cars and similar vehicles", "Pneumatic tires for passenger cars and similar vehicles [283111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene plastic pipes and tubes (except flexible) [464111]", "Polyethylene plastic pipes and tubes (except flexible)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Polyethylene plastic pipes and tubes (except flexible)", "Polyethylene plastic pipes and tubes (except flexible) [464111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other hardwood plywood and plywood products [241234]", "Other hardwood plywood and plywood products"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other hardwood plywood and plywood products", "Other hardwood plywood and plywood products [241234]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other softwood plywood and plywood products [241236]", "Other softwood plywood and plywood products"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Other softwood plywood and plywood products", "Other softwood plywood and plywood products [241236]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wooden doors [462111]", "Wooden doors"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wooden doors", "Wooden doors [462111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wood chips [25111]", "Wood chips"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Wood chips", "Wood chips [25111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Newsprint [25121]", "Newsprint"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Newsprint", "Newsprint [25121]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Metal windows and doors [46613]", "Metal windows and doors"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Metal windows and doors", "Metal windows and doors [46613]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Passenger cars [41111]", "Passenger cars"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Passenger cars", "Passenger cars [41111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor vehicle brakes and brake systems [41354]", "Motor vehicle brakes and brake systems"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor vehicle brakes and brake systems", "Motor vehicle brakes and brake systems [41354]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Industrial and commercial fans and blowers [344121]", "Industrial and commercial fans and blowers"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Industrial and commercial fans and blowers", "Industrial and commercial fans and blowers [344121]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ball and roller bearings [34513]", "Ball and roller bearings"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ball and roller bearings", "Ball and roller bearings [34513]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Materials handling trucks and tractors [345421]", "Materials handling trucks and tractors"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Materials handling trucks and tractors", "Materials handling trucks and tractors [345421]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Power and distribution transformers [381221]", "Power and distribution transformers"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Power and distribution transformers", "Power and distribution transformers [381221]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ready-mixed concrete [46512]", "Ready-mixed concrete"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Ready-mixed concrete", "Ready-mixed concrete [46512]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Lime [465131]", "Lime"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Lime", "Lime [465131]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Prefabricated metal buildings and components [47111]", "Prefabricated metal buildings and components"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Prefabricated metal buildings and components", "Prefabricated metal buildings and components [47111]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Caskets and coffins [47513]", "Caskets and coffins"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Caskets and coffins", "Caskets and coffins [47513]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor gasoline [26121]", "Motor gasoline"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Motor gasoline", "Motor gasoline [26121]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Plastic pipe fittings and unions [464113]", "Plastic pipe fittings and unions"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Plastic pipe fittings and unions", "Plastic pipe fittings and unions [464113]"))%>%
-    
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Waferboard, particle board and medium density fibreboard (MDF) [241221]", "Waferboard, particle board and medium density fibreboard (MDF)"))%>%
-    mutate(`North American Product Classification System (NAPCS)`=replace(`North American Product Classification System (NAPCS)`, `North American Product Classification System (NAPCS)` == "Waferboard, particle board and medium density fibreboard (MDF)", "Waferboard, particle board and medium density fibreboard (MDF) [241221]"))
-  
-  ippi <- rbind(ippi_prod,ippi_raw)
-  
-  return(ippi)
+    filter(!is.na(VALUE))
 }
 
 rspi_path <- './data/rspi.csv'
@@ -345,7 +350,12 @@ rmpi_path <- './data/rmpi.csv'
 
 download_rmpi <- function() {
   # Industrial product price index, by major product group, monthly
-  rmpi <- get_cansim("18-10-0034-01", refresh=TRUE)%>%
+  # rmpi <- get_cansim("18-10-0034-01", refresh=TRUE)%>%
+  #   select(REF_DATE, GEO, `North American Product Classification System (NAPCS)`,
+  #          VALUE, STATUS, 
+  #          `Classification Code for North American Product Classification System (NAPCS)`)%>%
+  #   filter(!is.na(VALUE))
+  rmpi <- get_cansim("18-10-0268", refresh=TRUE)%>%
     select(REF_DATE, GEO, `North American Product Classification System (NAPCS)`,
            VALUE, STATUS, 
            `Classification Code for North American Product Classification System (NAPCS)`)%>%

@@ -3,6 +3,8 @@ library(shinythemes)
 library(shinydashboard)
 library(shinyWidgets)
 library(shinyanimate)
+library(vembedr)
+
 
 source('preprocessing.R')
 
@@ -42,8 +44,8 @@ ui <- fluidPage(
                        br(),
                        div(p("The Producer Prices Division’s Data Visualization 
                                                Tool (", strong("PPD-VT"), ") compiles data from 23 Statistics Canada 
-                                               surveys and allows the user to select various figures 
-                                               within those surveys to visualize their index and percentage 
+                                               indexes and allows the user to select various figures 
+                                               within those indexes to visualize their value and percentage 
                                                change evolution over time. This R Shiny application is 
                                                constantly updated as it web-scrapes public CODR tables 
                                                on a daily basis. ", style = 'text-align: justify;
@@ -55,9 +57,9 @@ ui <- fluidPage(
                                                                              ')),
                        br(),
                        div(p("Besides serving as a data visualization tool, this application also presents 
-                         a brief description of each survey and allows the user to download the data used to generate 
+                         a brief description of each index and allows the user to download the data used to generate 
                          the plots. Additionnally, the ", strong("Editor"), " tab allows the user to compare different
-                         figures across the 23 surveys.", style = 'text-align: justify;
+                         figures across the 23 indexes.", style = 'text-align: justify;
                                                                              color: white;
                                                                              background-color: black;
                                                                              margin-left: 2em;
@@ -75,14 +77,17 @@ ui <- fluidPage(
                        br(),
                        hr(),
                        br(),
-                       div(id = 'animaespi111', h4(tags$u("Learn how to use the App in less than 3 minutes with the following video tutorial!"),
-                                                   style = 'margin-left: 1em')),
+                       div(id = 'subtitle', h4("Learn how to use the App with the following video tutorial:"),
+                                                   style = 'margin-left: 1em'),
                        
-                       div(tags$video(src = 'videoppdvt.mp4', type = "video/mp4", controls = "controls", width = '1400px', height = '850px'), style = 'text-align: center'),
+                       #div(tags$video(src = 'videoppdvt.mp4', type = "video/mp4", controls = "controls", width = '1400px', height = '850px'), style = 'text-align: center'),
+                       br(),
+                       br(),
+                       uiOutput("video2", align = "center"),
                        br(),
                        hr(),
                        br(),
-                       div(p("Special thanks to Roland Hebert, Xin Hua, and Dragos Ifrim for their valuable feedback in the development
+                       div(id = 'footnote', p("Special thanks to Roland Hebert, Xin Hua, Valerie Hastings, and Dragos Ifrim for their valuable feedback in the development
                          of this Application."), style = 'text-align: center;
                                                                              color: white;
                                                                              background-color: black;
@@ -264,7 +269,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlcimerlspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
-                       
+                       h4("Monthly plots:"),
                        selectInput("prodcimerlspi", "Select a figure:",
                                    choices = unique(cimerlspi$`North American Industry Classification System (NAICS)`),
                                    selected = "Commercial and industrial machinery and equipment rental and leasing [5324]",
@@ -277,6 +282,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercentcimerlspi", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        selectInput("prodcimerlspi_q", "Select a figure:",
                                    choices = unique(cimerlspi_q$`North American Industry Classification System (NAICS)`),
                                    selected = "Commercial and industrial machinery and equipment rental and leasing [5324]",
@@ -511,6 +517,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlcrspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
+                       h4("Monthly plots:"),
                        selectInput("prodcrspi", "Select a figure:",
                                    choices = unique(crspi_special$`Building Type`),
                                    selected = "Total, building type (Canada)",
@@ -523,6 +530,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercentcrspi", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        selectInput("prodcrspi_q", "Select a figure:",
                                    choices = unique(crspi_special_q$`Building Type`),
                                    selected = "Total, building type (Canada)",
@@ -756,6 +764,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlf", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
+                       h4("Monthly plots:"),
                        selectInput("prodf", "Select a figure:",
                                    choices = unique(f$`North American Industry Classification System (NAICS)`),
                                    selected = "Specialized freight (except used goods) trucking, local [48422]",
@@ -768,6 +777,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercentf", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        selectInput("prodf_q", "Select a figure:",
                                    choices = unique(f_q$`North American Industry Classification System (NAICS)`),
                                    selected = "Specialized freight (except used goods) trucking, local [48422]",
@@ -940,7 +950,7 @@ ui <- fluidPage(
                        tags$hr(),
                        selectInput("prod", "Select a figure:",
                                    choices = unique(ippi$`North American Product Classification System (NAPCS)`),
-                                   selected = "Total Industrial product price index (IPPI), excluding energy and petroleum products",
+                                   selected = "Total, Industrial product price index (IPPI)",
                                    multiple = TRUE, 
                                    width = "100%"),
                        plotlyOutput("plot", height = 650),
@@ -1176,6 +1186,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlnlspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
+                       h4("Monthly plots:"),
                        
                        selectInput("prodnlspi", "Select a figure:",
                                    choices = unique(nlspi$`GEO`),
@@ -1189,6 +1200,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercentnlspi", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        
                        selectInput("prodnlspi_q", "Select a figure:",
                                    choices = unique(nlspi_special_q$`GEO`),
@@ -1317,7 +1329,7 @@ ui <- fluidPage(
                        tags$hr(),
                        selectInput("prodrmpi", "Select a figure:",
                                    choices = unique(rmpi$`North American Product Classification System (NAPCS)`),
-                                   selected = "Total Raw materials price indexes (RMPI), excluding crude energy products",
+                                   selected = "Total, Raw materials price indexes (RMPI)",
                                    multiple = TRUE, 
                                    width = "100%"),
                        plotlyOutput("plotrmpi", height = 650),
@@ -1368,6 +1380,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlrspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
+                       h4("Monthly plots:"),
                        
                        selectInput("prodrspi", "Select a figure:",
                                    choices = unique(rspi$`North American Industry Classification System (NAICS)`),
@@ -1381,6 +1394,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercentrspi", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        
                        selectInput("prodrspi_q", "Select a figure:",
                                    choices = unique(rspi_q$`North American Industry Classification System (NAICS)`),
@@ -1443,6 +1457,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dltaspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
+                       h4("Monthly plots:"),
                        
                        selectInput("prodtaspi", "Select a figure:",
                                    choices = unique(taspi_special$`Client groups`),
@@ -1456,6 +1471,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercenttaspi", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        
                        selectInput("prodtaspi_q", "Select a figure:",
                                    choices = unique(taspi_special_q$`Client groups`),
@@ -1514,6 +1530,7 @@ ui <- fluidPage(
                                    '),
                        downloadButton("dlwspi", "Download", style = 'margin-left: 2em'),
                        tags$hr(),
+                       h4("Monthly plots:"),
                        
                        selectInput("prodwspi", "Select a figure:",
                                    choices = unique(wspi$`North American Industry Classification System (NAICS)`),
@@ -1527,6 +1544,7 @@ ui <- fluidPage(
                        plotlyOutput("yearpercentwspi", height = 650),
                        br(),
                        tags$hr(),
+                       h4("Quarterly plots:"),
                        
                        selectInput("prodwspi_q", "Select a figure:",
                                    choices = unique(wspi_q$`North American Industry Classification System (NAICS)`),
@@ -1587,7 +1605,7 @@ ui <- fluidPage(
                                    margin-left: 2em;
                                    margin-right: 2em
                                    '),
-                       p(strong(tags$u("Suggested comparisons:")), "The following are examples of surveys which have same timeliness, classification type, and reference year:",
+                       p(strong(tags$u("Suggested comparisons:")), "The following are examples of indexes which have same timeliness, classification type, and reference year:",
                          tags$ul(tags$li("IPPI and RMPI.", style = 'text-align: justify;
                                    color: white;
                                    background-color: black;
@@ -1627,13 +1645,15 @@ ui <- fluidPage(
                        br(),
                        div(p("If you encounter any bugs in the Application or
                          have any additional questions regarding its functioning, please
-                         contact _____________ at _____________ for further assistance.", style = 'text-align: justify;
+                         contact Anastasiia Nosach at anastasiia.nosach@canada.ca for further assistance.", style = 'text-align: justify;
                                                                              color: white;
                                                                              background-color: black;
                                                                              margin-left: 2em;
                                                                              margin-right: 2em;
                                                                              font-size:20px
                                                                              ')),
+                       br(),
+                       br(),
                        img(src = "thumbsup.png", height='400px', width='400px',
                            style = 'display: block;
                                  margin-left: auto;
