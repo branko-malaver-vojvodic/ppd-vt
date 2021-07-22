@@ -2593,7 +2593,7 @@ server <- function(input, output, session) {
         geom_line(aes(colour = `Figure`)) + 
         xlab("Date") + 
         ylab("Percentage (%)")+
-        ggtitle("MEPI Year-to-year Percentage Change, by Months, Time Series")+
+        ggtitle("Editor Year-to-year Percentage Change, by Months, Time Series")+
         scale_x_yearmon(breaks = seq(min(mega_dataset$REF_DATE),max(mega_dataset$REF_DATE),3/12))+
         theme(axis.text.x=element_text(angle=90, hjust=1),
               plot.title = element_text(hjust = 0.5)))%>%
